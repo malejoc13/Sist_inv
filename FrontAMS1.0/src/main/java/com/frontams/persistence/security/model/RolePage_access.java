@@ -31,25 +31,26 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "page_access", schema = "security")
+@Table(name = "role_page_access", schema = "security")
 @XmlRootElement
-public class Page_access extends BaseEntity{
+public class RolePage_access extends BaseEntity{
     
-   public Page_access(){}
-   
+    public RolePage_access(){}
+    
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "pageaccess_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "pk_sequence", sequenceName = "role_page_access_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
     @Generated(GenerationTime.INSERT)
     private Long id;
-
-    private String name;
-
-    private String idPage;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "page_access")
-    private List<RolePage_access> role_pages_access;
+    @ManyToOne
+    @JoinColumn(name = "role")
+    private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "page_access")
+    private Page_access page_access;
 
     /**
      * @return the id
@@ -66,45 +67,33 @@ public class Page_access extends BaseEntity{
     }
 
     /**
-     * @return the name
+     * @return the role
      */
-    public String getName() {
-        return name;
+    public Role getRole() {
+        return role;
     }
 
     /**
-     * @param name the name to set
+     * @param role the role to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     /**
-     * @return the idPage
+     * @return the page_access
      */
-    public String getIdPage() {
-        return idPage;
+    public Page_access getPage_access() {
+        return page_access;
     }
 
     /**
-     * @param idPage the idPage to set
+     * @param page_access the page_access to set
      */
-    public void setIdPage(String idPage) {
-        this.idPage = idPage;
+    public void setPage_access(Page_access page_access) {
+        this.page_access = page_access;
     }
-
-    /**
-     * @return the role_pages_access
-     */
-    public List<RolePage_access> getRole_pages_access() {
-        return role_pages_access;
-    }
-
-    /**
-     * @param role_pages_access the role_pages_access to set
-     */
-    public void setRole_pages_access(List<RolePage_access> role_pages_access) {
-        this.role_pages_access = role_pages_access;
-    }
-  
+    
+    
+    
 }

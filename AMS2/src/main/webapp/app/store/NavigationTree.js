@@ -158,7 +158,7 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: 'Accesos',
                         iconCls: 'x-fa fa-object-ungroup',
-                        viewType: 'pageAccess',
+                        viewType: 'pages_access',
                         leaf: true
                     },
                     {

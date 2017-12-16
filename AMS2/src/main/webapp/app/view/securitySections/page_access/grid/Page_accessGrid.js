@@ -1,6 +1,6 @@
-Ext.define('Admin.view.securitySections.pageAccess.grid.PageAccessGrid', {
+Ext.define('Admin.view.securitySections.page_access.grid.Page_accessGrid', {
     extend: 'Admin.base.BasePaginatedGrid',
-    alias: 'widget.pageAccessGrid',
+    alias: 'widget.page_accessGrid',
     columns: {
         defaults: {
             width: '50%',
@@ -11,10 +11,12 @@ Ext.define('Admin.view.securitySections.pageAccess.grid.PageAccessGrid', {
                 xtype: 'idGridColumn'
             },
             {
-                xtype: 'nameGridColumn'
+                text: "Nombre de p&aacute;gina",
+                dataIndex: 'name',
+                filterType: 'filterText'
             },
             {
-                text: "Id Page",
+                text: "Id de p&aacute;gina",
                 dataIndex: 'idPage',
                 width: '49%'
             }

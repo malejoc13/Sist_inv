@@ -1,6 +1,6 @@
-Ext.define('Admin.view.securitySections.pageAccess.view.PageAccessDetails', {
+Ext.define('Admin.view.securitySections.page_access.view.Page_accessDetails', {
     extend: 'Admin.base.BaseDetails',
-    xtype: 'pageAccessDetails',
+    xtype: 'page_accessDetails',
     items: [
         {
             xtype: 'component',
@@ -12,8 +12,8 @@ Ext.define('Admin.view.securitySections.pageAccess.view.PageAccessDetails', {
                 '<div style="padding:20px">',
                     '<table cellpadding="10" style="width:100%;cellspacing">',
                         '<tr>',
-                            '<td><b>Name:</b> {name}</td>',
-                            '<td><b>Id Page:</b> {idPage}</td>',
+                            '<td><b>Nombre de p&aacute;gina: </b> {name}</td>',
+                            '<td><b>Id de p&aacute;gina: </b> {idPage}</td>',
                         '</tr>',
                     '</table>',
                 '<div>'

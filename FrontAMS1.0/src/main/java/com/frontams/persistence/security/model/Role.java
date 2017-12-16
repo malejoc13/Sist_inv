@@ -47,6 +47,9 @@ public class Role extends BaseEntity{
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
     private List<User> users;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
+    private List<RolePage_access> role_pages_access;
 
     /**
      * @return the id
@@ -103,6 +106,21 @@ public class Role extends BaseEntity{
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    /**
+     * @return the role_pages_access
+     */
+    public List<RolePage_access> getRole_pages_access() {
+        return role_pages_access;
+    }
+
+    /**
+     * @param role_pages_access the role_pages_access to set
+     */
+    public void setRole_pages_access(List<RolePage_access> role_pages_access) {
+        this.role_pages_access = role_pages_access;
+    }
+
     
     
 }

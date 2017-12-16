@@ -18,10 +18,7 @@ public class Page_accessDTO implements Serializable{
     private String name;
     
     private String idPage;
-    
-    private String role;
-    private Long roleId;
-
+  
     /**
      * @return the id
      */
@@ -63,34 +60,5 @@ public class Page_accessDTO implements Serializable{
     public void setIdPage(String idPage) {
         this.idPage = idPage;
     }
-
-    /**
-     * @return the role
-     */
-    public String getRole() {
-        return role;
-    }
-
-    /**
-     * @param role the role to set
-     */
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    /**
-     * @return the roleId
-     */
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    /**
-     * @param roleId the roleId to set
-     */
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-    
-    
+   
 }
