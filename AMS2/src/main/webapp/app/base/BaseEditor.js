@@ -30,8 +30,7 @@ Ext.define('Admin.base.BaseEditor', {
     bbar: [
         '->',
         {
-            text: 'Cancelar',
-            id: 'cancelar',
+            text: 'Cancelar',            
             ui: 'soft-green',
             handler: function () {
                 var me = this,
@@ -44,8 +43,7 @@ Ext.define('Admin.base.BaseEditor', {
             }
         },
         {
-            text: 'Aceptar',
-            id: 'aceptar',
+            text: 'Aceptar',           
             ui: 'green',
             handler: function () {
                 var me = this,
