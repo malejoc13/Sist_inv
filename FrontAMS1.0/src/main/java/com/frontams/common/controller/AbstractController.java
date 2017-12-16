@@ -70,13 +70,16 @@ public abstract class AbstractController<D> {
     public WebResponse save(@PathVariable("pageId") String pageId,
             @RequestBody Map<String, Object> map, 
             HttpSession session) throws ParseException {
-        System.out.println("AbstractController -> saving...");
+        System.out.println("AbstractController -> saving..."+pageId);
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
         try { 
             Map<String, Object> data = GRUtil.parseRequestMap(map);
-            if ( principal.getId().equals(data.get("id"))) {//en caso que este eliminando usuarios
+            /*Apartado para en caso de estar modificando un usuario no permita que se
+                   modifique le que esta autenticado*/
+            if ( pageId.equals("users") && principal.getId().equals(data.get("id"))) {
                return new WebResponseData(560, "No puede modificar su usuario mientras est&aacute; autenticado");
             }
+            
             return new WebResponseData(getAbstractManager().save(data));
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,12 +92,13 @@ public abstract class AbstractController<D> {
             @RequestBody Map<String, Object> map, 
             HttpSession session) throws ParseException {
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
-        System.out.println("Eliminando......");
+        System.out.println("Eliminando......"+pageId);
         try { 
             Map<String, Object> data = GRUtil.parseRequestMap(map);
-            if ( principal.getId().equals(data.get("id"))) {//en caso que este eliminando usuarios
+            if ( pageId.equals("users") && principal.getId().equals(data.get("id"))) {
                return new WebResponseData(550, "No puede eliminiar su usuario mientras est&aacute; autenticado");
-            }                
+            }  
+            
              if (getAbstractManager().delete(data)) {
                 return new WebResponseData(); 
             }else return new WebResponseData(450, "Entidad en uso, no se puede eliminar");                

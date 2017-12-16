@@ -1,7 +1,7 @@
 Ext.define('Admin.view.securitySections.role.view.RoleViewTab', {
     extend: 'Admin.base.BaseViewTab',
     xtype: 'roleViewTab',
-    viewName: 'Role',
+    viewName: 'Rol',
     entity: 'role',
     items: [
         {

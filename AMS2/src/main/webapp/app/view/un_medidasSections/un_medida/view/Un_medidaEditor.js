@@ -10,7 +10,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaEditor', {
                     fieldLabel: 'Nombre',
                     name: 'nombre_um',
                     allowBlank : false,
-                    regexText : "Solo se permiten valores alfanumericos"
+                    blankText : 'Este campo es obligatorio'
                 }                
             ]
         },

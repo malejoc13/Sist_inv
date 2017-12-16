@@ -3,38 +3,27 @@ Ext.define('Admin.view.securitySections.role.view.RoleEditor', {
     alias: 'widget.roleEditor',
     items: [
         {
-            items: [
+            width: "50%",
+            items: [                
                 {
-                    xtype: 'idField'
-                },
-                {
-                    fieldLabel: 'Name',
-                    name: 'name'
-                },
-                {
-                    xtype: 'baseTextAreaField',
-                    fieldLabel: 'Description',
-                    name: 'description'
-                }
+                    xtype     : 'baseTextField',
+                    fieldLabel: 'Rol',
+                    name: 'name',
+                    allowBlank : false,
+                    blankText : 'Este campo es obligatorio'
+                }                
             ]
         },
         {
+            width: "50%",
             items: [
                 {
-                    xtype: 'baseCheckboxField',
-                    fieldLabel: 'Access All',
-                    name: 'accessAll',
-                    value: false
-                }
-            ]
-        },
-        {
-            items: [
+                    xtype     : 'baseTextAreaField',                    
+                    name      : 'descripcion',
+                    fieldLabel: 'Descripci&oacute;n'
+                },
                 {
-                    xtype: 'baseCheckboxField',
-                    fieldLabel: 'Read Only',
-                    name: 'readOnly',
-                    value: true
+                    xtype: 'idField'//para en caso de modificar ahi se va a guardar el ID
                 }
             ]
         }

@@ -50,7 +50,7 @@ public class RoleManager extends AbstractManager<Role, RoleDTO>{
     
    @Override
     protected boolean inUse(Role entity) { 
-        if (entity.getUsers().isEmpty()) {
+        if (entity.getUsers().isEmpty()) {//agregar si tambien tiene datos en pageAcces
              return false;
         }
         System.out.println("lista llena...");
