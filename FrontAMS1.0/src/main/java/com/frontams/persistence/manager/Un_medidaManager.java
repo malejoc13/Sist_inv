@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.frontams.persistence.manager;
+
+/**
+ *
+ * @author Sistemas
+ */
+
+import com.frontams.common.dao.AbstractBaseDAO;
+import com.frontams.common.manager.AbstractManager; 
+import com.frontams.persistence.dao.Un_medidaDAO;
+import com.frontams.persistence.dto.Un_medidaDTO; 
+import com.frontams.persistence.model.Un_medida;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+public class Un_medidaManager extends AbstractManager<Un_medida, Un_medidaDTO>{
+    
+    @Autowired
+    private Un_medidaDAO um_DAO;
+      
+    @Override
+    public AbstractBaseDAO dao() {
+        return um_DAO;
+    }
+    
+    @Override
+    protected Un_medida create(Map<String, Object> data) throws Exception {
+        Un_medida um = new Un_medida(); 
+        update(um, data);
+
+        return um;
+    }
+
+    @Override
+    protected void update(Un_medida entity, Map<String, Object> data) { 
+        entity.setNombre_um((String) data.get("nombre_um"));
+        entity.setDescipcion_um((String) data.get("descipcion_um"));        
+    }
+    
+    @Override
+    protected boolean inUse(Un_medida entity) { 
+        if (entity.getProductos().isEmpty()) {
+             return false;
+        }
+        System.out.println("lista llena...");
+        return true;
+    }
+    
+}
