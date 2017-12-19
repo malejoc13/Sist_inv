@@ -44,7 +44,7 @@ Ext.define('Ext.picker.Date', {
      * @cfg {String} todayText
      * The text to display on the button that selects the current date
      */
-    todayText: 'Today',
+    todayText: 'Hoy',
     //</locale>
     
     //<locale>
@@ -90,7 +90,7 @@ Ext.define('Ext.picker.Date', {
      * A string used to format the message for displaying in a tooltip over the button that selects the current date.
      * The `{0}` token in string is replaced by today's date.
      */
-    todayTip: '{0} (Spacebar)',
+    todayTip: '{0} (Espacio)',
     //</locale>
 
     //<locale>
@@ -138,7 +138,7 @@ Ext.define('Ext.picker.Date', {
      * @cfg {String} disabledDaysText
      * The tooltip to display when the date falls on a disabled day.
      */
-    disabledDaysText: 'Disabled',
+    disabledDaysText: 'Desabilitado',
     //</locale>
     
     //<locale>
@@ -182,7 +182,7 @@ Ext.define('Ext.picker.Date', {
      * @cfg {String} nextText
      * The next month navigation button tooltip
      */
-    nextText: 'Next Month (Control+Right)',
+    nextText: 'Próximo Mes (Control+Derecha)',
     //</locale>
 
     //<locale>
@@ -190,7 +190,7 @@ Ext.define('Ext.picker.Date', {
      * @cfg {String} prevText
      * The previous month navigation button tooltip
      */
-    prevText: 'Previous Month (Control+Left)',
+    prevText: 'Mes Anterior (Control+Izquierda)',
     //</locale>
 
     //<locale>
@@ -198,7 +198,7 @@ Ext.define('Ext.picker.Date', {
      * @cfg {String} monthYearText
      * The header month selector tooltip
      */
-    monthYearText: 'Choose a month (Control+Up/Down to move years)',
+    monthYearText: 'Seleccione un mes (Control+Arriba/Abajo para moverse)',
     //</locale>
     
     //<locale>

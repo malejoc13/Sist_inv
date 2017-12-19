@@ -4,8 +4,8 @@ Ext.define('Admin.view.securitySections.role.RoleSubPanel', {
     config: {
         subPanels: [
             {
-                xtype: 'rolePageAccessGridTab',
-                openViewFilters: 'rolePageAccess.id'
+                xtype: 'role_page_accessGridTab',
+                openViewFilters: 'role_page_access.id'
             }
         ]
     }

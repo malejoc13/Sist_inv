@@ -12,6 +12,8 @@ package com.frontams.persistence.security.manager;
 
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.security.dao.Page_accessDAO;
 import com.frontams.persistence.security.dao.RoleDAO;
 import com.frontams.persistence.security.dto.Page_accessDTO;
@@ -58,4 +60,13 @@ public class Page_accessManager extends AbstractManager<Page_access, Page_access
         System.out.println("lista llena...");
         return true;
     }
+    
+    @Override
+     protected WebResponseData del(Page_access entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "La p&aacute;gina "+entity.getName()+" no se puede eliminar, existen accesos a p&aacute;ginas que la referencian");
+     }
 }

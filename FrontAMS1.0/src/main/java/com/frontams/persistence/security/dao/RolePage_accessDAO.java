@@ -12,6 +12,7 @@ package com.frontams.persistence.security.dao;
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.persistence.security.dto.RolePage_accessDTO;
 import com.frontams.persistence.security.model.RolePage_access;
+import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
@@ -20,6 +21,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePage_accessDTO>{
@@ -30,9 +32,9 @@ public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePag
                 .createAlias("page_access", "page_access");
     }
 
-    public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("name"));
-    } 
+   /* public void addOrder(Criteria criteria) {
+        criteria.addOrder(Order.asc("role.name"));
+    } */
 
     @Override
     public void applyListProjection(Criteria criteria) {
@@ -45,6 +47,26 @@ public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePag
 
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(RolePage_accessDTO.class));
+    }
+    
+    @Transactional
+    public List<String> getPageAccessByRole(Long appRole) {
+        System.out.println("RolePageAccessDAO -> getPageAccessByAppRole:: appRole = " + appRole);
+        return getCriteria()
+                .createAlias("role", "role")
+                .createAlias("page_access", "page_access")
+                .add(Restrictions.eq("role.id", appRole))
+                .setProjection(Projections.property("page_access.idPage"))
+                .list();
+    }
+
+    public Long exist(Long idRole, Long idPageAccess) {
+        return (Long) buildCriteria()
+                .add(Restrictions.eq("role.id", idRole))
+                .add(Restrictions.eq("page_access.id", idPageAccess))
+                .setProjection(Projections.property("id"))
+                .setMaxResults(1)
+                .uniqueResult();
     }
     
 }

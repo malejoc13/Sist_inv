@@ -44,6 +44,10 @@ Ext.define('Admin.base.BaseController', {
                     var activeTabElement = activeSubTab.items.items[0];
                     //si es un grid lo que hay n el subtab lo mando a cargar
                     if (activeTabElement instanceof Admin.base.BasePaginatedGrid) {
+                        if (activeSubTab.entity === 'role_page_access') {
+                            activeSubTab.setTitle("Rol "+record.data.name+" - Acceso a P&aacute;ginas");
+                        }
+                        
                         activeTabElement.getStore().loadPage(1);//recargo el grid del subtab
                     }                                           //y el plugin del grid filter que se anexa 
                                                                //cada vez que creo un grid y le pasa los filtros
@@ -96,7 +100,7 @@ Ext.define('Admin.base.BaseController', {
                     jsonData:'{"id":"(L)'+data.id+'"}',
                     ignoreError: true,
                     success: function (response) {
-                        if (response.status == 450 || response.status == 550) {
+                        if (response.status === 450 || response.status === 550) {
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                         } else {
                             grid.getStore().loadPage(1);  
@@ -176,7 +180,7 @@ Ext.define('Admin.base.BaseController', {
             if (grid.loadAdditionalInfoWhenDblClick && data) {//si se necesita cargar datos
                 Request.load({
                     url: me.getView().xtype + '/' + currentTab.entity + '/load',
-                    params: 'params=id=(I)' + data.id,
+                    params: 'params=id=(L)' + data.id,
                     success: function (response) {
                         newTab.data = response;
 

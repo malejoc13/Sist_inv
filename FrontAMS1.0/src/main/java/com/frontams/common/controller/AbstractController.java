@@ -62,24 +62,18 @@ public abstract class AbstractController<D> {
             HttpSession session) throws Exception {
    
         List<Criterion> data = GRUtil.parseParamsToExpressions(params); 
-       
+              
         return getAbstractManager().pageList(new ListRequestDTO(page, start, limit,report, data));
      }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = "application/json")
     public WebResponse save(@PathVariable("pageId") String pageId,
             @RequestBody Map<String, Object> map, 
-            HttpSession session) throws ParseException {
+            HttpSession session) throws ParseException, Exception {
         System.out.println("AbstractController -> saving..."+pageId);
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
         try { 
-            Map<String, Object> data = GRUtil.parseRequestMap(map);
-            /*Apartado para en caso de estar modificando un usuario no permita que se
-                   modifique le que esta autenticado*/
-            if ( pageId.equals("users") && principal.getId().equals(data.get("id"))) {
-               return new WebResponseData(560, "No puede modificar su usuario mientras est&aacute; autenticado");
-            }
-            
+            Map<String, Object> data = GRUtil.parseRequestMap(map);           
             return new WebResponseData(getAbstractManager().save(data));
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,13 +89,9 @@ public abstract class AbstractController<D> {
         System.out.println("Eliminando......"+pageId);
         try { 
             Map<String, Object> data = GRUtil.parseRequestMap(map);
-            if ( pageId.equals("users") && principal.getId().equals(data.get("id"))) {
-               return new WebResponseData(550, "No puede eliminiar su usuario mientras est&aacute; autenticado");
-            }  
-            
-             if (getAbstractManager().delete(data)) {
-                return new WebResponseData(); 
-            }else return new WebResponseData(450, "Entidad en uso, no se puede eliminar");                
+                 
+        return getAbstractManager().delete(data, principal); 
+                          
         } catch (Exception e) {
             e.printStackTrace();   
             return WebResponse.forException(e);

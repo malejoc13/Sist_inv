@@ -9,7 +9,9 @@ package com.frontams.persistence.security.manager;
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.persistence.security.dao.UserDAO; 
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.UnidadDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.model.Unidad;
 import com.frontams.persistence.security.dao.RoleDAO;
 import com.frontams.persistence.security.dto.UserDTO; 
@@ -52,7 +54,7 @@ public class UserManager extends AbstractManager<User, UserDTO> {
 
     @Override
     protected void update(User entity, Map<String, Object> data) {
-              
+                 
         entity.setFirstName((String) data.get("firstName"));
         entity.setLastName((String) data.get("lastName"));
         entity.setUsername((String) data.get("username"));
@@ -67,17 +69,14 @@ public class UserManager extends AbstractManager<User, UserDTO> {
         entity.setRole(role);        
     }
     
-   /* @Override
-    public boolean delete(Map<String, Object> data) throws Exception{
-        User entity;
-        Long id = (Long) data.get("id");
-        entity = userDAO.findById(id);
-        if (!inUse(entity)) {                
-            dao().delete(entity);
-            return true;
-        }
-        return false;    
-    }*/
-   
+   @Override
+     protected WebResponseData del(User entity, Principal principal) throws Exception{ 
+        if ( principal.getId().equals(entity.getId())) {
+               return new WebResponseData(550, "No puede eliminiar su usuario mientras est&aacute; autenticado");
+            }          
+        dao().delete(entity);
+        return new WebResponseData();
+         
+     }   
 
 }

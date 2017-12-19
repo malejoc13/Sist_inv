@@ -5,7 +5,6 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            width: '30%',
             align: 'center'
         },
         items: [
@@ -30,13 +29,19 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 width: '15%'
             },
             {
+                text: "Precio costo",
+                dataIndex: 'precio_costo',
+                filterType: 'filterNumber',
+                width: '12%'
+            },
+            {
                 text: "Precio",
                 dataIndex: 'precio_max',
                 filterType: 'filterNumber',
                 width: '12%'
             },
             {
-                text: "Precio min",
+                text: "Precio m&iacute;nimo",
                 dataIndex: 'precio_min',
                 filterType: 'filterNumber',
                 width: '12%'

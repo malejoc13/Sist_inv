@@ -88,7 +88,7 @@ Ext.define('Ext.picker.Month', {
     /**
      * @cfg {String} cancelText The text to display on the cancel button.
      */
-    cancelText: 'Cancel',
+    cancelText: 'Cancelar',
     //</locale>
 
     /**

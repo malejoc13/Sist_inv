@@ -11,10 +11,12 @@ package com.frontams.persistence.manager;
  */
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.ProductoDAO;
 import com.frontams.persistence.dao.ProveedorDAO;
 import com.frontams.persistence.dao.Tipo_prodDAO;
 import com.frontams.persistence.dao.Un_medidaDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.dto.ProductoDTO; 
 import com.frontams.persistence.model.Producto;
 import com.frontams.persistence.model.Proveedor;
@@ -62,6 +64,7 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
         entity.setFecha_alta((Date) data.get("fecha_alta"));
         entity.setPrecio_max((Double) data.get("precio_max"));
         entity.setPrecio_min((Double) data.get("precio_min"));
+        entity.setPrecio_costo((Double) data.get("precio_costo"));
         
         Long idprov = (Long) data.get("proveedorId");         
         Proveedor proveedor = proveedorDAO.findById(idprov);         
@@ -82,5 +85,14 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
         System.out.println("lista llena...");
         return false; //cambiar por tu cuando implementes la funcion 
     }
+    
+    @Override
+     protected WebResponseData del(Producto entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "El producto "+entity.getName()+" no se puede eliminar, a&uacute;n cuenta con existencia en el inventario");
+     }
     
 }

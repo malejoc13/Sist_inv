@@ -32,7 +32,7 @@ Ext.define('Admin.base.BaseViewTab', {
             if(container.items.items.length === 1){ //If get's here is because Is a single view
                    Request.load({
                     url: container.xtype + '/' + me.entity + '/load',
-                    params: 'params=' + me.loadFilter + '=(I)' + Session.Principal[ me.loadFilterValue ],
+                    params: 'params=' + me.loadFilter + '=(L)' + Session.Principal[ me.loadFilterValue ],
                     success: function (response) {
                         me.superData = response;
                         me.config.data = response;//This will be used in setTabTitle
@@ -58,7 +58,7 @@ Ext.define('Admin.base.BaseViewTab', {
             baseDetails.items.items[0].setData(data);
         }
 
-        if (data && data.id) {
+        if (data && data.id) {//si estamos modificando
             if (subPanel) {
                 me.down('baseSubPanel').show();
             }
@@ -72,8 +72,9 @@ Ext.define('Admin.base.BaseViewTab', {
     },
     editMode: function () {
         var me = this;
-        me.items.items[0].hide();
-        me.items.items[1].show();
+        me.down('editButton').hide();
+        me.items.items[0].hide();//oculto details
+        me.items.items[1].show();//muestro editor
     },
     setTabTitle: function (newData) {   //this function should be overriden when required
         var me = this,
@@ -88,6 +89,7 @@ Ext.define('Admin.base.BaseViewTab', {
                 //var titleName = data[me.propertyTitleName || 'name']; //if data has not name, then specify 'propertyTitleName'
                 //title = me.viewName + ': ' + titleName;
             } else {
+                
                 title = 'Nuevo ' + me.viewName;
             }
         }

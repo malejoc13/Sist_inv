@@ -11,7 +11,9 @@ package com.frontams.persistence.manager;
  */
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.ProveedorDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.dto.ProveedorDTO; 
 import com.frontams.persistence.model.Proveedor;
 import java.util.Map;
@@ -57,5 +59,14 @@ public class ProveedorManager extends AbstractManager<Proveedor, ProveedorDTO>{
         System.out.println("lista llena...");
         return true;
     }
+    
+    @Override
+     protected WebResponseData del(Proveedor entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "El proveedor "+entity.getName()+" no se puede eliminar, existen produtos que son suministrados por &eacute;l");
+     }
     
 }

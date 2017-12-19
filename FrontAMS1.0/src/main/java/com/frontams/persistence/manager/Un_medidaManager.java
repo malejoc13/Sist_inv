@@ -12,7 +12,9 @@ package com.frontams.persistence.manager;
 
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.Un_medidaDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.dto.Un_medidaDTO; 
 import com.frontams.persistence.model.Un_medida;
 import java.util.Map;
@@ -55,4 +57,12 @@ public class Un_medidaManager extends AbstractManager<Un_medida, Un_medidaDTO>{
         return true;
     }
     
+    @Override
+     protected WebResponseData del(Un_medida entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "La unidad de medida "+entity.getNombre_um()+" no se puede eliminar, existen productos clasificados dentro de esta");
+     }
 }

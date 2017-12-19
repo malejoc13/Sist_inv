@@ -103,7 +103,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} disabledDaysText
      * The tooltip to display when the date falls on a disabled day of week.
      */
-    disabledDaysText : "Disabled",
+    disabledDaysText : "Desabilitado",
     //</locale>
     
     //<locale>
@@ -111,7 +111,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} ariaDisabledDaysText The text that Assistive Technologies such as screen readers
      * will announce when the date falls on a disabled day of week.
      */
-    ariaDisabledDaysText: "This day of week is disabled",
+    ariaDisabledDaysText: "Este d&iacute;a de la semana est&aacute; desabilitado",
     //</locale>
     
     //<locale>
@@ -119,7 +119,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} disabledDatesText
      * The tooltip text to display when the date falls on a disabled date.
      */
-    disabledDatesText : "Disabled",
+    disabledDatesText : "Desabilitado",
     //</locale>
     
     //<locale>
@@ -127,7 +127,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} ariaDisabledDatesText The text that Assistive Technologies such as screen readers
      * will announce when the date falls on a disabled date.
      */
-    ariaDisabledDatesText: "This date cannot be selected",
+    ariaDisabledDatesText: "Esta fecha no se puede seleccionar",
     //</locale>
     
     //<locale>
@@ -135,7 +135,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} minText
      * The error text to display when the date in the cell is before {@link #minValue}.
      */
-    minText : "The date in this field must be equal to or after {0}",
+    minText : "La fecha a seleccionar debe ser igual o mayor a {0}",
     //</locale>
     
     //<locale>
@@ -144,7 +144,7 @@ Ext.define('Ext.form.field.Date', {
      * will announce when the date in the cell is before {@link #minValue}. The date substituted
      * for {0} will be formatted as per {@link #ariaFormat}.
      */
-    ariaMinText: "The date must be equal to or after {0}",
+    ariaMinText: "La fecha debe ser igual o mayor a {0}",
     //</locale>
     
     //<locale>
@@ -152,7 +152,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} maxText
      * The error text to display when the date in the cell is after {@link #maxValue}.
      */
-    maxText : "The date in this field must be equal to or before {0}",
+    maxText : "La fecha a seleccionar debe ser igual o menor a {0}",
     //</locale>
     
     //<locale>
@@ -161,7 +161,7 @@ Ext.define('Ext.form.field.Date', {
      * will announce when the date in the cell is after {@link #maxValue}. The date substituted
      * for {0} will be formatted as per {@link #ariaFormat}.
      */
-    ariaMaxText: "The date must be equal to or before {0}",
+    ariaMaxText: "La fecha debe ser igual o menor a {0}",
     //</locale>
     
     //<locale>
@@ -169,7 +169,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} invalidText
      * The error text to display when the date in the field is invalid.
      */
-    invalidText : "{0} is not a valid date - it must be in the format {1}",
+    invalidText : "{0} no es una fecha v&aacute;lida - debe ser en el formato: {1}",
     //</locale>
     
     //<locale>
@@ -177,7 +177,7 @@ Ext.define('Ext.form.field.Date', {
      * @cfg {String} formatText The format text to be announced by screen readers
      * when the field is focused.
      */
-    formatText: 'Expected date format {0}.',
+    formatText: 'Se espera el formato de fecha: {0}.',
     //</locale>
     
     /**

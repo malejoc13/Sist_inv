@@ -1,7 +1,7 @@
  Ext.define('Admin.view.productosSections.producto.view.ProductoEditor', {
     extend: 'Admin.base.BaseEditor',
     alias: 'widget.productoEditor',
-    height: 350,
+    height: 400,
     items: [
         {
             items: [                
@@ -11,6 +11,13 @@
                     name: 'name',//le pongo de nombre el mismo valord el grid para que me lo cargue a la hora de modificar
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio'                    
+                },
+                {
+                    fieldLabel: 'Precio costo',                  
+                    name: 'precio_costo',
+                    xtype: 'baseDoubleField',                    
+                    allowBlank : false,
+                    blankText : 'Este campo es obligatorio'
                 },
                 {
                     xtype     : 'baseTextAreaField',    //DE TIPO TEX AREA YA DEFINIDO EN CMP                
@@ -25,6 +32,8 @@
                     fieldLabel: 'Fecha de alta',                  
                     name: 'fecha_alta',
                     xtype: 'baseDateField',
+                    minValue: '01-01-2017', 
+                    maxValue: new Date(),
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio'                    
                 },

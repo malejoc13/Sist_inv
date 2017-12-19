@@ -11,7 +11,9 @@ package com.frontams.persistence.manager;
  */
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.UnidadDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.dto.UnidadDTO;
 import com.frontams.persistence.model.Unidad;
 import java.util.Map;
@@ -55,4 +57,12 @@ public class UnidadManager extends AbstractManager<Unidad, UnidadDTO>{
         return true;
     }
     
+    @Override
+     protected WebResponseData del(Unidad entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "La unidad "+entity.getName()+" no se puede eliminar, existen usuarios que pertenecen a ella");
+     }
 }

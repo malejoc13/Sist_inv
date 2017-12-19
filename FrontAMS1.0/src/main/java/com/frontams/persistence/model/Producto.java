@@ -53,6 +53,8 @@ public class Producto extends BaseEntity {
     
     private Double precio_min;
     
+    private Double precio_costo;
+    
     @ManyToOne
     @JoinColumn(name = "un_medida")
     private Un_medida un_medida;
@@ -189,6 +191,20 @@ public class Producto extends BaseEntity {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the precio_costo
+     */
+    public Double getPrecio_costo() {
+        return precio_costo;
+    }
+
+    /**
+     * @param precio_costo the precio_costo to set
+     */
+    public void setPrecio_costo(Double precio_costo) {
+        this.precio_costo = precio_costo;
     }
     
     

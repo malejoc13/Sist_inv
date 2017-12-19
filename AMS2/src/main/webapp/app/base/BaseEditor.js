@@ -36,10 +36,10 @@ Ext.define('Admin.base.BaseEditor', {
                 var me = this,
                     viewTab = me.up().up().up(),
                     items = viewTab.items.items;                        
-                    // viewTab.close();  
-                    viewTab.down('editButton').show();
-                    items[0].show();
-                    items[1].hide();
+                     viewTab.close();  
+                    //viewTab.down('editButton').show();
+                    //items[0].show();//muestro el details
+                    //items[1].hide();//oculto el editor
             }
         },
         {
@@ -64,7 +64,7 @@ Ext.define('Admin.base.BaseEditor', {
                     jsonData: formData.typedValues,
                     ignoreError: true,
                     success: function (response) {
-                        if (response.status === 560) {
+                        if (response.status === 500) {
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                          }else{
                             var items = viewTab.items.items,

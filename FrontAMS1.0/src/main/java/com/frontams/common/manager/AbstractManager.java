@@ -10,6 +10,9 @@ import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.dto.ListRequestDTO;
 import com.frontams.common.dto.NomenclatorDTO;
 import com.frontams.common.model.BaseEntity;
+import com.frontams.common.util.response.WebResponse;
+import com.frontams.common.util.response.WebResponseData;
+import com.frontams.persistence.dto.Principal;
 import java.util.List;
 import java.util.Map;
 import org.hibernate.criterion.Criterion;
@@ -48,22 +51,18 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
     }
 
     public abstract AbstractBaseDAO dao();
-
+    //reimplementar en todas las Manager
     protected T create(Map<String, Object> data) throws Exception{ return null;}
-
-    protected void update(T entity, Map<String, Object> data) throws Exception{}
-    
+    protected void update(T entity, Map<String, Object> data) throws Exception{}    
     protected boolean inUse(T entity) throws Exception{ return false;}
+    protected WebResponseData del(T entity, Principal principal) throws Exception{ return null;}
     
-    public boolean delete(Map<String, Object> data) throws Exception{
+    public WebResponseData delete(Map<String, Object> data, Principal principal) throws Exception{
         T entity;
         Long id = (Long) data.get("id");
         entity = (T) dao().findById(id);
-        if (!inUse(entity)) {                
-            dao().delete(entity);
-            return true;
-        }
-        return false;
+        
+        return del(entity, principal);        
     }
 
     public Long save(Map<String, Object> data) throws Exception {
@@ -72,8 +71,11 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
         T entity;
         Boolean creating = (data == null || !data.containsKey("id"));
         System.out.println("AbstractManager -> creating = " + creating);
+       
         if (creating) {
+            
             entity = create(data);
+           
         } else {
             Long id = (Long) data.get("id");
             entity = (T) dao().findById(id); 
@@ -89,6 +91,7 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
         }
 
         return entity.getId();
+       
     }
 
     public T findById(Long id) {

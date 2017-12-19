@@ -1,6 +1,6 @@
-Ext.define('Admin.view.securitySections.rolePageAccess.view.RolePageAccessEditor', {
+Ext.define('Admin.view.securitySections.role_page_access.view.RolePage_accessEditor', {
     extend: 'Admin.base.BaseEditor',
-    alias: 'widget.rolePageAccessEditor',
+    alias: 'widget.role_page_accessEditor',
     items: [
         {
             items: [
@@ -8,7 +8,7 @@ Ext.define('Admin.view.securitySections.rolePageAccess.view.RolePageAccessEditor
                     xtype: 'idField'
                 },
                 {
-                    fieldLabel: 'Role',
+                    fieldLabel: 'Rol',
                     xtype: 'baseSelectField',
                     name: 'roleId',
                     url: 'role',
@@ -18,10 +18,14 @@ Ext.define('Admin.view.securitySections.rolePageAccess.view.RolePageAccessEditor
                     defaultPropertyValue:'superData.id'
                 },
                 {
-                    fieldLabel: 'Page Access',
+                    fieldLabel: 'P&aacute;gina',
                     xtype: 'baseSelectField',
-                    name: 'pageAccessId',
-                    url: 'pageAccess'
+                    name: 'page_accessId',
+                    url: 'page_access',
+                    allowBlank : false,                    
+                    emptyText : "Seleccione...",
+                    editable : false,
+                    blankText : 'Este campo es obligatorio'
                 }
             ]
         }

@@ -11,7 +11,9 @@ package com.frontams.persistence.manager;
  */
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
+import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.Tipo_prodDAO;
+import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.dto.Tipo_prodDTO; 
 import com.frontams.persistence.model.Tipo_prod;
 import java.util.Map;
@@ -53,4 +55,13 @@ public class Tipo_prodManager extends AbstractManager<Tipo_prod, Tipo_prodDTO>{
         System.out.println("lista llena...");
         return true;
     }
+    
+     @Override
+     protected WebResponseData del(Tipo_prod entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "El tipo de producto "+entity.getName()+" no se puede eliminar, existen productos clasificados dentro de dicho tipo");
+     }
 }

@@ -46,6 +46,7 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
                 .add(Projections.property("fecha_alta").as("fecha_alta"))   
                 .add(Projections.property("precio_max").as("precio_max"))
                 .add(Projections.property("precio_min").as("precio_min"))
+                .add(Projections.property("precio_costo").as("precio_costo"))
                 .add(Projections.property("proveedor.name").as("proveedor"))                
                 .add(Projections.property("proveedor.id").as("proveedorId"))
                 .add(Projections.property("un_medida.nombre_um").as("un_medida"))

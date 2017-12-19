@@ -36,6 +36,8 @@ public class ProductoDTO implements Serializable{
     private Double precio_max;
     
     private Double precio_min;
+    
+    private Double precio_costo;
     //atributos de las clases con que se relaciona
     private String un_medida;
     private Long un_medidaId;
@@ -212,6 +214,20 @@ public class ProductoDTO implements Serializable{
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the precio_costo
+     */
+    public Double getPrecio_costo() {
+        return precio_costo;
+    }
+
+    /**
+     * @param precio_costo the precio_costo to set
+     */
+    public void setPrecio_costo(Double precio_costo) {
+        this.precio_costo = precio_costo;
     }
     
     

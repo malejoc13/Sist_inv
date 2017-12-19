@@ -1,6 +1,6 @@
-Ext.define('Admin.view.securitySections.rolePageAccess.view.RolePageAccessDetails', {
+Ext.define('Admin.view.securitySections.role_page_access.view.RolePage_accessDetails', {
     extend:'Admin.base.BaseDetails',
-    xtype: 'rolePageAccessDetails', 
+    xtype: 'role_page_accessDetails', 
     items: [
         {
             xtype: 'component', 
@@ -12,8 +12,8 @@ Ext.define('Admin.view.securitySections.rolePageAccess.view.RolePageAccessDetail
                 '<div style="padding:20px">', 
                 '<table cellpadding="4" style="width:100%;cellspacing">',
                     '<tr>',
-                        '<td><b>Role:</b> {role}</td>',
-                        '<td><b>Page Access:</b> {pageAccess}</td>',
+                        '<td><b>Rol: </b> {role}</td>',
+                        '<td><b>Acceso a P&aacute;gina: </b> {page_access}</td>',
                     '</tr>', 
                 '</table>',
                 '<div>'

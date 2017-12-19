@@ -90,7 +90,7 @@ Ext.define('Admin.base.BaseTab', {
                 
             }
 
-            return (me.staticFilters || tab.staticFilters  || me.filters) + '@is@' + (me.filterPrefix || '(I)') + filterValue;
+            return (me.staticFilters || tab.staticFilters  || me.filters) + '@is@' + (me.filterPrefix || '(L)') + filterValue;
         }
         return "";
     },

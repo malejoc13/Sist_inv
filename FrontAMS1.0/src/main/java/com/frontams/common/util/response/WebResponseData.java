@@ -27,12 +27,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class WebResponseData<T> extends WebResponse implements Serializable {
 
     private T data;
-
-    private int status;
-    /**
-     *
-     */
-    private String statusMessage;
     /**
      * The default constructor
      */
@@ -45,8 +39,6 @@ public class WebResponseData<T> extends WebResponse implements Serializable {
 
     public WebResponseData(int status, String statusMessage) {
         super(status, statusMessage);
-        this.status = status;
-        this.statusMessage = statusMessage;
     }
 
     public static WebResponseData toLoginFail() {
