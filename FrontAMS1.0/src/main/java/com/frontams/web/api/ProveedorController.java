@@ -32,5 +32,10 @@ public class ProveedorController  extends AbstractController{
     public AbstractManager getAbstractManager() {
         return proveedorManager;
     }
+    
+    @Override
+    public AbstractManager getReportManager(){
+      return proveedorManager;
+  }
             
 }

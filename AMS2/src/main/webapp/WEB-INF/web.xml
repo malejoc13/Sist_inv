@@ -12,7 +12,7 @@
     </context-param>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.girocheck.ams.conf.spring</param-value>
+        <param-value>com.ams.conf.spring</param-value>
     </context-param>
 
     <listener>
@@ -31,7 +31,7 @@
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>com.girocheck.ams.web.api</param-value>
+            <param-value>com.ams.web.api</param-value>
         </init-param>
         <init-param>
             <param-name>com.sun.jersey.api.json.POJOMappingFeatures</param-name>

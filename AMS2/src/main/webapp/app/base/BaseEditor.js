@@ -80,7 +80,8 @@ Ext.define('Admin.base.BaseEditor', {
                             viewTab.down('editButton').show();
                             items[0].show();
                             items[1].hide();
-
+                           // items[1].reset();
+                            //viewTab.close(); 
                             var subPanel = items[2];
 
                             if (subPanel && subPanel instanceof Admin.base.BaseSubPanel) {

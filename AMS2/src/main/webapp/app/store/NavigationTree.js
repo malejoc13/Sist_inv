@@ -99,13 +99,13 @@ Ext.define('Admin.store.NavigationTree', {
                         leaf: true
                     }
                 ]
-            }/*,
-            {
-                text: 'Clients',
-                iconCls: 'x-fa fa-users',
-                viewType: 'clients',
-                leaf: true
             },
+            {
+                text: 'Transactions',
+                iconCls: 'x-fa fa-users',
+                viewType: 'transactions',
+                leaf: true
+            }/*,
              {
                 text: 'Mobile Clients',
                 iconCls: 'x-fa fa-mobile',

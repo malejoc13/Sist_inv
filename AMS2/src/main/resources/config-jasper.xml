@@ -9,25 +9,22 @@
   http://www.springframework.org/schema/util 
   http://www.springframework.org/schema/util/spring-util-3.0.xsd">
          
-    <bean id="transactionPDFView" class="com.girocheck.ams.reports.PDFView"
-          p:url="classpath:reports/transactions.jasper"
+    <bean id="unidadPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/unidad.jasper"
           p:reportDataKey="datasource"/> 
     
-    <bean id="transactionExcelView" class="com.girocheck.ams.util.TransactionExcelBuilder"/> 
-         
-    <bean id="merchantPDFView" class="com.girocheck.ams.reports.PDFView"
-          p:url="classpath:reports/merchant.jasper"
+    <bean id="unidadExcelView" class="com.ams.util.UnidadExcelBuilder"/>
+    
+    <bean id="proveedorPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/proveedor.jasper"
           p:reportDataKey="datasource"/> 
-         
-    <bean id="terminalPDFView" class="com.girocheck.ams.reports.PDFView"
-          p:url="classpath:reports/terminal.jasper"
+     
+    <bean id="proveedorExcelView" class="com.ams.util.ProveedorExcelBuilder"/>
+    
+    <bean id="tipo_prodPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/tipo_prod.jasper"
           p:reportDataKey="datasource"/> 
-         
-    <bean id="userPDFView" class="com.girocheck.ams.reports.PDFView"
-          p:url="classpath:reports/user.jasper"
-          p:reportDataKey="datasource"/> 
-         
-    <bean id="cardPDFView" class="com.girocheck.ams.reports.PDFView"
-          p:url="classpath:reports/card.jasper"
-          p:reportDataKey="datasource"/> 
+    
+    <bean id="tipo_prodExcelView" class="com.ams.util.Tipo_prodExcelBuilder"/>
+   
 </beans>

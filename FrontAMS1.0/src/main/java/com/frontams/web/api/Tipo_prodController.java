@@ -32,5 +32,10 @@ public class Tipo_prodController  extends AbstractController{
     public AbstractManager getAbstractManager() {
         return tipo_prodManager;
     }
+    
+    @Override
+    public AbstractManager getReportManager(){
+      return tipo_prodManager;
+  }
             
 }

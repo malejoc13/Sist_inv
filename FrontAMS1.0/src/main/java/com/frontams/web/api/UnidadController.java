@@ -29,4 +29,8 @@ public class UnidadController extends AbstractController{
         return unidadManager;
     }
     
+    public AbstractManager getReportManager(){
+      return unidadManager;
+  }
+    
 }

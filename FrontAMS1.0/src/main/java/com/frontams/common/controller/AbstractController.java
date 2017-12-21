@@ -15,6 +15,7 @@ import com.frontams.common.util.response.WebResponseDataList;
 import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import java.text.ParseException; 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
@@ -36,7 +37,7 @@ public abstract class AbstractController<D> {
 
     @Autowired
     private AccessService accessService;
-
+    
     @RequestMapping(value = "/report", method = RequestMethod.GET)
     public Map report(
             @PathVariable("pageId") String pageId, 
@@ -47,7 +48,7 @@ public abstract class AbstractController<D> {
         System.out.println("FrontAMS / report = " + report);
         System.out.println("FrontAMS / params = " + params);
         List<Criterion> data = GRUtil.parseParamsToExpressions(params); 
-        
+       
         return getReportManager().pageList(new ListRequestDTO(0, 0, 0,report, data)); 
     }
 
@@ -60,9 +61,9 @@ public abstract class AbstractController<D> {
             @RequestParam(value = "report", defaultValue = "") String report,
             @RequestParam(value = "params", defaultValue = "") String params,
             HttpSession session) throws Exception {
-   
+           
         List<Criterion> data = GRUtil.parseParamsToExpressions(params); 
-              
+               
         return getAbstractManager().pageList(new ListRequestDTO(page, start, limit,report, data));
      }
 
