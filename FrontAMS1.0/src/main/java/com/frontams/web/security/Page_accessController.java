@@ -31,6 +31,12 @@ public class Page_accessController extends AbstractController{
        return pageManager;
     }
     
+     @Override
+    public AbstractManager getReportManager(){
+      return pageManager;
+  
+    }
+    
     @RequestMapping(value = "/ping")
     public String checkAccess( @PathVariable("pageId") String pageId) { 
         return "PING";

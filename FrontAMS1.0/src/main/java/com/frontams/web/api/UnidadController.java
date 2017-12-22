@@ -29,6 +29,7 @@ public class UnidadController extends AbstractController{
         return unidadManager;
     }
     
+    @Override
     public AbstractManager getReportManager(){
       return unidadManager;
   }

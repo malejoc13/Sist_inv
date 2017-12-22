@@ -40,4 +40,8 @@ public class ProductoController extends AbstractController{
         return productoManager;
     }
     
+    @Override
+    public AbstractManager getReportManager(){
+      return productoManager;
+  }
 }

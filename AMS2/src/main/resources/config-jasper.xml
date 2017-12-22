@@ -26,5 +26,41 @@
           p:reportDataKey="datasource"/> 
     
     <bean id="tipo_prodExcelView" class="com.ams.util.Tipo_prodExcelBuilder"/>
+    
+    <bean id="un_medidaPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/un_medida.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="un_medidaExcelView" class="com.ams.util.Un_medidaExcelBuilder"/>
+    
+    <bean id="productoPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/producto.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="productoExcelView" class="com.ams.util.ProductoExcelBuilder"/>
+    
+    <bean id="userPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/user.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="userExcelView" class="com.ams.util.UserExcelBuilder"/>
+    
+    <bean id="page_accessPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/page_access.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="page_accessExcelView" class="com.ams.util.Page_accessExcelBuilder"/>
+    
+    <bean id="rolePDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/role.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="roleExcelView" class="com.ams.util.RoleExcelBuilder"/>
+    
+    <bean id="role_page_accessPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/role_page_access.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="role_page_accessExcelView" class="com.ams.util.RolePage_accessExcelBuilder"/>
    
 </beans>

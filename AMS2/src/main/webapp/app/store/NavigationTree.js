@@ -160,7 +160,7 @@ Ext.define('Admin.store.NavigationTree', {
                         iconCls: 'x-fa fa-object-ungroup',
                         viewType: 'pages_access',
                         leaf: true
-                    },
+                    }, 
                     {
                         text: 'Usuarios',
                         iconCls: 'x-fa fa-user',

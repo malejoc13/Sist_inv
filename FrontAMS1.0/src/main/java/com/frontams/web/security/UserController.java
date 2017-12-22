@@ -30,6 +30,11 @@ public class UserController extends AbstractController{
        return userManager;
     }
     
+    @Override
+    public AbstractManager getReportManager(){
+      return userManager;
+  }
+    
     @RequestMapping(value = "/ping")
     public String checkAccess( @PathVariable("pageId") String pageId) { 
         return "PING";

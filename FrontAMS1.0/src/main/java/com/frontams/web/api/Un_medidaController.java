@@ -32,4 +32,9 @@ public class Un_medidaController extends AbstractController {
     public AbstractManager getAbstractManager() {
         return un_medidaManager;
     }
+    
+    @Override
+    public AbstractManager getReportManager(){
+      return un_medidaManager;
+  }
 }

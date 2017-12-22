@@ -31,6 +31,11 @@ public class RolePage_accessController extends AbstractController{
        return rolepageManager;
     }
     
+    @Override
+    public AbstractManager getReportManager(){
+      return rolepageManager;
+  }
+    
     @RequestMapping(value = "/ping")
     public String checkAccess( @PathVariable("pageId") String pageId) { 
         return "PING";

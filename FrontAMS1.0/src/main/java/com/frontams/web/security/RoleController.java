@@ -32,4 +32,9 @@ public class RoleController extends AbstractController{
        return roleManager;
     }
     
+    @Override
+    public AbstractManager getReportManager(){
+      return roleManager;
+  }
+    
 }
