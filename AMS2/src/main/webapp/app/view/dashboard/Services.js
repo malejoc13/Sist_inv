@@ -74,11 +74,11 @@ Ext.define('Admin.view.dashboard.Services', {
         ]
     },
     {
-        layout: 'hbox',
+        //layout: 'hbox',
         width:'100%',
         id:'servicesLegend',
-         layout: {
-            type: 'hbox',
+        layout: {
+            type: 'hbox'
           //  align: 'stretch'
         },
         defaults:{

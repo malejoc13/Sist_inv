@@ -34,7 +34,7 @@ Ext.define('Admin.view.boardingSections.merchant.view.MerchantEditor', {
                     defaultPropertyValue: 'data.agrupationId'
                 }
             ]
-        },
+        }
 //        {
 //            items: [
 //                {
