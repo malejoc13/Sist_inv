@@ -41,7 +41,8 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
     public void applyListProjection(Criteria criteria) {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))                                                
-                .add(Projections.property("name").as("name"))  
+                .add(Projections.property("name").as("name"))
+                .add(Projections.property("clave").as("clave"))
                 .add(Projections.property("descripcion").as("descripcion"))
                 .add(Projections.property("fecha_alta").as("fecha_alta"))   
                 .add(Projections.property("precio_max").as("precio_max"))

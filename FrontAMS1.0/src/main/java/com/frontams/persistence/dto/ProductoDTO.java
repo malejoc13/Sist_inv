@@ -9,17 +9,11 @@ package com.frontams.persistence.dto;
  *
  * @author Sistemas
  */
-import com.frontams.persistence.model.Un_medida;
-import com.frontams.persistence.model.Tipo_prod;
-import com.frontams.persistence.model.Proveedor;
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 public class ProductoDTO implements Serializable{
     
-    private static final DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
     
     public ProductoDTO(){
     
@@ -28,6 +22,8 @@ public class ProductoDTO implements Serializable{
     private Long id;
     
     private String name;
+    
+     private String clave;
 
     private String descripcion;
 
@@ -228,6 +224,20 @@ public class ProductoDTO implements Serializable{
      */
     public void setPrecio_costo(Double precio_costo) {
         this.precio_costo = precio_costo;
+    }
+
+    /**
+     * @return the clave
+     */
+    public String getClave() {
+        return clave;
+    }
+
+    /**
+     * @param clave the clave to set
+     */
+    public void setClave(String clave) {
+        this.clave = clave;
     }
     
     
