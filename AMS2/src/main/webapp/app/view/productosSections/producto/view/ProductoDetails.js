@@ -19,7 +19,7 @@ Ext.define('Admin.view.productosSections.producto.view.ProductoDetails', {
                         '<td><b>Precio: $</b> {precio_max}</td>',                        
                     '</tr>',
                     '<tr>',
-                        '<td><b>UM: </b> {un_medida}</td>',
+                        '<td><b>UM: </b> {un_medida}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Clave: </b> {clave}</td>',
                         '<td><b>Tipo: </b> {tipo_prod}</td>',
                          '<td><b>Precio m&iacute;nimo: $</b> {precio_min}</td>',
                         '<td><b>Proveedor: </b> {proveedor}</td>',
