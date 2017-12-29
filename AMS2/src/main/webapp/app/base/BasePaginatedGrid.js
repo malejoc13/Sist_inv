@@ -102,7 +102,7 @@ Ext.define('Admin.base.BasePaginatedGrid', {
         me.setStore(store);
     }, 
     plugins: [
-        {ptype: "gridFilter"},
+        {ptype: "gridFilter"}
 //        {ptype: "gridMultipageSelection"}
     ],
     getParams: function () {//aki llamo la funcion get filters para que tome los filtros 

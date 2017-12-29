@@ -71,9 +71,9 @@ Ext.define('Admin.cmp.gridFilter.FilterNumber', {
                                                 {id: 'gt', name: " > "},
                                                 {id: 'lt', name: " < "},
                                                 {id: 'ge', name: " >= "},
-                                                {id: 'le', name: " <= "},
+                                                {id: 'le', name: " <= "}
                                             ]
-                                        }),
+                                        })
                                     },
                                     {
                                         xtype: 'textfield',

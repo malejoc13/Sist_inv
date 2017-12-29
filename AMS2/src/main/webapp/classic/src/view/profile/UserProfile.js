@@ -26,7 +26,7 @@ Ext.define('Admin.view.profile.UserProfile', {
             xtype: 'profiledescription',
 
             userCls: 'big-50 small-100 shadow'
-        },
+        }
 //        {
 //            xtype: 'profilenotifications',
 //

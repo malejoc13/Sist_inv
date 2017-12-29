@@ -53,50 +53,49 @@ Ext.define('Admin.view.main.Main', {
                 {
                     iconCls:'x-fa fa-search',
                     ui: 'header',
-                    href: '#searchresults',
+                    //href: '#searchresults',
                     hrefTarget: '_self',
                     tooltip: 'See latest search'
                 },
                 {
                     iconCls:'x-fa fa-envelope',
                     ui: 'header',
-                    href: '#email',
+                    //href: '#email',
                     hrefTarget: '_self',
                     tooltip: 'Check your email'
                 },
                 {
                     iconCls:'x-fa fa-question',
                     ui: 'header',
-                    href: '#faq',
+                    //href: '#faq',
                     hrefTarget: '_self',
                     tooltip: 'Help / FAQ\'s'
                 },
                 {
-                    iconCls:'x-fa fa-th-large',
+                    iconCls:'x-fa fa-sign-out',
                     ui: 'header',
                    // href: '#profile',
                     hrefTarget: '_self',
                     tooltip: 'Log Out',
                     listeners:{
-                        click:function(){
-                            Ext.GlobalEvents.fireEvent('logOut');
-                        }
+                        click:function(){                            
+                          Ext.GlobalEvents.fireEvent('logOut');
+                      }
                     }
                 },
                 {
                     xtype: 'tbtext',
-                    
-//                    text: 'Alfred Urcuyo',
                     itemId:'principalName',
                     cls: 'top-user-name'
                 },
                 {
                     xtype: 'image',
+                    itemId:'principalPict',
                     cls: 'header-right-profile-image',
                     height: 35,
                     width: 35,
                     alt:'current user image',
-                    src: 'resources/images/user-profile/profile-pic.jpg'
+                    src: 'resources/images/user-profile/X.jpg'
                 }
             ]
         },

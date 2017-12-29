@@ -14,7 +14,7 @@ Ext.define('Admin.view.charts.Stacked', {
             xtype: 'cartesian',
             colors: [
                 '#6aa5db',
-                '#ee929c',
+                '#ee929c'
                 
             ],
             bind: '{stackedData}',

@@ -211,6 +211,6 @@ Ext.define('Admin.data.marketshare.MultiYear', {
             "successful": 615,
             "failed": 342,
             "y4value": 412
-        },
+        }
     ]
 });
