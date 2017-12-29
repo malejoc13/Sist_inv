@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/{pageId}/proveedor")
-public class ProveedorController  extends AbstractController{
+public class ProveedorController extends AbstractController{
     
     @Autowired
     protected ProveedorManager proveedorManager;

@@ -36,7 +36,7 @@ public class UserManager extends AbstractManager<User, UserDTO> {
     @Autowired
     private UnidadDAO unidadDAO;
     
-     @Autowired
+    @Autowired
     private RoleDAO roleDAO;
       
     @Override
@@ -69,14 +69,25 @@ public class UserManager extends AbstractManager<User, UserDTO> {
         entity.setRole(role);        
     }
     
+    @Override
+    protected boolean inUse(User entity) { 
+       /* if (entity.getCompras().isEmpty()) {
+             return false;
+        }*/
+        System.out.println("lista llena...");
+        return true;
+    }
+    
    @Override
      protected WebResponseData del(User entity, Principal principal) throws Exception{ 
         if ( principal.getId().equals(entity.getId())) {
                return new WebResponseData(550, "No puede eliminiar su usuario mientras est&aacute; autenticado");
-            }          
+            }   
+        if ( inUse(entity)) {
+               return new WebResponseData(450, "El usuario "+entity.getFirstName()+" no se puede eliminar, existen compras asociadas a &eacute;l");
+            }
         dao().delete(entity);
-        return new WebResponseData();
-         
+        return new WebResponseData();         
      }   
 
 }

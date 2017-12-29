@@ -12,6 +12,7 @@
 	<field name="proveedor" class="java.lang.String"/>
 	<field name="un_medida" class="java.lang.String"/>
 	<field name="tipo_prod" class="java.lang.String"/>
+	<field name="clave" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -43,42 +44,42 @@
 				<reportElement x="0" y="20" width="752" height="24" backcolor="#CCCCCC" uuid="dcdd022a-f819-433f-aa31-657be0d4ed92"/>
 			</rectangle>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="20" width="141" height="24" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
+				<reportElement mode="Transparent" x="60" y="20" width="125" height="24" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[ Nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="141" y="20" width="122" height="24" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
+				<reportElement mode="Transparent" x="185" y="20" width="122" height="24" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="263" y="20" width="77" height="24" uuid="11c9a0ce-415d-4eef-94f6-67dc3b810b10"/>
+				<reportElement mode="Transparent" x="307" y="20" width="63" height="24" uuid="11c9a0ce-415d-4eef-94f6-67dc3b810b10"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Fecha de alta]]></text>
+				<text><![CDATA[Fecha alta]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="340" y="20" width="70" height="24" uuid="92f6c61f-0eda-4bc5-81c0-4646bd58855f"/>
+				<reportElement mode="Transparent" x="370" y="20" width="61" height="24" uuid="92f6c61f-0eda-4bc5-81c0-4646bd58855f"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Precio costo]]></text>
+				<text><![CDATA[Precio cost]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="410" y="20" width="70" height="24" uuid="d72270e6-04ed-42a6-8683-d5c6c114f492"/>
+				<reportElement mode="Transparent" x="440" y="20" width="51" height="24" uuid="d72270e6-04ed-42a6-8683-d5c6c114f492"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Precio]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="480" y="20" width="70" height="24" uuid="16f15f61-d340-4f89-be01-72067d817ec7"/>
+				<reportElement mode="Transparent" x="491" y="20" width="59" height="24" uuid="16f15f61-d340-4f89-be01-72067d817ec7"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
@@ -105,32 +106,39 @@
 				</textElement>
 				<text><![CDATA[Tipo]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="20" width="60" height="24" uuid="4c1471cd-9f2e-4cdb-9cfb-7c2aee114c98"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Clave]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="141" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
+				<reportElement x="60" y="0" width="125" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="141" y="0" width="122" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
+				<reportElement x="185" y="0" width="122" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="263" y="0" width="77" height="20" uuid="0fd8047a-67ff-4645-966c-8d03c82ab58c"/>
+				<reportElement x="307" y="0" width="63" height="20" uuid="0fd8047a-67ff-4645-966c-8d03c82ab58c"/>
 				<textFieldExpression><![CDATA[$F{fecha_alta}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="340" y="0" width="70" height="20" uuid="12a98208-4f3f-4837-a30f-9c84a9556cc4"/>
+				<reportElement x="370" y="0" width="70" height="20" uuid="12a98208-4f3f-4837-a30f-9c84a9556cc4"/>
 				<textFieldExpression><![CDATA[$F{precio_costo}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="410" y="0" width="70" height="20" uuid="b2a60d6f-14c1-4145-baa4-cdf8364a1559"/>
+				<reportElement x="440" y="0" width="51" height="20" uuid="b2a60d6f-14c1-4145-baa4-cdf8364a1559"/>
 				<textFieldExpression><![CDATA[$F{precio_max}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="480" y="0" width="70" height="20" uuid="c8a1a398-6ab5-4f6f-a80f-b67490030dc2"/>
+				<reportElement x="491" y="0" width="59" height="20" uuid="c8a1a398-6ab5-4f6f-a80f-b67490030dc2"/>
 				<textFieldExpression><![CDATA[$F{precio_min}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -144,6 +152,10 @@
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement x="682" y="0" width="70" height="20" uuid="225ed199-e2db-4c8f-89db-9711d9e8dfb2"/>
 				<textFieldExpression><![CDATA[$F{tipo_prod}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="60" height="20" uuid="9a7fffa7-fec9-4f6a-8308-a4bd7ab5de4a"/>
+				<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

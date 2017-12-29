@@ -55,6 +55,7 @@ public class User extends BaseEntity {
    @ManyToOne
     @JoinColumn(name = "role")
     private Role role;
+      
     /**
      * @return the id
      */

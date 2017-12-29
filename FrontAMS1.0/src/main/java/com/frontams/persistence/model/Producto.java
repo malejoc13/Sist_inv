@@ -69,6 +69,7 @@ public class Producto extends BaseEntity {
     @JoinColumn(name = "proveedor")
     private Proveedor proveedor;
     
+      
      /**
      * @return the id
      */
@@ -222,7 +223,5 @@ public class Producto extends BaseEntity {
     public void setClave(String clave) {
         this.clave = clave;
     }
-    
-    
-    
+
 }
