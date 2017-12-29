@@ -50,7 +50,7 @@ Ext.define('Admin.view.userSections.user.grid.UserGrid', {
                 dataIndex: 'active',
                 filterType:'filterBoolean',                
                 width: '8%',
-                xtype: 'booleanGridColumn'
+                xtype: 'booleanGridColumn',
             }
         ]
     }

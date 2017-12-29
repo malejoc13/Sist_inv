@@ -11,13 +11,13 @@ Ext.define('Admin.view.proveedoresSections.proveedor.grid.ProveedorGrid', {
         items: [
             {
                 xtype: 'idGridColumn',
-                dataIndex: 'id'
+                dataIndex: 'id',
             },
             {
                 text: "Nombre",
                 dataIndex: 'name',
                 width: '30%',
-                filterType: 'filterText'
+                filterType: 'filterText',
             },            
             {
                 text: "Direcci&oacute;n",

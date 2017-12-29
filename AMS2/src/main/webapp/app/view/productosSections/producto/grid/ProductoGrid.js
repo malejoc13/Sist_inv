@@ -25,7 +25,7 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
             },            
             {
                 dataIndex: 'descripcion',
-                hidden: true
+                hidden: true,
             },
             {
                 xtype: 'dateGridColumn',

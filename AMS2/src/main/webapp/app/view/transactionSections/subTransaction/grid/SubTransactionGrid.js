@@ -34,7 +34,7 @@ Ext.define('Admin.view.transactionSections.subTansaction.grid.SubTransactionGrid
                     41: "Reverse Request",
                     43: "Check Info",
                     43: "New Branch",
-                    43: "Post Transaction"
+                    43: "Post Transaction",
                 }
             }, 
             {

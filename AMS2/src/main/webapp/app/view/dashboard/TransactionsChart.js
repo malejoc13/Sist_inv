@@ -15,7 +15,8 @@ Ext.define('Admin.view.dashboard.TransactionsChart', {
             xtype: 'cartesian',
             colors: [
                 '#034f84',
-                '#ee929c'                
+                '#ee929c',
+                
             ], 
             bind: '{transactionChartData}',
             axes: [{

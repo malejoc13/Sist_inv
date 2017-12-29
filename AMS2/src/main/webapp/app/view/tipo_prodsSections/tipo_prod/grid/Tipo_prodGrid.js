@@ -9,7 +9,8 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.grid.Tipo_prodGrid', {
         },
         items: [
             {
-                xtype: 'idGridColumn'
+                xtype: 'idGridColumn',
+                dataIndex: 'id',
             },
             {
                 text: "Nombre",

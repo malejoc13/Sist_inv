@@ -8,7 +8,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.grid.Un_medidaGrid', {
         },
         items: [
             {
-                xtype: 'idGridColumn'
+                xtype: 'idGridColumn',
             },
             {
                 text: "Nombre",

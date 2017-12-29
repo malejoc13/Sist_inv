@@ -9,7 +9,7 @@ Ext.define('Admin.view.userSections.user.view.UserViewTab', {
         },
         {
             xtype: 'userEditor' 
-        }
+        },
 //        {
 //            xtype: 'userSubPanel'
 //        }
@@ -23,7 +23,7 @@ Ext.define('Admin.view.userSections.user.view.UserViewTab', {
                 //var titleName = data[me.propertyTitleName || 'name']; //if data has not name, then specify 'propertyTitleName'
                 //title = me.viewName + ': ' + titleName;
             } else {
-                title = 'Nuevo Usuario';
+                title = 'Nuevo Usuario'
             }        
         me.setTitle(title);
     }

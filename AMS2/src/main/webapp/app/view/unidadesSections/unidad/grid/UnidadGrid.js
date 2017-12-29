@@ -15,7 +15,7 @@ Ext.define('Admin.view.unidadesSections.unidad.grid.UnidadGrid', {
                 text: "Nombre",
                 dataIndex: 'name',
                 width: '40%',
-                filterType: 'filterText'
+                filterType: 'filterText',
             },            
             {
                 text: "Direcci&oacute;n",
