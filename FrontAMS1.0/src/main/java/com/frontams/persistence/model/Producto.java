@@ -44,8 +44,6 @@ public class Producto extends BaseEntity {
     private Long id;
     
     private String name;
-    
-    private String clave;
 
     private String descripcion;
 
@@ -207,20 +205,6 @@ public class Producto extends BaseEntity {
      */
     public void setPrecio_costo(Double precio_costo) {
         this.precio_costo = precio_costo;
-    }
-
-    /**
-     * @return the clave
-     */
-    public String getClave() {
-        return clave;
-    }
-
-    /**
-     * @param clave the clave to set
-     */
-    public void setClave(String clave) {
-        this.clave = clave;
     }
     
     

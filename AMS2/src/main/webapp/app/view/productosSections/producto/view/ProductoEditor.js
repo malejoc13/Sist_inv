@@ -1,17 +1,10 @@
  Ext.define('Admin.view.productosSections.producto.view.ProductoEditor', {
     extend: 'Admin.base.BaseEditor',
     alias: 'widget.productoEditor',
-    height: 500,
+    height: 400,
     items: [
         {
-            items: [  
-                {
-                    xtype     : 'baseTextField',
-                    fieldLabel: 'Clave',
-                    name: 'clave',//le pongo de nombre el mismo valord el grid para que me lo cargue a la hora de modificar
-                    allowBlank : false,
-                    blankText : 'Este campo es obligatorio'                    
-                },
+            items: [                
                 {
                     xtype     : 'baseTextField',
                     fieldLabel: 'Nombre',

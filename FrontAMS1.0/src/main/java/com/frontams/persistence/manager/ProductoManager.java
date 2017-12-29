@@ -60,7 +60,6 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
     @Override
     protected void update(Producto entity, Map<String, Object> data) { 
         entity.setName((String) data.get("name"));
-        entity.setClave((String) data.get("clave"));
         entity.setDescripcion((String) data.get("descripcion"));
         entity.setFecha_alta((Date) data.get("fecha_alta"));
         entity.setPrecio_max((Double) data.get("precio_max"));

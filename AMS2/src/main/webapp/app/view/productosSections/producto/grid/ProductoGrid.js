@@ -12,12 +12,6 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 xtype: 'idGridColumn'
             },
             {
-                text: "Clave",
-                dataIndex: 'clave',
-                filterType: 'filterText',//para cuando fitre sepa qe tipo de datos envia
-                width: '10%'
-            },
-            {
                 text: "Nombre",
                 dataIndex: 'name',
                 filterType: 'filterText',//para cuando fitre sepa qe tipo de datos envia
