@@ -4,7 +4,7 @@
 package com.frontams.persistence.security.model;
 
 import com.frontams.common.model.BaseEntity;
-import com.frontams.persistence.model.Compra;
+
 import com.frontams.persistence.model.Unidad;
 import java.util.Date;
 import java.util.List;
@@ -57,9 +57,6 @@ public class User extends BaseEntity {
     @JoinColumn(name = "role")
     private Role role;
    
-   @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Compra> compras;
-      
     /**
      * @return the id
      */
@@ -186,18 +183,5 @@ public class User extends BaseEntity {
         this.role = role;
     }
 
-    /**
-     * @return the compras
-     */
-    public List<Compra> getCompras() {
-        return compras;
-    }
-
-    /**
-     * @param compras the compras to set
-     */
-    public void setCompras(List<Compra> compras) {
-        this.compras = compras;
-    }
-
+    
 }
