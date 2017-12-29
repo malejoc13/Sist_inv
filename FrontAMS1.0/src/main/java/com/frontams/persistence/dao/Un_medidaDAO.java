@@ -26,7 +26,6 @@ import org.springframework.stereotype.Repository;
 public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
 
     //criterio para ordenar
-    @Override
     public void addOrder(Criteria criteria) {
         criteria.addOrder(Order.asc("nombre_um"));
     } 

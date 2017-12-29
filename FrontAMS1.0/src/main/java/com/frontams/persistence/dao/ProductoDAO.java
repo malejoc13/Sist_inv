@@ -16,7 +16,6 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
@@ -25,7 +24,6 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
     
     //alias de las otras entidades pra cuando indexas datos de otra tabla
    
-    @Override
     public Criteria buildCriteria() {
         return getCriteria()  //entidad   //alias
                 .createAlias("proveedor", "proveedor")
@@ -34,7 +32,6 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
     }
 
     //criterio para ordenar
-    @Override
     public void addOrder(Criteria criteria) {
         criteria.addOrder(Order.asc("name"));
     } 
@@ -62,5 +59,4 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
                 .setResultTransformer(Transformers.aliasToBean(ProductoDTO.class));
     }
     
-   
 }

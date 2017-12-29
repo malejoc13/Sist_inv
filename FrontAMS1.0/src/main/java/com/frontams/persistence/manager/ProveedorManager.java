@@ -66,7 +66,7 @@ public class ProveedorManager extends AbstractManager<Proveedor, ProveedorDTO>{
             dao().delete(entity);
             return new WebResponseData();
         }       
-         return new WebResponseData(450, "El proveedor "+entity.getName()+" no se puede eliminar, existen produtos o compras asociados a &eacute;l");
+         return new WebResponseData(450, "El proveedor "+entity.getName()+" no se puede eliminar, existen produtos que son suministrados por &eacute;l");
      }
     
 }

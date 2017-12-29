@@ -24,9 +24,6 @@ import com.frontams.persistence.model.Tipo_prod;
 import com.frontams.persistence.model.Un_medida;
 import java.util.Date;
 import java.util.Map;
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,7 +43,7 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
     
     @Autowired
     private Un_medidaDAO un_medidaDAO;
-    
+      
     @Override
     public AbstractBaseDAO dao() {
         return productoDAO;
@@ -83,15 +80,14 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
     
     @Override
     protected boolean inUse(Producto entity) { 
-        
-        /*if (entity.getDetalle_compras().isEmpty()) {
-            return false;
+       /* if (entity.getProductos().isEmpty()) {
+             return false;
         }*/
         System.out.println("lista llena...");
-        return true; 
+        return false; //cambiar por tu cuando implementes la funcion 
     }
     
-     @Override
+    @Override
      protected WebResponseData del(Producto entity, Principal principal) throws Exception{ 
         if (!inUse(entity)) {                
             dao().delete(entity);

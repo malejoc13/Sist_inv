@@ -4,7 +4,6 @@
 package com.frontams.persistence.security.model;
 
 import com.frontams.common.model.BaseEntity;
-
 import com.frontams.persistence.model.Unidad;
 import java.util.Date;
 import java.util.List;
@@ -56,7 +55,6 @@ public class User extends BaseEntity {
    @ManyToOne
     @JoinColumn(name = "role")
     private Role role;
-   
     /**
      * @return the id
      */
@@ -183,5 +181,4 @@ public class User extends BaseEntity {
         this.role = role;
     }
 
-    
 }
