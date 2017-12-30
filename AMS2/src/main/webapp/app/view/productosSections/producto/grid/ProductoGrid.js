@@ -21,36 +21,31 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "Nombre",
                 dataIndex: 'name',
                 filterType: 'filterText',//para cuando fitre sepa qe tipo de datos envia
-                width: '25%'
-            },            
-            {
-                dataIndex: 'descripcion',
-                hidden: true
+                width: '25%',
+                xtype: 'toolTipColumn'
             },
             {
                 xtype: 'dateGridColumn',
                 text: "Fecha de alta",
                 dataIndex: 'fecha_alta',
                 filterType: 'filterDate',
-                width: '15%'
+                width: '12%'
             },
             {
                 text: "Precio costo",
                 dataIndex: 'precio_costo',
                 filterType: 'filterNumber',
-                width: '12%'
+                width: '10%'
             },
             {
                 text: "Precio",
                 dataIndex: 'precio_max',
                 filterType: 'filterNumber',
-                width: '12%'
-            },
-            {
-                text: "Precio m&iacute;nimo",
-                dataIndex: 'precio_min',
-                filterType: 'filterNumber',
-                width: '12%'
+                width: '10%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Precio mínimo: $' + record.get('precio_min') + '"';
+                    return value;
+                }
             },
             {
                 text: "UM",

@@ -136,7 +136,7 @@ Ext.define('Admin.base.BaseController', {
         var me = this,
                 xtype = grid.xtype, //ej 'proveedorGridTab'
                 currentTab = grid.up(),//gridTab
-                openViewFilters = currentTab.openViewFilters,
+                openViewFilters = currentTab.openViewFilters,//ej role_page_accessGridTab
                 originCmpId = grid.id,
                 superTab = me.getView().getActiveTab(),
                 view = xtype.substring(0, xtype.indexOf('Grid')),//ej proveedor

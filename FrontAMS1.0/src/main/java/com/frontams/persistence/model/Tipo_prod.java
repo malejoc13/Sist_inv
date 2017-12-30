@@ -43,6 +43,8 @@ public class Tipo_prod extends BaseEntity{
     
     private String name;
     
+    private String descripcion;
+    
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "tipo_prod")
     private List<Producto> productos;
 
@@ -86,6 +88,20 @@ public class Tipo_prod extends BaseEntity{
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

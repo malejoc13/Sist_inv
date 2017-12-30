@@ -44,6 +44,7 @@ public class Tipo_prodManager extends AbstractManager<Tipo_prod, Tipo_prodDTO>{
     @Override
     protected void update(Tipo_prod entity, Map<String, Object> data) { 
         entity.setName((String) data.get("name"));
+        entity.setDescripcion((String) data.get("descripcion"));
         
     }
     

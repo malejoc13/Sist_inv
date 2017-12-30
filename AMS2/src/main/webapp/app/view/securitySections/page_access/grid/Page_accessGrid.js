@@ -1,6 +1,8 @@
 Ext.define('Admin.view.securitySections.page_access.grid.Page_accessGrid', {
     extend: 'Admin.base.BasePaginatedGrid',
     alias: 'widget.page_accessGrid',
+    height: '100%',
+    storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
             width: '50%',

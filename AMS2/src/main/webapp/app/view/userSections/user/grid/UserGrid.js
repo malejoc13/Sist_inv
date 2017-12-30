@@ -1,6 +1,8 @@
 Ext.define('Admin.view.userSections.user.grid.UserGrid', {
     extend: 'Admin.base.BasePaginatedGrid',
     alias: 'widget.userGrid',
+    height: '100%',
+    storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
             align: 'center'
@@ -9,11 +11,22 @@ Ext.define('Admin.view.userSections.user.grid.UserGrid', {
             {
                 xtype: 'idGridColumn'
             },
+            { 
+                xtype: 'booleanGridColumn',
+                text: 'Activo', 
+                dataIndex: 'active',
+                filterType:'filterBoolean',                
+                width: '8%'
+            },
             {
                 text: "Nombre",
                 dataIndex: 'firstName',
                 filterType: 'filterText',
-                width: '20%'
+                width: '20%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Rol: ' + record.get('role') + '"';
+                    return value;
+                }
             },
             {
                 text: "Apellidos",
@@ -38,20 +51,7 @@ Ext.define('Admin.view.userSections.user.grid.UserGrid', {
                 dataIndex: 'unidad',
                 filter: 'unidad.name',
                 width: '20%'
-            },
-            {
-                text: "Rol",
-                dataIndex: 'role',
-                filter: 'role.name',
-                width: '15%'
-            },
-            { 
-                text: 'Activo', 
-                dataIndex: 'active',
-                filterType:'filterBoolean',                
-                width: '8%',
-                xtype: 'booleanGridColumn'
-            }
+            }     
         ]
     }
 });

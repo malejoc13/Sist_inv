@@ -17,6 +17,8 @@ public class Tipo_prodDTO implements Serializable{
     private Long id;
     
     private String name;
+    
+    private String descripcion;
 
     /**
      * @return the id
@@ -44,6 +46,20 @@ public class Tipo_prodDTO implements Serializable{
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the descrip€cion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descrip€cion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
    

@@ -5,8 +5,8 @@ Ext.define('Admin.view.securitySections.role.RoleSubPanel', {
         subPanels: [
             {
                 xtype: 'role_page_accessGridTab',
-                openViewFilters: 'role_page_access.id'
-            }
+                openViewFilters: 'role_page_access.id'//le paso el id para cuando abra un tab 
+            }                                          
         ]
     }
 });

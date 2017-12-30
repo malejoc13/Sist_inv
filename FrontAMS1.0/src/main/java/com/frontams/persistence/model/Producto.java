@@ -69,6 +69,9 @@ public class Producto extends BaseEntity {
     @JoinColumn(name = "proveedor")
     private Proveedor proveedor;
     
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
+    private List<Inventario> inventario;
+    
      /**
      * @return the id
      */
@@ -221,6 +224,20 @@ public class Producto extends BaseEntity {
      */
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    /**
+     * @return the inventario
+     */
+    public List<Inventario> getInventario() {
+        return inventario;
+    }
+
+    /**
+     * @param inventario the inventario to set
+     */
+    public void setInventario(List<Inventario> inventario) {
+        this.inventario = inventario;
     }
     
     

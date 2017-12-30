@@ -98,6 +98,7 @@ public class GRUtil {
                     break;
                 case "(B)":
                     criterion = Restrictions.eq(key, Boolean.parseBoolean(value));
+                    System.out.println(Boolean.parseBoolean(value));
                     break;
                 default:
                     criterion = Restrictions.eq(key, value);

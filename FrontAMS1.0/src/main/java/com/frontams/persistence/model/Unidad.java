@@ -53,6 +53,9 @@ public class Unidad extends BaseEntity{
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "unidad")
     private List<User> users;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "unidad")
+    private List<Inventario> inventario;
     /**
      * @return the id
      */
@@ -121,6 +124,20 @@ public class Unidad extends BaseEntity{
      */
    public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    /**
+     * @return the inventario
+     */
+    public List<Inventario> getInventario() {
+        return inventario;
+    }
+
+    /**
+     * @param inventario the inventario to set
+     */
+    public void setInventario(List<Inventario> inventario) {
+        this.inventario = inventario;
     }
   
     

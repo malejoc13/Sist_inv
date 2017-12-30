@@ -13,7 +13,13 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.view.Tipo_prodDetails', {
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
                         '<td><b>Nombre: </b> {name}</td>',
-                    '</tr>', 
+                    '</tr>',
+                '</table>',
+                '<table cellpadding="10" style="width:100%;cellspacing">',
+                    '<tr>',                    
+                        '<td><b>Descripci&oacute;n: </b> {descripcion}</td>',                        
+                    '</tr>',
+                '</table>',
                 '<div>'
             ].join('') 
 

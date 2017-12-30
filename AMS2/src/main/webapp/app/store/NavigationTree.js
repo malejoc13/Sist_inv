@@ -59,7 +59,7 @@ Ext.define('Admin.store.NavigationTree', {
             {
                 text: 'Inventario',
                 iconCls: 'x-fa fa-file-text-o',
-                viewType: 'transactions',
+                viewType: 'inventarios',
                 leaf: true
             },
             {

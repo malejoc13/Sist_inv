@@ -106,7 +106,7 @@ Ext.define('Admin.base.BasePaginatedGrid', {
 //        {ptype: "gridMultipageSelection"}
     ],
     getParams: function () {//aki llamo la funcion get filters para que tome los filtros 
-        var me = this,
+        var me = this,//Funcion para pasar el param cuando se esta filtrando por las columnas del grid
                 searchParams = me.up().getFilters();
         me.columns.forEach(function (column) {
             var cmp = column.items.items[0];

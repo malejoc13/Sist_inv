@@ -34,7 +34,8 @@ public class Tipo_prodDAO extends AbstractBaseDAO<Tipo_prod, Tipo_prodDTO> {
     public void applyListProjection(Criteria criteria) {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
-                .add(Projections.property("name").as("name"));
+                .add(Projections.property("name").as("name"))
+                .add(Projections.property("descripcion").as("descripcion"));
          
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(Tipo_prodDTO.class));
