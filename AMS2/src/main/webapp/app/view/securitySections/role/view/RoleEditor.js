@@ -11,6 +11,11 @@ Ext.define('Admin.view.securitySections.role.view.RoleEditor', {
                     name: 'name',
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio'
+                },
+                {
+                    xtype     : 'baseCheckboxField',
+                    fieldLabel: 'Acceso total',
+                    name: 'access_all'                   
                 }                
             ]
         },

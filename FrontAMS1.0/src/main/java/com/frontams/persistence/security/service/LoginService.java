@@ -28,7 +28,7 @@ public class LoginService {
     public Principal login(String username, String password) throws NoSuchAlgorithmException { 
         Principal principal = userDAO.getPrincipal(username,password);
  
-        if (principal != null) {
+        if (principal != null) {           
 //            List<String> pageAccess = rolePageAccessDAO.getPageAccessByRole(principal.getRoleId());
 //            principal.setPageAccess(pageAccess);
 //            principal.setEntityId(getEntityId(principal));

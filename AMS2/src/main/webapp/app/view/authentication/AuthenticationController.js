@@ -26,8 +26,8 @@ Ext.define('Admin.view.authentication.AuthenticationController', {
                    
                     var node = navTree.data.items[0],
                             firstItem = node.get('routeId') || node.get('viewType') || node.get('children')[0].viewType;
-
-                    Ext.ComponentQuery.query('#principalName')[0].setText(Session.Principal.name + ' ' + Session.Principal.lastName);
+                   //  Ext.Msg.alert('Acceso:', Session.Principal.accessAll);
+                    Ext.ComponentQuery.query('#principalName')[0].setText(Session.Principal.name + ' ' + Session.Principal.lastName+ ' <b>( ' + Session.Principal.unidad+ ' )</b>' );
                     var img = Session.Principal.name.charAt(0);                   
                     Ext.ComponentQuery.query('#principalPict')[0].setSrc('resources/images/user-profile/'+img.toLowerCase()+'.jpg');
                     Ext.GlobalEvents.fireEvent('logIn', firstItem);

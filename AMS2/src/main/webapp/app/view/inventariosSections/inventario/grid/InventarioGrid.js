@@ -56,6 +56,18 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 width: '25%'
             }
         ]
+    },
+    getParams: function () {//aki llamo la funcion get filters para que tome los filtros 
+        var me = this,
+            searchParams = me.up().staticFilters + '@is@(L)' +Session.Principal.entityId;//en caso de cargarse el grid en base a un id
+        me.columns.forEach(function (column) {//Funcion para pasar el param cuando se esta filtrando por las columnas del grid
+            var cmp = column.items.items[0];
+            var val = cmp.getValue();
+            if (val) {
+                searchParams += '@p@' + (column.filter || column.dataIndex) + "@is@" + cmp.prefix + val;
+            }
+        });
+        return searchParams;
     }
 });
 

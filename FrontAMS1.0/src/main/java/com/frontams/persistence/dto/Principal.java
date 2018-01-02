@@ -19,11 +19,13 @@ public class Principal implements Serializable{
     public static final String TOKEN = "TOKEN";
 
     private Long id;
-    //private int entityId;
+    private Long entityId;
+    private String unidad;
+    
     private String name;
     private String lastName;
-    //private int roleId;
-    private Boolean accessAll = true;
+    private Long roleId;
+    private Boolean accessAll;
     private String token;
  
  
@@ -99,28 +101,47 @@ public class Principal implements Serializable{
         this.token = token;
     }
 
-   /* public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }*/
+    /**
+     * @return the unidadId
+     */
+    public Long getEntityId() {
+        return entityId;
+    }
+
+    /**
+     * @param entityId the unidadId to set
+     */
+    public void setEntityId(Long entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * @return the unidad
+     */
+    public String getUnidad() {
+        return unidad;
+    }
+
+    /**
+     * @param unidad the unidad to set
+     */
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
+    }
 
     /**
      * @return the roleId
      */
-    /*public int getRoleId() {
+    public Long getRoleId() {
         return roleId;
-    }*/
+    }
 
     /**
-     * @return the entityId
+     * @param roleId the roleId to set
      */
-  /*  public int getEntityId() {
-        return entityId;
-    }*/
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 
-    /**
-     * @param entityId the entityId to set
-     */
-   /* public void setEntityId(int entityId) {
-        this.entityId = entityId;
-    }*/
+  
 }

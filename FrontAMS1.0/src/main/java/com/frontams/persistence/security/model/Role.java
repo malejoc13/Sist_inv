@@ -45,6 +45,8 @@ public class Role extends BaseEntity{
     
     private String descripcion;
     
+    private Boolean access_all;
+    
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
     private List<User> users;
     
@@ -121,6 +123,19 @@ public class Role extends BaseEntity{
         this.role_pages_access = role_pages_access;
     }
 
-    
+    /**
+     * @return the access_all
+     */
+    public Boolean getAccess_all() {
+        return access_all;
+    }
+
+    /**
+     * @param access_all the access_all to set
+     */
+    public void setAccess_all(Boolean access_all) {
+        this.access_all = access_all;
+    }
+
     
 }

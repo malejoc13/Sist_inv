@@ -91,7 +91,9 @@ Ext.define('Admin.base.BaseTab', {
             }
 
             return (me.staticFilters || tab.staticFilters  || me.filters) + '@is@' + (me.filterPrefix || '(L)') + filterValue;
-        }
+        }/*else{
+            return me.staticFilters + '@is@(L)' +Session.Principal.entityId;
+        }*/
         return "";
     },
     isShowingOnBottom: function () {

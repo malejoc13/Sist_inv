@@ -13,16 +13,6 @@
                     blankText : 'Este campo es obligatorio'                    
                 },
                 {
-                    fieldLabel: 'Producto',
-                    xtype: 'baseSelectField',
-                    name: 'productoId', //referencia al atributo id en el DTO
-                    url: 'producto',// referencia al alias en el DAO para que busque en esa entidad y llene el combo
-                    allowBlank : false,                    
-                    emptyText : "Seleccione...",
-                    editable : false,
-                    blankText : 'Este campo es obligatorio'
-                },
-                {
                     fieldLabel: 'Unidad',
                     xtype: 'baseSelectField',
                     name: 'unidadId', //referencia al atributo id en el DTO
@@ -30,8 +20,23 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'
-                 }         
+                    //disabledOnEdit: true,
+                    blankText : 'Este campo es obligatorio'//,
+                    //trigger: 'productoId'//mando a recargar el select que depende de este
+                 }, 
+                {
+                    fieldLabel: 'Producto',
+                    xtype: 'baseSelectField',
+                    name: 'productoId', //referencia al atributo id en el DTO
+                    url: 'producto',// referencia al alias en el DAO para que busque en esa entidad y llene el combo
+                    allowBlank : false,                    
+                    emptyText : "Seleccione...",
+                    editable : false,
+                    blankText : 'Este campo es obligatorio'//,
+                    //applyFilter: 'unidad.id=(L)',//filtro por el que se busca
+                   // filterPropertyName: 'data.unidadId',//nombre del dato por el que viene el id que deseamos fltrar
+                   // disabledOnCreate: true//desactivado al crear nuevo hasta que se escoja una unidad
+                 }        
             ]
         },
         {

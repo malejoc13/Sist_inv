@@ -19,6 +19,8 @@ public class RoleDTO implements Serializable{
     private String name;
 
     private String descripcion;
+    
+    private Boolean access_all;
 
     /**
      * @return the id
@@ -61,7 +63,20 @@ public class RoleDTO implements Serializable{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
+
+    /**
+     * @return the access_all
+     */
+    public Boolean getAccess_all() {
+        return access_all;
+    }
+
+    /**
+     * @param access_all the access_all to set
+     */
+    public void setAccess_all(Boolean access_all) {
+        this.access_all = access_all;
+    }
+
     
 }

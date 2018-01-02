@@ -30,7 +30,8 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
         return dao().pageList(request);
     }
 
-    public List<NomenclatorDTO> nomenclatorList(List<Criterion> expressions) { 
+    public List<NomenclatorDTO> nomenclatorList(List<Criterion> expressions) {
+        System.out.println("Expressions ..."+expressions.toString());
         return dao().nomenclatorList(expressions);
     }
 

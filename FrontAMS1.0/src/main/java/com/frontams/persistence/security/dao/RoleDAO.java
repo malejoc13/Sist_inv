@@ -37,7 +37,8 @@ public class RoleDAO extends AbstractBaseDAO<Role, RoleDTO>{
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("name").as("name"))
-                .add(Projections.property("descripcion").as("descripcion"));
+                .add(Projections.property("descripcion").as("descripcion"))
+                .add(Projections.property("access_all").as("access_all"));
          
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(RoleDTO.class));

@@ -55,11 +55,11 @@ public class UserDAO extends AbstractBaseDAO<User, UserDTO> {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("firstName").as("name"))
-                .add(Projections.property("lastName").as("lastName")) 
-                //.add(Projections.property("role.id").as("roleId"))
-                ;
-        //Ignore for this version
-//                .add(Projections.property("role.accessAll").as("accessAll"));
+                .add(Projections.property("lastName").as("lastName"))
+                .add(Projections.property("unidad.id").as("entityId")) 
+                .add(Projections.property("unidad.name").as("unidad"))
+                .add(Projections.property("role.id").as("roleId"))
+                .add(Projections.property("role.access_all").as("accessAll"));
 
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(Principal.class));
