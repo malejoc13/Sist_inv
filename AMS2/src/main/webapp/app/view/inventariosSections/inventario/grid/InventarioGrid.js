@@ -57,10 +57,15 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
             }
         ]
     },
-    getParams: function () {//aki llamo la funcion get filters para que tome los filtros 
-        var me = this,
+    getParams: function () {//redefino la funcion para que cargue el inventrio de la unidad
+         var me = this,
+             searchParams;
+        if (!Session.Principal.accessAll) {
             searchParams = me.up().staticFilters + '@is@(L)' +Session.Principal.entityId;//en caso de cargarse el grid en base a un id
-        me.columns.forEach(function (column) {//Funcion para pasar el param cuando se esta filtrando por las columnas del grid
+        }else{
+            searchParams = me.up().getFilters();
+        }
+        me.columns.forEach(function (column) {
             var cmp = column.items.items[0];
             var val = cmp.getValue();
             if (val) {
