@@ -62,5 +62,10 @@
           p:reportDataKey="datasource"/> 
     
     <bean id="role_page_accessExcelView" class="com.ams.util.RolePage_accessExcelBuilder"/>
+    
+    <bean id="inventarioPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/inventario.jasper"
+          p:reportDataKey="datasource"/>
    
+    <bean id="inventarioExcelView" class="com.ams.util.InventarioExcelBuilder"/>
 </beans>

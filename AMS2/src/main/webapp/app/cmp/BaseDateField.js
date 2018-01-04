@@ -2,7 +2,7 @@ Ext.define('Admin.cmp.BaseDateField', {
     extend: 'Ext.form.DateField',
     xtype: 'baseDateField',
     labelAlign : "top" ,
-    format: 'd-m-Y',
+    format: 'd/m/Y',
     formatText :"",
     prefix:'(D)',
     disabled:false,

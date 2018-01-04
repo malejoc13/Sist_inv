@@ -101,11 +101,10 @@
                     blankText : 'Este campo es obligatorio',
                     disabledOnCreate: true,
                     validator:function (val) { 
-                          fechaIni = new Date(parseInt(this.up().up().getValues().values['fecha_ini']));
-                          fechaIni=Ext.Date.format(fechaIni, 'd-m-Y');
-                           //Ext.Msg.alert('Informaci&oacute;n', val);
+                          fechaIni = new Date(parseInt(this.up().up().getValues().values['fecha_ini']));                          
+                         
                             if (val){
-                                    if ( (Date.parse(val))  >= (Date.parse(fechaIni))) {           
+                                    if ( (Date.parse(this.getValue()))  >= (Date.parse(fechaIni))) {           
                                         return true;
                                     }else{
                                          return "La fecha de actualizacíon debe ser mayor o igual que la fecha de alta";

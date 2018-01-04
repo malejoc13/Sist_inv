@@ -9,6 +9,7 @@ package com.ams.util;
  *
  * @author Sistemas
  */
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
-public class ProductoExcelBuilder extends AbstractExcelView{
+public class InventarioExcelBuilder  extends AbstractExcelView{
      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
      @Override
     protected void buildExcelDocument(Map<String, Object> model,
@@ -37,7 +38,7 @@ public class ProductoExcelBuilder extends AbstractExcelView{
         List<HashMap> list = (List<HashMap>) model.get("list");
 
         // create a new Excel sheet
-        HSSFSheet sheet = workbook.createSheet("Productos");
+        HSSFSheet sheet = workbook.createSheet("Inventarios");
         sheet.setDefaultColumnWidth(30);
         //sheet.setColumnWidth(1,50);
 
@@ -54,48 +55,41 @@ public class ProductoExcelBuilder extends AbstractExcelView{
         // create header row
         HSSFRow header = sheet.createRow(0);
 
-        header.createCell(0).setCellValue("Nombre");
+        header.createCell(0).setCellValue("Clave");
         header.getCell(0).setCellStyle(style);
 
-        header.createCell(1).setCellValue("Descripción");
+        header.createCell(1).setCellValue("Producto");
         header.getCell(1).setCellStyle(style);
 
-        header.createCell(2).setCellValue("Fecha alta");
+        header.createCell(2).setCellValue("Saldo inicial");
         header.getCell(2).setCellStyle(style);
         
-        header.createCell(3).setCellValue("Precio costo");
+        header.createCell(3).setCellValue("Cantidad");
         header.getCell(3).setCellStyle(style);
         
-        header.createCell(4).setCellValue("Precio");
+        header.createCell(4).setCellValue("Fecha alta");
         header.getCell(4).setCellStyle(style);
         
-        header.createCell(5).setCellValue("Precio min");
+        header.createCell(5).setCellValue("Fecha");
         header.getCell(5).setCellStyle(style);
         
-        header.createCell(6).setCellValue("Proveedor");
+        header.createCell(6).setCellValue("Unidad");
         header.getCell(6).setCellStyle(style);
-        
-        header.createCell(7).setCellValue("UM");
-        header.getCell(7).setCellStyle(style);
-        
-        header.createCell(8).setCellValue("Tipo");
-        header.getCell(8).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
 
         for (HashMap element : list) {
             HSSFRow aRow = sheet.createRow(rowCount++);            
-            aRow.createCell(0).setCellValue(element.get("name") + "");
-            aRow.createCell(1).setCellValue(element.get("descripcion") + "");
-            aRow.createCell(2).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_alta").toString() )) ) + ""); 
-            aRow.createCell(3).setCellValue(element.get("precio_costo") + ""); 
-            aRow.createCell(4).setCellValue(element.get("precio_max") + ""); 
-            aRow.createCell(5).setCellValue(element.get("precio_min") + ""); 
-            aRow.createCell(6).setCellValue(element.get("proveedor") + ""); 
-            aRow.createCell(7).setCellValue(element.get("un_medida") + "");
-            aRow.createCell(8).setCellValue(element.get("tipo_prod") + "");        
+            aRow.createCell(0).setCellValue(element.get("productoClave") + "");
+            aRow.createCell(1).setCellValue(element.get("producto") + "");
+            aRow.createCell(2).setCellValue(element.get("saldo_ini") + ""); 
+            aRow.createCell(3).setCellValue(element.get("cantidad") + ""); 
+            aRow.createCell(4).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_ini").toString() )) )+ ""); 
+            aRow.createCell(5).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha").toString() )) ) + ""); 
+            aRow.createCell(6).setCellValue(element.get("unidad") + "");       
             
         }
     }
+    
 }
