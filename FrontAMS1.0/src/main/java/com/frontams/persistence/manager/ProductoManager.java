@@ -80,11 +80,11 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
     
     @Override
     protected boolean inUse(Producto entity) { 
-       /* if (entity.getProductos().isEmpty()) {
+        if (entity.getInventario().isEmpty()) {
              return false;
-        }*/
+        }
         System.out.println("lista llena...");
-        return false; //cambiar por tu cuando implementes la funcion 
+        return true;  
     }
     
     @Override

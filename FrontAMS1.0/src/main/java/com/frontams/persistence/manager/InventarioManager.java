@@ -19,6 +19,9 @@ import com.frontams.persistence.dao.UnidadDAO;
 import com.frontams.persistence.dto.InventarioDTO;
 import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.model.Inventario;
+import com.frontams.persistence.model.Producto;
+import com.frontams.persistence.model.Unidad;
+import java.util.Date;
 import java.util.Map;
 import org.mockito.cglib.beans.BulkBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,12 +39,37 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     private ProductoDAO productoDAO;
     
     @Autowired
-    private UnidadDAO unidad;
+    private UnidadDAO unidadDAO;
       
     @Override
     public AbstractBaseDAO dao() {
         return inventarioDAO;
     }
     
+    @Override
+    protected Inventario create(Map<String, Object> data) throws Exception {
+        Inventario tp = new Inventario(); 
+        if (inventarioDAO.exist((Long) data.get("productoId"), (Long) data.get("unidadId"))) {
+            throw new RuntimeException("Ya tiene este producto en inventario");
+        } else {
+            System.out.println("InventarioManager -> creating...");
+            update(tp, data);
+        }
+        return tp;
+    }
+
+    @Override
+    protected void update(Inventario entity, Map<String, Object> data) { 
+        entity.setCantidad((Integer) data.get("cantidad"));
+        entity.setSaldo_ini((Integer) data.get("saldo_ini"));
+        entity.setFecha_ini((Date) data.get("fecha_ini"));
+        entity.setFecha((Date) data.get("fecha"));
+                
+        Producto prod = productoDAO.findById((Long) data.get("productoId"));
+        Unidad unidad = unidadDAO.findById((Long) data.get("unidadId"));
+        
+        entity.setProducto(prod);      
+        entity.setUnidad(unidad);
+    }
     
 }

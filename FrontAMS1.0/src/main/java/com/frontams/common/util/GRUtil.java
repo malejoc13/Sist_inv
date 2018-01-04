@@ -97,8 +97,7 @@ public class GRUtil {
                     criterion = parseDate(key, value);
                     break;
                 case "(B)":
-                    criterion = Restrictions.eq(key, Boolean.parseBoolean(value));
-                    System.out.println(Boolean.parseBoolean(value));
+                    criterion = Restrictions.eq(key, Boolean.parseBoolean(value));                    
                     break;
                 default:
                     criterion = Restrictions.eq(key, value);

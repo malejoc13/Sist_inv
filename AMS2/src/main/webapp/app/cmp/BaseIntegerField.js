@@ -1,22 +1,14 @@
-Ext.define('Admin.cmp.BaseDateField', {
-    extend: 'Ext.form.DateField',
-    xtype: 'baseDateField',
+Ext.define('Admin.cmp.BaseIntegerField', {
+    extend: 'Ext.form.field.Text',
+    xtype: 'baseIntegerField',
     labelAlign : "top" ,
-    format: 'd-m-Y',
-    formatText :"",
-    prefix:'(D)',
-    disabled:false,
-    editable : false,
+    prefix:'(I)',
+    regex : /^\d*$/,//solo numeros
+    regexText : "Solo se permiten valores num&eacute;ricos",
     disabledOnCreate: null,
     disabledOnEdit: null,
     init: function (data) {
-        var me = this,
-                date = new Date();
- 
-        if (data && data[me.name]) {
-            date = new Date(parseInt( data[me.name] ));
-        }
-        me.setValue(date);
+      var me = this;
      if (!Session.Principal.accessAll){ 
         if (data && data.id) {//si esta editando
             me.disabledOnCreate=false;
@@ -31,6 +23,6 @@ Ext.define('Admin.cmp.BaseDateField', {
             }
         }
     }
-    } 
+    }
 });
- 
+

@@ -64,7 +64,7 @@ Ext.define('Admin.base.BaseEditor', {
                     jsonData: formData.typedValues,
                     ignoreError: true,
                     success: function (response) {
-                        if (response.status === 500) {
+                        if (response.status === 500) {//en caso de lanzar una exepcion
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                          }else{
                             var items = viewTab.items.items,

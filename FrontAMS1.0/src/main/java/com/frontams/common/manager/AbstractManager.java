@@ -56,7 +56,10 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
     protected T create(Map<String, Object> data) throws Exception{ return null;}
     protected void update(T entity, Map<String, Object> data) throws Exception{}    
     protected boolean inUse(T entity) throws Exception{ return false;}
-    protected WebResponseData del(T entity, Principal principal) throws Exception{ return null;}
+    protected WebResponseData del(T entity, Principal principal) throws Exception{ 
+        dao().delete(entity);
+        return new WebResponseData();
+    }
     
     public WebResponseData delete(Map<String, Object> data, Principal principal) throws Exception{
         T entity;
@@ -98,7 +101,7 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
     public T findById(Long id) {
         return (T) dao().findById(id);
     }
-
+    //devuelve el valor del campo propertyName dado su ID
     public Object getPropertyValueFromEntityId(Long entityId, String propertyName) {
         return dao().getPropertyValueFromEntityId(entityId, propertyName);
     }

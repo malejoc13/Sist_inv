@@ -60,13 +60,12 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 viewTab = me.up().up().up(),
                 filterValue;
 
-        if (me.applyFilter && !(me.noFilterOnCreate && (!data || !data.id))) {
+        if (me.applyFilter && !(me.noFilterOnCreate && (!data || !data.id))) {//en caso de estar creando
             var filter;
 
             if (me.applyFilter === true) { //if true, apply the parent tab's filter
                 filter = viewTab.getFilters(true);
-            } else {// if applyFilter has the filter to apply  
-
+            } else {// if applyFilter has the filter to apply 
                 if (me.filterPropertyName) {  // Ej:  data.propertyName  o  superData.propertyName
                     filterValue = me.getValueFromSource(me.filterPropertyName, data, viewTab, true);
 
@@ -77,7 +76,8 @@ Ext.define('Admin.cmp.BaseSelectField', {
                     filterValue = viewTab.superEntityId;
                 }
 
-                filter = me.applyFilter + filterValue;
+                filter = me.applyFilter + filterValue;//Ej unidad.id=(L)1
+                //Ext.Msg.alert('Informaci&oacute;n', filter);
             }
             me.setParams(filter);
         }
@@ -125,7 +125,7 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 me.setValue(defaultPropertyValue);
             }
         }
-
+        if (!Session.Principal.accessAll){
         if (data && data.id) {
             if (me.disabledOnEdit) {
                 me.disable();
@@ -135,7 +135,7 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 me.disable();
             }
         }
-
+        }
         if (me.disabledIfHasValue && me.getValue()) {
             me.disable();
         }
@@ -174,11 +174,18 @@ Ext.define('Admin.cmp.BaseSelectField', {
         this.getStore().setParams(params);
     },
     getValueFromSource: function (sourcePropertyName, data, viewTab, disableIfNotSource) {
-        var sourceName = sourcePropertyName.split('.')[0],
-                propertyName = sourcePropertyName.split('.')[1],
+        var sourceName = sourcePropertyName.split('.')[0],//Ej new
+                propertyName = sourcePropertyName.split('.')[1],//Ej. unidadId
                 source,
                 me = this;
-
+       
+        if (sourceName === 'new') {
+            if (Session.Principal.accessAll) {
+                return '';
+            }
+            return Session.Principal.entityId;
+            //Ext.Msg.alert('Informaci&oacute;n', source);
+         }
         if (sourceName === 'data' && data[propertyName]) { //If the value is not in data, look in superData
             source = data;
         } else {

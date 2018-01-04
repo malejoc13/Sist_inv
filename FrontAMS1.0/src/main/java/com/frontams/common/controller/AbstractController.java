@@ -61,7 +61,7 @@ public abstract class AbstractController<D> {
             @RequestParam(value = "report", defaultValue = "") String report,
             @RequestParam(value = "params", defaultValue = "") String params,
             HttpSession session) throws Exception {
-           
+            //System.out.println("Params ... "+params);
         List<Criterion> data = GRUtil.parseParamsToExpressions(params); 
                
         return getAbstractManager().pageList(new ListRequestDTO(page, start, limit,report, data));
@@ -104,10 +104,9 @@ public abstract class AbstractController<D> {
             @PathVariable("pageId") String pageId,
             @RequestParam(value = "params", defaultValue = "") String params,
             HttpSession session) throws Exception {
-         
+         System.out.println("Params ... "+params);
         List<Criterion> expressions = GRUtil.parseParamsToExpressions( params );
         checkAccess(session, pageId, expressions);
-
         return new WebResponseDataList<NomenclatorDTO>(getAbstractManager().nomenclatorList(expressions));
     }
 

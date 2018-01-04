@@ -18,6 +18,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
@@ -31,7 +32,7 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
     }
     
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("producto.name"));
+        criteria.addOrder(Order.asc("unidad.name"));
     }
     
     @Override
@@ -50,6 +51,14 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                                            //alias[.atrib]   //atributo en el DTO
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(InventarioDTO.class));
+    }
+    
+    public Boolean exist(Long productoId, Long unidadId) {
+        return buildCriteria()
+                .add(Restrictions.eq("producto.id", productoId))
+                .add(Restrictions.eq("unidad.id", unidadId))
+                .setMaxResults(1)
+                .uniqueResult() != null;
     }
     
 }

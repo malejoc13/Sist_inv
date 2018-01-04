@@ -1,17 +1,10 @@
  Ext.define('Admin.view.inventariosSections.inventario.view.InventarioEditor', {
     extend: 'Admin.base.BaseEditor',
     alias: 'widget.inventarioEditor',
-    height: 420,
+    height: 300,
     items: [
         {
-            items: [  
-                {
-                    xtype     : 'baseTextField',
-                    fieldLabel: 'Clave',
-                    name: 'productoClave',//le pongo de nombre el mismo valord el grid para que me lo cargue a la hora de modificar
-                    allowBlank : false,
-                    blankText : 'Este campo es obligatorio'                    
-                },
+            items: [                
                 {
                     fieldLabel: 'Unidad',
                     xtype: 'baseSelectField',
@@ -20,9 +13,10 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    //disabledOnEdit: true,
-                    blankText : 'Este campo es obligatorio'//,
-                    //trigger: 'productoId'//mando a recargar el select que depende de este
+                    disabledOnEdit: true,
+                    blankText : 'Este campo es obligatorio',
+                    applyFilter: 'id@is@(L)',//filtro por el que se busca
+                    filterPropertyName: 'new.unidadId'//indicarle nque es nuevo y no depende de ningun tab
                  }, 
                 {
                     fieldLabel: 'Producto',
@@ -32,10 +26,11 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'//,
+                    blankText : 'Este campo es obligatorio',
+                    disabledOnEdit: true
                     //applyFilter: 'unidad.id=(L)',//filtro por el que se busca
                    // filterPropertyName: 'data.unidadId',//nombre del dato por el que viene el id que deseamos fltrar
-                   // disabledOnCreate: true//desactivado al crear nuevo hasta que se escoja una unidad
+                   
                  }        
             ]
         },
@@ -44,9 +39,17 @@
                 {
                     fieldLabel: 'Saldo inicial',                  
                     name: 'saldo_ini',
-                    xtype: 'baseDoubleField',                    
+                    xtype: 'baseIntegerField',                    
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio'
+                    blankText : 'Este campo es obligatorio',
+                    disabledOnEdit:true,
+                    listeners:{
+                        change: function(me, newValue, oldValue, eOpts){
+                            if(me.up().up().getForm().findField ( 'cantidad' ).isDisabled()){
+                                me.up().up().getForm().findField ( 'cantidad' ).setValue(newValue);
+                            }                                                    
+                        }
+                    }
                 },
                 {
                     fieldLabel: 'Fecha de alta',                  
@@ -55,7 +58,16 @@
                     minValue: '01-01-2017', 
                     maxValue: new Date(),
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio'                    
+                    blankText : 'Este campo es obligatorio',
+                    disabledOnEdit:true,
+                    listeners:{
+                        change: function(me, newValue, oldValue, eOpts){
+                            if(me.up().up().getForm().findField ( 'fecha' ).isDisabled()){
+                                me.up().up().getForm().findField ( 'fecha' ).setValue(newValue);
+                                //Ext.Msg.alert('Informaci&oacute;n', "val");
+                            }                                                    
+                        }
+                    }
                 }
             ]
         },
@@ -64,18 +76,42 @@
                 {
                     fieldLabel: 'Cantidad',                  
                     name: 'cantidad',
-                    xtype: 'baseDoubleField',                    
+                    xtype: 'baseIntegerField',                    
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio'
+                    blankText : 'Este campo es obligatorio',
+                    disabledOnCreate: true,
+                    validator:function (val) { 
+                          saldoIni =  this.up().up().getForm().findField ( 'saldo_ini' ).getValue();
+                          //Ext.Msg.alert('Informaci&oacute;n', saldoIni);
+                            if (val){
+                                    if (parseInt(val) <= saldoIni) {           
+                                        return true;
+                                    }else{
+                                         return "La cantidad debe ser menor o igual al Saldo inicial";
+                                    }
+                            }                         
+                     }
                 },
                 {
                     fieldLabel: 'Fecha',                  
                     name: 'fecha',
-                    xtype: 'baseDateField',
-                    minValue: '01-01-2017', 
+                    xtype: 'baseDateField',                  
                     maxValue: new Date(),
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio'                    
+                    blankText : 'Este campo es obligatorio',
+                    disabledOnCreate: true,
+                    validator:function (val) { 
+                          fechaIni = new Date(parseInt(this.up().up().getValues().values['fecha_ini']));
+                          fechaIni=Ext.Date.format(fechaIni, 'd-m-Y');
+                           //Ext.Msg.alert('Informaci&oacute;n', val);
+                            if (val){
+                                    if ( (Date.parse(val))  >= (Date.parse(fechaIni))) {           
+                                        return true;
+                                    }else{
+                                         return "La fecha de actualizacíon debe ser mayor o igual que la fecha de alta";
+                                    }
+                            }                         
+                     }
                 },
                 {
                     xtype: 'idField'//para en caso de modificar ahi se va a guardar el ID

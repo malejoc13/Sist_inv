@@ -3,6 +3,6 @@ Ext.define('Admin.cmp.BaseDoubleField', {
     xtype: 'baseDoubleField',
     labelAlign : "top" ,
     prefix:'(d)',
-    regex : /^[1-9]+\.?[0-9]*$/,//solo numeros
+    regex : /^[0-9]+\.?[0-9]*$/,//solo numeros
     regexText : "Solo se permiten valores num&eacute;ricos"
 });
