@@ -40,14 +40,20 @@ Ext.define('Admin.view.userSections.user.view.UserEditor', {
                     fieldLabel: 'Contrase&ntilde;a',
                     name: 'password',                   
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio' 
+                    blankText : 'Este campo es obligatorio'                    
                 },
                 {
                     xtype     : 'basePassField',
                     fieldLabel: 'Confirme contrase&ntilde;a',
                     name: 'confirmPassword',                  
                     allowBlank : false,
-                    blankText : 'Este campo es obligatorio',                    
+                    blankText : 'Este campo es obligatorio', 
+                    init: function (data){
+                        if(data['password']){
+                                 //Ext.Msg.alert('Informaci&oacute;nn', data['password']);
+                                this.setValue(data['password']);                                
+                            }  
+                    },
                     validator:function (val) {
                             formData = this.up().up().getValues(); 
                             if (val){
