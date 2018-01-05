@@ -56,10 +56,11 @@ public class SecurityController {
                 session.putValue(Principal.TOKEN, principal.getToken());
                 return new WebResponseData(principal);
             }
+                return WebResponseData.toLoginFail();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        return WebResponseData.toLoginFail();
+             return WebResponseData.forException(e);
+        }       
     }
 
     @RequestMapping(value = "/checkAccess")

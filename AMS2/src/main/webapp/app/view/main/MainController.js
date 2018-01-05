@@ -147,7 +147,7 @@ Ext.define('Admin.view.main.MainController', {
             // visible.
             if (collapsing) {
                 document.getElementsByClassName('main-logo-image')[0].src = "resources/images/icon.png";
-                document.getElementsByClassName('main-logo-image')[0].style = "width:55px; margin-left:4px;top:12px;";
+                document.getElementsByClassName('main-logo-image')[0].style = "width:55px; margin-left:1px;top:-1px;height:80px;";
 
 //                document.getElementsByClassName('main-logo-image')[0].style.visibility = 'hidden';
 //                document.getElementsByClassName('mini-logo-image')[0].style.visibility = 'visible';
@@ -161,7 +161,7 @@ Ext.define('Admin.view.main.MainController', {
                 });
             } else { 
                 document.getElementsByClassName('main-logo-image')[0].src = "resources/images/vc-logo.jpg";
-                document.getElementsByClassName('main-logo-image')[0].style = "width:190px; margin-left:22px;top:-4px;height:90px;";
+                document.getElementsByClassName('main-logo-image')[0].style = "margin-left:17px;top:-1px;height:70px;";
             }
         }
     },

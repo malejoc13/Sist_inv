@@ -1,13 +1,11 @@
 /*
- @Autor: Roberto Rodriguez
- Email: robertoSoftwareEngineer@gmail.com
 
- @Copyright 2016 
  */
 package com.frontams.persistence.security.service;
   
 import com.frontams.persistence.dto.Principal;
 import com.frontams.persistence.security.dao.UserDAO; 
+import com.frontams.persistence.security.dto.UserDTO;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 import javax.transaction.Transactional;
@@ -16,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author rrodriguez
+ * @author Alejo
  */
 @Service
 @Transactional
@@ -25,32 +23,20 @@ public class LoginService {
     @Autowired
     private UserDAO userDAO; 
 
-    public Principal login(String username, String password) throws NoSuchAlgorithmException { 
+    public Principal login(String username, String password) throws Exception { 
         Principal principal = userDAO.getPrincipal(username,password);
  
-        if (principal != null) {           
+        if (principal != null) { 
+            UserDTO udto = userDAO.getActive(username, password);
+            if (!udto.getActive()) {
+                 throw new RuntimeException("Su usuario se encuentra desabilitado, consulte al Administrador");
+            }
 //            List<String> pageAccess = rolePageAccessDAO.getPageAccessByRole(principal.getRoleId());
-//            principal.setPageAccess(pageAccess);
-//            principal.setEntityId(getEntityId(principal));
+//            principal.setPageAccess(pageAccess);//            
             principal.setToken(UUID.randomUUID().toString());
         }
 
         return principal;
     }
-    
-//    private Long getEntityId(Principal principal){
-//        Long entityId = 0L;
-//        System.out.println("getEntityId:: principal.getId() = " + principal.getId());
-//        switch(principal.getRoleId().intValue()){
-//            case 4:  //PSU
-//                entityId = partnerUserDAO.getPartnerIdByUser(principal.getId()); 
-//                break;
-//            case 5:  //MERCHANT_MANAGER
-//                entityId = merchantUserDAO.getMerchantIdByUser(principal.getId()); 
-//                break;
-//        }
-//        
-//        System.out.println("entityId = " + entityId);
-//        return entityId;
-//    }
+
 }

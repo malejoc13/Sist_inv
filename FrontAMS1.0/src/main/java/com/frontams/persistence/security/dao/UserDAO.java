@@ -45,7 +45,30 @@ public class UserDAO extends AbstractBaseDAO<User, UserDTO> {
                 .setResultTransformer(Transformers.aliasToBean(UserDTO.class));
     }
 
-    public Principal getPrincipal(String username, String password) {
+    public Boolean exist(String username) {
+        return buildCriteria()
+                .add(Restrictions.eq("username", username))
+                .setMaxResults(1)
+                .uniqueResult() != null;
+    }
+    
+    public UserDTO getActive(String username, String password) {
+        Criteria criteria = buildCriteria()
+                .add(Restrictions.eq("username", username))
+                .add(Restrictions.eq("password", password))
+                .setMaxResults(1);
+        
+        ProjectionList projectionList = Projections.projectionList()
+                .add(Projections.property("active").as("active"));
+        
+        criteria.setProjection(projectionList)
+                .setResultTransformer(Transformers.aliasToBean(UserDTO.class));
+        
+        return (UserDTO) criteria.uniqueResult();
+    }
+    
+    public Principal getPrincipal(String username, String password)throws Exception {
+           
         //criterio de busqueda
         Criteria criteria = buildCriteria()
                 .add(Restrictions.eq("username", username))
