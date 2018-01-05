@@ -48,7 +48,7 @@ public abstract class AbstractController<D> {
         System.out.println("FrontAMS / report = " + report);
         System.out.println("FrontAMS / params = " + params);
         List<Criterion> data = GRUtil.parseParamsToExpressions(params); 
-       
+       //System.out.println("Params ... "+data.toString());
         return getReportManager().pageList(new ListRequestDTO(0, 0, 0,report, data)); 
     }
 

@@ -48,7 +48,7 @@ Ext.define('Admin.store.NavigationTree', {
     },
     config: {
         children: [
-            {
+            {//nodos del tree
                 text: 'Tablero',
                 iconCls: 'x-fa fa-desktop',
                 rowCls: 'nav-tree-badge',

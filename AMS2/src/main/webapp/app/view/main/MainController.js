@@ -98,7 +98,7 @@ Ext.define('Admin.view.main.MainController', {
     },
     onNavigationTreeSelectionChange: function (tree, node) {
         var to = node && (node.get('routeId') || node.get('viewType'));
-
+        
         if (to) {
             this.redirectTo(to);
         }

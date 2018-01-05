@@ -8,7 +8,8 @@ Ext.define('Admin.base.BaseGridTab', {
         'Admin.cmp.toolbar.CreateButton',
         'Admin.cmp.toolbar.EditGridRowButton',
         'Admin.cmp.toolbar.PdfReportButton',
-        'Admin.cmp.toolbar.DeleteButton' 
+        'Admin.cmp.toolbar.DeleteButton', 
+        'Admin.cmp.toolbar.ReportButton'
     ],   
     tbar: [ 
         '->',
@@ -19,7 +20,7 @@ Ext.define('Admin.base.BaseGridTab', {
             xtype: 'editGridRowButton' 
         },
         {
-          xtype: 'deleteButton'
+            xtype: 'deleteButton'
         },
         {
             xtype: 'excelReportButton'
@@ -30,5 +31,5 @@ Ext.define('Admin.base.BaseGridTab', {
         {
             xtype: 'showFilters' 
         }
-    ] 
+    ]
 });

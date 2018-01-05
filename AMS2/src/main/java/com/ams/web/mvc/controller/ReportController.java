@@ -40,7 +40,7 @@ public class ReportController {
 
         System.out.println("%url = " + url);
         System.out.println("%params = " + params);
-
+        System.out.println("%report = " + report);
         if (url.contains("/AMS/")) {
             url = url.split("/AMS/")[0]; 
         }

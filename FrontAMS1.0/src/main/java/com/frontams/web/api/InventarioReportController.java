@@ -9,31 +9,29 @@ package com.frontams.web.api;
  *
  * @author Sistemas
  */
-
 import com.frontams.common.controller.AbstractController;
 import com.frontams.common.manager.AbstractManager; 
-import com.frontams.persistence.manager.InventarioManager;
+
 import com.frontams.persistence.manager.InventarioReportManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/{pageId}/inventario")
-public class InventarioController extends AbstractController{
+@RequestMapping(value = "/{pageId}/inventario_r")
+public class InventarioReportController  extends AbstractController{
     
     @Autowired
-    protected InventarioManager inventarioManager;
-
+    protected InventarioReportManager inventarioReportManager;
+    
     
     @Override
     public AbstractManager getAbstractManager() {
-        return inventarioManager;
+        return inventarioReportManager;
     }
     
     @Override
     public AbstractManager getReportManager(){
-      return inventarioManager;
+      return inventarioReportManager;
   }
-    
 }
