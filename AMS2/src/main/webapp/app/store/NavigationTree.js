@@ -6,41 +6,45 @@ Ext.define('Admin.store.NavigationTree', {
             name: 'text'
         }],
     custom: function () {
-        var me = this;
+        var me = this; 
         me.getRootNode().removeAll();
+        if (!Session.Principal.accessAll) {
 
-        me.config.children.forEach(function (node) {
+            me.config.children.forEach(function (node) {
 
-//            if (node.children) {
-//                var children = node.children;
-//
-//                node.children = [];
-//
-//                children.forEach(function (child) {
-//                     if (me.hasAccess(child)) {
-//                          node.children.push(child);
-//                     }
-//                });
-//
-//                    if (node.children.length > 0) {
-//                    me.getRootNode().appendChild(node);
-//                }
-//            } else {
-                if (me.hasAccess(node)) {
-                    me.getRootNode().appendChild(node);
-//                }
-            }
-        });
+                if (node.children) {//si no es hoja y tiene subnodos dentro 
+                    var children = node.children;//escojo los hijos
+
+                    node.children = [];
+
+                    children.forEach(function (child) {//recoro los hijo a ver si teng permiso
+                         if (me.hasAccess(child)) {
+                              node.children.push(child);
+                         }
+                    });
+                     if (node.children.length > 0) {//si se le asignaron hijos lo incluyo al tree
+                        me.getRootNode().appendChild(node);
+                    }
+               } else {//en caso de que sea hoja
+                    if (me.hasAccess(node)) {
+                        me.getRootNode().appendChild(node);
+                    }
+                }
+            });
+        }else{Ext.Msg.alert('Acceso:', "node.get('viewType')");
+            me.config.children.forEach(function (node) {
+                me.getRootNode().appendChild(node);
+            });
+        }   
     },
     hasAccess: function (node) {
         var Principal = Session.Principal,
-                pageAccess = Principal.pageAccess,
-                accessAll = Principal.accessAll;
+                pageAccess = Principal.pageAccess;
 
-//TODO implement this 
-//        return (accessAll && (pageAccess.indexOf(node.viewType) === -1 && pageAccess.indexOf(node.routeId) === -1))
-//                || !accessAll && ((pageAccess.indexOf(node.viewType) > -1) || pageAccess.indexOf(node.routeId) > -1);
-        return true;
+        if (pageAccess.indexOf(node.viewType) > -1) {
+            return true;
+        }
+        return false;
     },
     root: {
         expanded: true,
@@ -99,44 +103,7 @@ Ext.define('Admin.store.NavigationTree', {
                         leaf: true
                     }
                 ]
-            }/*,
-             {
-                text: 'Mobile Clients',
-                iconCls: 'x-fa fa-mobile',
-                viewType: 'mobileClients',
-                leaf: true
-            },            
-            {
-                text: 'Credit Cards',
-                iconCls: 'x-fa fa-credit-card',
-                rowCls: 'nav-tree-badge',
-                viewType: 'cards',
-                leaf: true
-            }, 
-            {
-                text: 'Profile',
-                iconCls: 'x-fa fa-edit',
-                viewType: 'profile',
-                leaf: true
-            }/*,
-            {
-                text: 'Configurations',
-                iconCls: 'x-fa fa-arrows',
-                expanded: false,
-                selectable: false,
-                children: [
-                    {
-                        text: 'Fee Schedules',
-                        iconCls: 'x-fa fa-clock-o',
-                        viewType: 'feeAllocationConfigs',
-                        leaf: true,
-                        style: {
-                            'margin-right': '0px',
-                            'padding-right': '0px'
-                        }
-                    },
-                ]
-            }*/,
+            },
             {
                 text: 'Seguridad',
                 iconCls: 'x-fa fa-key',

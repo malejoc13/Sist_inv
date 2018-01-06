@@ -56,7 +56,7 @@ public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePag
                 .createAlias("role", "role")
                 .createAlias("page_access", "page_access")
                 .add(Restrictions.eq("role.id", appRole))
-                .setProjection(Projections.property("page_access.idPage"))
+                .setProjection(Projections.property("page_access.idPage").as("idPage"))
                 .list();
     }
 

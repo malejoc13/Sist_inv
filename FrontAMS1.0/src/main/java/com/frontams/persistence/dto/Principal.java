@@ -7,6 +7,7 @@
 package com.frontams.persistence.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -27,6 +28,7 @@ public class Principal implements Serializable{
     private Long roleId;
     private Boolean accessAll;
     private String token;
+    private List<String> pageAccess;
  
  
 
@@ -141,6 +143,20 @@ public class Principal implements Serializable{
      */
     public void setRoleId(Long roleId) {
         this.roleId = roleId;
+    }
+
+    /**
+     * @return the pageAccess
+     */
+    public List<String> getPageAccess() {
+        return pageAccess;
+    }
+
+    /**
+     * @param pageAccess the pageAccess to set
+     */
+    public void setPageAccess(List<String> pageAccess) {
+        this.pageAccess = pageAccess;
     }
 
   
