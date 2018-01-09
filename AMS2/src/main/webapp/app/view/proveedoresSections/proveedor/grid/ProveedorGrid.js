@@ -16,26 +16,30 @@ Ext.define('Admin.view.proveedoresSections.proveedor.grid.ProveedorGrid', {
             {
                 text: "Nombre",
                 dataIndex: 'name',
-                width: '30%',
-                filterType: 'filterText'
-            },            
-            {
-                text: "Direcci&oacute;n",
-                dataIndex: 'direccion',
-                filterType: 'filterText',
-                width: '30%'
+                width: '42%',
+                filterType: 'filterText', 
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Dirección: ' + record.get('direccion') + '"';
+                    return value;
+                }
             },
             {
-                text: "Tel&eacute;fono",
+                text: "Tel&eacute;fono fijo",
                 dataIndex: 'telefono',
                 filterType: 'filterText',
-                width: '20%'
+                width: '15%'
+            },
+            {
+                text: "Tel&eacute;fono celular",
+                dataIndex: 'telefono_m',
+                filterType: 'filterText',
+                width: '15%'
             },
             {
                 text: "Email",
                 dataIndex: 'email',
                 filterType: 'filterText',
-                width: '20%'
+                width: '27%'
             }
         ]
     }
