@@ -6,7 +6,7 @@
 package com.frontams.web.security;
 
 import com.frontams.common.util.response.WebResponseData;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import com.frontams.persistence.security.service.LoginService;
 import javax.servlet.http.HttpSession;
@@ -63,7 +63,7 @@ public class SecurityController {
         }       
     }
 
-    @RequestMapping(value = "/checkAccess")
+    @RequestMapping(value = "/checkAccess")//verifica que se tenga acceso a la pagina que indexa
     public WebResponseData checkAccess( @PathVariable("pageId") String pageId, HttpSession session) {
 
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);

@@ -28,10 +28,7 @@
                     editable : false,
                     blankText : 'Este campo es obligatorio',
                     disabledOnEdit: true
-                    //applyFilter: 'unidad.id=(L)',//filtro por el que se busca
-                   // filterPropertyName: 'data.unidadId',//nombre del dato por el que viene el id que deseamos fltrar
-                   
-                 }        
+                }        
             ]
         },
         {

@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.grid.UserGrid', {
+Ext.define('Admin.view.securitySections.user.grid.UserGrid', {
     extend: 'Admin.base.BasePaginatedGrid',
     alias: 'widget.userGrid',
     height: '100%',

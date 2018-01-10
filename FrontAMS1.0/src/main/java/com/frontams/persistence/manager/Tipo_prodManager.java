@@ -13,7 +13,7 @@ import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.Tipo_prodDAO;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.dto.Tipo_prodDTO; 
 import com.frontams.persistence.model.Tipo_prod;
 import java.util.Map;

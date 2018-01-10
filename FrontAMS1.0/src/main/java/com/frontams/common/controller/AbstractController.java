@@ -12,7 +12,7 @@ import com.frontams.common.util.GRUtil;
 import com.frontams.common.util.response.WebResponse;
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.common.util.response.WebResponseDataList; 
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import java.text.ParseException; 
 import java.util.HashMap;
@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Robe
+ * @author Sistemas
  */
 @RestController
 public abstract class AbstractController<D> {
@@ -85,9 +85,10 @@ public abstract class AbstractController<D> {
     @RequestMapping(value = "/delete", method = RequestMethod.POST, consumes = "application/json")
     public WebResponse delete(@PathVariable("pageId") String pageId,
             @RequestBody Map<String, Object> map, 
-            HttpSession session) throws ParseException {
+            HttpSession session) throws ParseException, Exception {
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
         System.out.println("Eliminando......"+pageId);
+        
         try { 
             Map<String, Object> data = GRUtil.parseRequestMap(map);
                  
@@ -104,10 +105,9 @@ public abstract class AbstractController<D> {
             @PathVariable("pageId") String pageId,
             @RequestParam(value = "params", defaultValue = "") String params,
             HttpSession session) throws Exception {
-         System.out.println("Params ... "+params);
-        List<Criterion> expressions = GRUtil.parseParamsToExpressions( params );
-        checkAccess(session, pageId, expressions);
-        return new WebResponseDataList<NomenclatorDTO>(getAbstractManager().nomenclatorList(expressions));
+        //System.out.println("Params ... "+params);    
+        List<Criterion> expressions = GRUtil.parseParamsToExpressions( params );      
+        return new WebResponseDataList<NomenclatorDTO>(getAbstractManager().nomenclatorList(expressions));        
     }
 
     @RequestMapping(value = "/load", method = RequestMethod.GET)
@@ -115,15 +115,19 @@ public abstract class AbstractController<D> {
         return (D) getAbstractManager().load(GRUtil.parseParamsToExpressions( params ) );
     }
 
+    /*Funcion que verifique que tiene permiso en la pagina y que tien permiso de
+    realizar determinada operacion sobre los datos*/
     private void checkAccess(HttpSession session, String page, List<Criterion> expressions) throws Exception {
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
 
         if (!(accessService.checkAccess(principal, page) && checkAuth(principal, expressions))){
-            throw new Exception("Acceso denegado");
+            throw new Exception("Acceso denegado, no tiene permitido realizar esta operaci&oacute;n");
         }
     }
 
-    public boolean checkAuth(Principal principal, List<Criterion> expressions){return true;} //Redefine if need special check access
+    public boolean checkAuth(Principal principal, List<Criterion> expressions){
+        return true;
+    } //Redefine if need special check access
     
     public abstract AbstractManager getAbstractManager();
     

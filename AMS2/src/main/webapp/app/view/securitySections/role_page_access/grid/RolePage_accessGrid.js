@@ -13,7 +13,28 @@ Ext.define('Admin.view.securitySections.role_page_access.grid.RolePage_accessGri
                 text: "P&aacute;gina",
                 dataIndex: 'page_access',
                 filter: 'page_access.name',
-                width: '99%'
+                width: '69%'
+            },
+            { 
+                xtype: 'booleanGridColumn',
+                text: 'Crear', 
+                dataIndex: 'create',
+                filterType:'filterBoolean',                
+                width: '10%'
+            },
+            { 
+                xtype: 'booleanGridColumn',
+                text: 'Actualizar', 
+                dataIndex: 'update',
+                filterType:'filterBoolean',                
+                width: '10%'
+            },
+            { 
+                xtype: 'booleanGridColumn',
+                text: 'Eliminar', 
+                dataIndex: 'delete',
+                filterType:'filterBoolean',                
+                width: '10%'
             }
         ]
     }

@@ -1,17 +1,14 @@
 /*
- @Autor: Roberto Rodriguez
- Email: robertoSoftwareEngineer@gmail.com
 
- @Copyright 2016 
  */
-package com.frontams.persistence.dto;
+package com.frontams.persistence.security.dto;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  *
- * @author rrodriguez
+ * @author Sistemas
  * clase para guardar los atributos de la sesion de manera gloval
  */
 public class Principal implements Serializable{

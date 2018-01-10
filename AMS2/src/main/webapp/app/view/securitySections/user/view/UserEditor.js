@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.view.UserEditor', {
+Ext.define('Admin.view.securitySections.user.view.UserEditor', {
     extend: 'Admin.base.BaseEditor',
     alias: 'widget.userEditor',
     height: 350,

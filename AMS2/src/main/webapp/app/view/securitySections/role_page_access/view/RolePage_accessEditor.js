@@ -25,7 +25,27 @@ Ext.define('Admin.view.securitySections.role_page_access.view.RolePage_accessEdi
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'
+                    blankText : 'Este campo es obligatorio',
+                    disabledIfHasValue:true
+                }
+            ]
+        },
+        {
+            items: [
+                {
+                    xtype     : 'baseCheckboxField',
+                    fieldLabel: 'Crear',
+                    name: 'create'                   
+                },
+                {
+                    xtype     : 'baseCheckboxField',
+                    fieldLabel: 'Actualizar',
+                    name: 'update'                   
+                },
+                {
+                    xtype     : 'baseCheckboxField',
+                    fieldLabel: 'Eliminar',
+                    name: 'delete'                   
                 }
             ]
         }

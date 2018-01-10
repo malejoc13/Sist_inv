@@ -14,6 +14,9 @@ import java.io.Serializable;
 public class RolePage_accessDTO implements Serializable{
     
     private Long id;
+    private Boolean create;    
+    private Boolean upd;    
+    private Boolean delete;
     private String role;
     private Long roleId;
     private String page_access;
@@ -87,6 +90,48 @@ public class RolePage_accessDTO implements Serializable{
      */
     public void setPage_accessId(Long page_accessId) {
         this.page_accessId = page_accessId;
+    }
+
+    /**
+     * @return the create
+     */
+    public Boolean getCreate() {
+        return create;
+    }
+
+    /**
+     * @param create the create to set
+     */
+    public void setCreate(Boolean create) {
+        this.create = create;
+    }
+
+    /**
+     * @return the upd
+     */
+    public Boolean getUpdate() {
+        return upd;
+    }
+
+    /**
+     * @param update the upd to set
+     */
+    public void setUpdate(Boolean update) {
+        this.upd = update;
+    }
+
+    /**
+     * @return the delete
+     */
+    public Boolean getDelete() {
+        return delete;
+    }
+
+    /**
+     * @param delete the delete to set
+     */
+    public void setDelete(Boolean delete) {
+        this.delete = delete;
     }
     
     

@@ -8,7 +8,7 @@ Ext.define('Admin.cmp.toolbar.ReportButton', {
     //hidden : true,
     listeners: {
         click: function (button) {
-            var grid = button.up().items.items[0],
+            var grid = button.up().up().items.items[0],
                     gridTab = grid.up(),
                     params = grid.getParams(),
                     entity = gridTab.entity,

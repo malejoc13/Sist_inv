@@ -1,6 +1,6 @@
 Ext.define('Admin.view.dashboard.Dashboard', {
     extend: 'Ext.panel.Panel',
-    xtype: 'admindashboard',
+    xtype: 'dashboard',
     title: 'Daily Operations of October',
     tools: [ ], 
     requires: [

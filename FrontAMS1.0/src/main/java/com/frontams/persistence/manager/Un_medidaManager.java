@@ -14,7 +14,7 @@ import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.Un_medidaDAO;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.dto.Un_medidaDTO; 
 import com.frontams.persistence.model.Un_medida;
 import java.util.Map;

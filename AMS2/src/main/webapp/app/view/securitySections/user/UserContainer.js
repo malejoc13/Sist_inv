@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.UserContainer', {
+Ext.define('Admin.view.securitySections.user.UserContainer', {
     extend: 'Admin.base.BaseContainer', 
     xtype: 'users',  
     items: [

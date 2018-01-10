@@ -13,7 +13,7 @@ package com.frontams.persistence.security.manager;
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.dao.Page_accessDAO;
 import com.frontams.persistence.security.dao.RoleDAO;
 import com.frontams.persistence.security.dto.Page_accessDTO;

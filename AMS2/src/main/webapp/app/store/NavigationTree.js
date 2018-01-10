@@ -56,7 +56,7 @@ Ext.define('Admin.store.NavigationTree', {
                 text: 'Tablero',
                 iconCls: 'x-fa fa-desktop',
                 rowCls: 'nav-tree-badge',
-                viewType: 'admindashboard',
+                viewType: 'dashboard',
                 routeId: 'dashboard',
                 leaf: true
             },

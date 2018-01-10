@@ -1,17 +1,14 @@
 /*
- @Autor: Roberto Rodriguez
- Email: robertoSoftwareEngineer@gmail.com
-
- @Copyright 2016 
+ 
  */
 package com.frontams.persistence.security.service;
  
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author rrodriguez
+ * @author Sistemas
  */
 @Service
 public class AccessService {
@@ -21,11 +18,10 @@ public class AccessService {
     }
 
     private boolean pageAccess(Principal principal, String pageId) {
-//        if (principal.getAccessAll()) {
-//            return !principal.getPageAccess().contains(pageId);
-//        } else {
-//            return principal.getPageAccess().contains(pageId);
-//        }
-        return true;
+        if (principal.getAccessAll()) {//implementar permisos  determinadas funcionalidades
+            return true;
+        } else {
+            return principal.getPageAccess().contains(pageId);
+        }
     }
 }
