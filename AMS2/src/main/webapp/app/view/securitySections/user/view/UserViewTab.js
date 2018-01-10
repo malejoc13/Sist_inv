@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.view.UserViewTab', {
+Ext.define('Admin.view.securitySections.user.view.UserViewTab', {
     extend:'Admin.base.BaseViewTab',
     xtype: 'userViewTab', 
     viewName:'User', 

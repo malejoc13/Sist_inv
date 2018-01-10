@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.UserSubPanel', {
+Ext.define('Admin.view.securitySections.user.UserSubPanel', {
     extend: 'Admin.base.BaseSubPanel',
     xtype: 'userSubPanel',
     config: {

@@ -16,7 +16,7 @@ import com.frontams.persistence.dao.ProductoDAO;
 import com.frontams.persistence.dao.ProveedorDAO;
 import com.frontams.persistence.dao.Tipo_prodDAO;
 import com.frontams.persistence.dao.Un_medidaDAO;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.dto.ProductoDTO; 
 import com.frontams.persistence.model.Producto;
 import com.frontams.persistence.model.Proveedor;

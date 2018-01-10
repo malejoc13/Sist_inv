@@ -2,7 +2,7 @@ package com.frontams.persistence.security.dao;
 
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.dto.NomenclatorDTO;
-import com.frontams.persistence.dto.Principal; 
+import com.frontams.persistence.security.dto.Principal; 
 import com.frontams.persistence.security.dto.UserDTO; 
 import com.frontams.persistence.security.model.User;
 import org.hibernate.Criteria;

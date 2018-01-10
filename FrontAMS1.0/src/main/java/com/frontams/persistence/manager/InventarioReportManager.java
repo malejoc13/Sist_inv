@@ -18,7 +18,7 @@ import com.frontams.persistence.dao.ProductoDAO;
 import com.frontams.persistence.dao.UnidadDAO;
 import com.frontams.persistence.dto.InventarioReportDTO;
 
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.model.Inventario;
 import com.frontams.persistence.model.Producto;
 import com.frontams.persistence.model.Unidad;

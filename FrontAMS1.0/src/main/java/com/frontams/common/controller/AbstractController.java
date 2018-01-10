@@ -12,7 +12,7 @@ import com.frontams.common.util.GRUtil;
 import com.frontams.common.util.response.WebResponse;
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.common.util.response.WebResponseDataList; 
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import java.text.ParseException; 
 import java.util.HashMap;

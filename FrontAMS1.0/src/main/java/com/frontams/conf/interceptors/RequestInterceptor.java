@@ -15,7 +15,7 @@
  */
 package com.frontams.conf.interceptors;
 
-import com.frontams.persistence.dto.Principal; 
+import com.frontams.persistence.security.dto.Principal; 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;

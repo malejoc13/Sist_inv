@@ -3,7 +3,7 @@
  */
 package com.frontams.persistence.security.service;
   
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.dao.RolePage_accessDAO;
 import com.frontams.persistence.security.dao.UserDAO; 
 import com.frontams.persistence.security.dto.UserDTO;

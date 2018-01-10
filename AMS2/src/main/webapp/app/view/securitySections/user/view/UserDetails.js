@@ -1,4 +1,4 @@
-Ext.define('Admin.view.userSections.user.view.UserDetails', {
+Ext.define('Admin.view.securitySections.user.view.UserDetails', {
     extend: 'Admin.base.BaseDetails',
     xtype: 'userDetails',
     items: [

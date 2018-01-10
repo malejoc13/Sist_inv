@@ -12,7 +12,7 @@ import com.frontams.common.dto.NomenclatorDTO;
 import com.frontams.common.model.BaseEntity;
 import com.frontams.common.util.response.WebResponse;
 import com.frontams.common.util.response.WebResponseData;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import java.util.List;
 import java.util.Map;
 import org.hibernate.criterion.Criterion;

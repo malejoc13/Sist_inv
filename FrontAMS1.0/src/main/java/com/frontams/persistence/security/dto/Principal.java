@@ -4,7 +4,7 @@
 
  @Copyright 2016 
  */
-package com.frontams.persistence.dto;
+package com.frontams.persistence.security.dto;
 
 import java.io.Serializable;
 import java.util.List;

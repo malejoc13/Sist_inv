@@ -6,7 +6,7 @@
 package com.frontams.web.security;
 
 import com.frontams.common.util.response.WebResponseData;
-import com.frontams.persistence.dto.Principal;
+import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import com.frontams.persistence.security.service.LoginService;
 import javax.servlet.http.HttpSession;
