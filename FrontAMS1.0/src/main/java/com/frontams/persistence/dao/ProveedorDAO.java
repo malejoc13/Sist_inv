@@ -37,7 +37,6 @@ public class ProveedorDAO extends AbstractBaseDAO<Proveedor, ProveedorDTO>{
                 .add(Projections.property("name").as("name"))
                 .add(Projections.property("direccion").as("direccion"))
                 .add(Projections.property("telefono").as("telefono"))
-                .add(Projections.property("telefono_m").as("telefono_m"))
                 .add(Projections.property("email").as("email"));
          
         criteria.setProjection(projectionList)

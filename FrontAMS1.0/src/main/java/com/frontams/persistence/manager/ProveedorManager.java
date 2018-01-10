@@ -47,7 +47,6 @@ public class ProveedorManager extends AbstractManager<Proveedor, ProveedorDTO>{
         entity.setName((String) data.get("name"));
         entity.setDireccion((String) data.get("direccion"));
         entity.setTelefono((String) data.get("telefono"));
-        entity.setTelefono_m((String) data.get("telefono_m"));
         entity.setEmail((String) data.get("email"));
         
     }

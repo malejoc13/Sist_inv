@@ -24,28 +24,23 @@ Ext.define('Admin.view.proveedoresSections.proveedor.view.ProveedorEditor', {
             items: [
                 {
                     xtype: 'baseTextField',
-                    fieldLabel: 'Tel&eacute;fono fijo',                  
+                    fieldLabel: 'Tel&eacute;fono',                  
                     name: 'telefono',
-                    regex : /^\d*$/,//solo numeros
-                    regexText : "Solo se permiten valores num&eacute;ricos"
-                },
-                {
-                    xtype: 'baseTextField',
-                    fieldLabel: 'Tel&eacute;fono celular',                  
-                    name: 'telefono_m',
+                    allowBlank : false,
+                    blankText : 'Este campo es obligatorio',
                     regex : /^\d*$/,//solo numeros
                     regexText : "Solo se permiten valores num&eacute;ricos"
                 }
             ]
         },
         {
-            width: "32%",
+           // width: "32%",
             items: [                
                 {
                     xtype: 'baseTextField',
                     fieldLabel: 'Email',                  
                     name: 'email',
-                    regex : /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\._-]{2,})\.([a-z]{2,3})$/,//solo email
+                    regex : /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/,//solo email
                     regexText : "Solo se permiten direcciones de correo v&aacute;lidos"                 
                 },
                 {

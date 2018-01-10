@@ -31,7 +31,7 @@ Ext.define('Admin.store.NavigationTree', {
                     }
                 }
             });
-        }else{
+        }else{Ext.Msg.alert('Acceso:', "node.get('viewType')");
             me.config.children.forEach(function (node) {
                 me.getRootNode().appendChild(node);
             });

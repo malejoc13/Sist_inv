@@ -23,8 +23,6 @@ public class ProveedorDTO implements Serializable{
     
     private String telefono;
     
-    private String telefono_m;
-    
     private String email;
 
     /**
@@ -96,20 +94,6 @@ public class ProveedorDTO implements Serializable{
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * @return the telefono_m
-     */
-    public String getTelefono_m() {
-        return telefono_m;
-    }
-
-    /**
-     * @param telefono_m the telefono_m to set
-     */
-    public void setTelefono_m(String telefono_m) {
-        this.telefono_m = telefono_m;
     }
     
         
