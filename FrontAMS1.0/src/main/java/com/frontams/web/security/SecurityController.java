@@ -63,7 +63,7 @@ public class SecurityController {
         }       
     }
 
-    @RequestMapping(value = "/checkAccess")
+    @RequestMapping(value = "/checkAccess")//verifica que se tenga acceso a la pagina que indexa
     public WebResponseData checkAccess( @PathVariable("pageId") String pageId, HttpSession session) {
 
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);

@@ -22,7 +22,6 @@ public class ProveedorDTO implements Serializable{
     private String direccion;
     
     private String telefono;
-    
     private String telefono_m;
     
     private String email;

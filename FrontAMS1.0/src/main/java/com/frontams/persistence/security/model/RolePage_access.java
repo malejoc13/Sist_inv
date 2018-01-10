@@ -44,6 +44,12 @@ public class RolePage_access extends BaseEntity{
     @Generated(GenerationTime.INSERT)
     private Long id;
     
+    private Boolean creat;
+    
+    private Boolean upd;
+    
+    private Boolean delt;
+    
     @ManyToOne
     @JoinColumn(name = "role")
     private Role role;
@@ -93,7 +99,49 @@ public class RolePage_access extends BaseEntity{
     public void setPage_access(Page_access page_access) {
         this.page_access = page_access;
     }
-    
-    
+
+    /**
+     * @return the creat
+     */
+    public Boolean getCreat() {
+        return creat;
+    }
+
+    /**
+     * @param creat the creat to set
+     */
+    public void setCreat(Boolean creat) {
+        this.creat = creat;
+    }
+
+    /**
+     * @return the upd
+     */
+    public Boolean getUpd() {
+        return upd;
+    }
+
+    /**
+     * @param upd the upd to set
+     */
+    public void setUpd(Boolean upd) {
+        this.upd = upd;
+    }
+
+    /**
+     * @return the delt
+     */
+    public Boolean getDelt() {
+        return delt;
+    }
+
+    /**
+     * @param delt the delt to set
+     */
+    public void setDelt(Boolean delt) {
+        this.delt = delt;
+    }
+
+   
     
 }

@@ -39,7 +39,10 @@ public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePag
     @Override
     public void applyListProjection(Criteria criteria) {
         ProjectionList projectionList = Projections.projectionList()
-                .add(Projections.property("id").as("id"))          
+                .add(Projections.property("id").as("id"))
+                .add(Projections.property("creat").as("creat"))
+                .add(Projections.property("upd").as("upd"))
+                .add(Projections.property("delt").as("delt"))
                 .add(Projections.property("role.id").as("roleId"))
                 .add(Projections.property("role.name").as("role"))
                 .add(Projections.property("page_access.id").as("page_accessId"))

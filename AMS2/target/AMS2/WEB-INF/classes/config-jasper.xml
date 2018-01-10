@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://www.springframework.org/schema/util 
+  http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+         
+    <bean id="unidadPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/unidad.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="unidadExcelView" class="com.ams.util.UnidadExcelBuilder"/>
+    
+    <bean id="proveedorPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/proveedor.jasper"
+          p:reportDataKey="datasource"/> 
+     
+    <bean id="proveedorExcelView" class="com.ams.util.ProveedorExcelBuilder"/>
+    
+    <bean id="tipo_prodPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/tipo_prod.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="tipo_prodExcelView" class="com.ams.util.Tipo_prodExcelBuilder"/>
+    
+    <bean id="un_medidaPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/un_medida.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="un_medidaExcelView" class="com.ams.util.Un_medidaExcelBuilder"/>
+    
+    <bean id="productoPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/producto.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="productoExcelView" class="com.ams.util.ProductoExcelBuilder"/>
+    
+    <bean id="userPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/user.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="userExcelView" class="com.ams.util.UserExcelBuilder"/>
+    
+    <bean id="page_accessPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/page_access.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="page_accessExcelView" class="com.ams.util.Page_accessExcelBuilder"/>
+    
+    <bean id="rolePDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/role.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="roleExcelView" class="com.ams.util.RoleExcelBuilder"/>
+    
+    <bean id="role_page_accessPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/role_page_access.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="role_page_accessExcelView" class="com.ams.util.RolePage_accessExcelBuilder"/>
+    
+    <bean id="inventarioPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/inventario.jasper"
+          p:reportDataKey="datasource"/>
+    
+    <bean id="inventario_rPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/inventario_r.jasper"
+          p:reportDataKey="datasource"/>
+   
+    <bean id="inventarioExcelView" class="com.ams.util.InventarioExcelBuilder"/>
+</beans>

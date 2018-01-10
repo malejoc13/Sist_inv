@@ -1,0 +1,16 @@
+com\ams\util\UserExcelBuilder.class
+com\ams\conf\spring\WebConfig.class
+com\ams\manager\ReportManager$1.class
+com\ams\util\UnidadExcelBuilder.class
+com\ams\web\mvc\controller\GeneralController.class
+com\ams\util\ProductoExcelBuilder.class
+com\ams\util\Page_accessExcelBuilder.class
+com\ams\web\api\TestController.class
+com\ams\web\mvc\controller\ReportController.class
+com\ams\manager\ReportManager.class
+com\ams\util\RolePage_accessExcelBuilder.class
+com\ams\util\Un_medidaExcelBuilder.class
+com\ams\reports\PDFView.class
+com\ams\util\ProveedorExcelBuilder.class
+com\ams\util\RoleExcelBuilder.class
+com\ams\util\Tipo_prodExcelBuilder.class

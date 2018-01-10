@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab479676-fa42-4b63-ab11-2cad81b7bde4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="idPage" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement mode="Transparent" x="0" y="14" width="141" height="65" uuid="567c8039-eeea-4528-a95c-3249f03d9d88"/>
+				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\vc-logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="205" y="29" width="156" height="36" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Páginas]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="452" y="9" width="120" height="20" uuid="28e3b0e7-0c2e-422e-a3e4-417cac9846fc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="20" width="560" height="24" backcolor="#CCCCCC" uuid="dcdd022a-f819-433f-aa31-657be0d4ed92"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="20" width="261" height="24" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre página]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="261" y="20" width="171" height="24" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Id de página]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="261" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="261" y="0" width="171" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
+				<textFieldExpression><![CDATA[$F{idPage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="452" y="34" width="80" height="20" uuid="a89d8172-21e8-4a42-99d2-1b3f32e8037c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="532" y="34" width="40" height="20" uuid="f4a04a75-c4b5-4e70-a10a-266508dc99c1"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
