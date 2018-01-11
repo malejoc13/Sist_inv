@@ -100,7 +100,7 @@ Ext.define('Admin.base.BaseController', {
                     jsonData:'{"id":"(L)'+data.id+'"}',
                     ignoreError: true,
                     success: function (response) {
-                        if (response.status === 450 || response.status === 550) {
+                        if (response.status === 450 || response.status === 550 || response.status === 500) {
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                         } else {
                             grid.getStore().loadPage(1);  

@@ -39,4 +39,12 @@ public class Page_accessDAO extends AbstractBaseDAO<Page_access, Page_accessDTO>
                 .setResultTransformer(Transformers.aliasToBean(Page_accessDTO.class));
     }
     
+    public Long getIdByPageId(String idPage) {
+        return (Long) getCriteria()
+                .add(Restrictions.eq("idPage", idPage))
+                .setProjection(Projections.property("id"))
+                .setMaxResults(1)
+                .uniqueResult();
+    }
+    
 }

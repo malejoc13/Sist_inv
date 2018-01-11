@@ -74,7 +74,13 @@ public abstract class AbstractController<D> {
         System.out.println("AbstractController -> saving..."+pageId);
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
         try { 
-            Map<String, Object> data = GRUtil.parseRequestMap(map);           
+            Map<String, Object> data = GRUtil.parseRequestMap(map);
+            Boolean creating = (data == null || !data.containsKey("id"));
+            System.out.println("AbstractController -> creating = " + creating);
+            if (creating) {
+                checkAuth(session, pageId, "create");
+            }else {checkAuth(session, pageId, "update");}
+            
             return new WebResponseData(getAbstractManager().save(data));
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,7 +97,7 @@ public abstract class AbstractController<D> {
         
         try { 
             Map<String, Object> data = GRUtil.parseRequestMap(map);
-                 
+        checkAuth(session, pageId, "delete");
         return getAbstractManager().delete(data, principal); 
                           
         } catch (Exception e) {
@@ -115,19 +121,16 @@ public abstract class AbstractController<D> {
         return (D) getAbstractManager().load(GRUtil.parseParamsToExpressions( params ) );
     }
 
-    /*Funcion que verifique que tiene permiso en la pagina y que tien permiso de
+    /*Funcion que tiene permiso de
     realizar determinada operacion sobre los datos*/
-    private void checkAccess(HttpSession session, String page, List<Criterion> expressions) throws Exception {
+    private void checkAuth(HttpSession session, String pageId, String operation) throws Exception {
         Principal principal = (Principal) session.getAttribute(Principal.PRINCIPAL);
 
-        if (!(accessService.checkAccess(principal, page) && checkAuth(principal, expressions))){
+        if (!accessService.checkAuth(principal, pageId, operation)){
             throw new Exception("Acceso denegado, no tiene permitido realizar esta operaci&oacute;n");
         }
     }
 
-    public boolean checkAuth(Principal principal, List<Criterion> expressions){
-        return true;
-    } //Redefine if need special check access
     
     public abstract AbstractManager getAbstractManager();
     

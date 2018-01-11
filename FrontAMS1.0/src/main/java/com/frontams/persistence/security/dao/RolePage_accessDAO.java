@@ -72,4 +72,29 @@ public class RolePage_accessDAO extends AbstractBaseDAO<RolePage_access, RolePag
                 .uniqueResult();
     }
     
+    public Boolean getPermission(Long idRole, Long idPageAccess, String operation){
+        Criteria criteria = buildCriteria()
+                .add(Restrictions.eq("role.id", idRole))
+                .add(Restrictions.eq("page_access.id", idPageAccess));
+        
+        ProjectionList projectionList = Projections.projectionList();
+        
+        switch (operation){
+            case "delete":
+               projectionList.add(Projections.property("delt").as("delt"));
+                break;
+            case "create":
+               projectionList.add(Projections.property("creat").as("creat"));
+                break;
+            case "update":
+               projectionList.add(Projections.property("upd").as("upd"));
+                break;
+        }
+        
+        return (Boolean) criteria.setProjection(projectionList)
+                                    .setMaxResults(1)
+                                    .uniqueResult();
+        
+    }
+    
 }
