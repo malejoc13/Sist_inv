@@ -8,6 +8,9 @@ Ext.define('Admin.base.BasePaginatedGrid', {
     height: 350,
     width: '100%',
     titleAlign: 'center',
+    viewConfig: {
+                    loadingText: 'Cargando...'
+                 },
     closable: true,
     showigOnTop: true,
     loadAdditionalInfoWhenDblClick: null, //If true, we consume the /load Web Service when DblClick
@@ -112,6 +115,12 @@ Ext.define('Admin.base.BasePaginatedGrid', {
             var cmp = column.items.items[0];
             var val = cmp.getValue();
             if (val) {
+                if (val === "Si" || val === "si" || val === "true") {
+                    val = true;
+                }
+                if (val === "No" || val === "no" || val === "false") {
+                    val = false;
+                }
                 searchParams += '@p@' + (column.filter || column.dataIndex) + "@is@" + cmp.prefix + val;
             }
         });

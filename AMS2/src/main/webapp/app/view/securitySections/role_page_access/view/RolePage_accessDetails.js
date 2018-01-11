@@ -16,9 +16,9 @@ Ext.define('Admin.view.securitySections.role_page_access.view.RolePage_accessDet
                         '<td><b>Acceso a P&aacute;gina: </b> {page_access}</td>',
                     '</tr>', 
                     '<tr>',
-                        '<td><b>Crear: </b> {creat}</td>',
-                        '<td><b>Actualizar: </b> {upd}</td>',
-                        '<td><b>Eliminar: </b> {delt}</td>',
+                        '<td><b>Crear: </b> {[Util.formatBool(values.creat)]}</td>',
+                        '<td><b>Actualizar: </b> {[Util.formatBool(values.upd)]}</td>',
+                        '<td><b>Eliminar: </b> {[Util.formatBool(values.delt)]}</td>',
                     '</tr>', 
                 '</table>',
                 '<div>'

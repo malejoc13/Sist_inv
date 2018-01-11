@@ -13,6 +13,7 @@ Ext.define('Admin.view.securitySections.role.view.RoleDetails', {
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
                         '<td><b>Rol: </b> {name}</td>',
+                        '<td><b>Acceso total: </b> {[Util.formatBool(values.access_all)]}</td>',
                     '</tr>',                                        
                 '</table>',
                 '<table cellpadding="10" style="width:100%;cellspacing">',

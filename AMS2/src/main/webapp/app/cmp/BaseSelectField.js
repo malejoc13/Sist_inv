@@ -1,10 +1,12 @@
 Ext.define('Admin.cmp.BaseSelectField', {
-    extend: 'Ext.form.ComboBox',
+    extend: 'Ext.form.field.ComboBox',
     xtype: 'baseSelectField',
     requires: [],
     displayField: 'name',
     valueField: 'id',
     labelAlign : "top" ,
+    listConfig : ({loadingText: 'Cargando...'
+                    }),
     url: '',
     prefix: '(L)',
     applyFilter: null, //if true, apply the parent tab's filter

@@ -47,8 +47,6 @@ $include-admin-cmp-gridfilter-filternumber: dynamic(true);;
 $include-admin-cmp-gridfilter-filterselectfield: dynamic(true);;
 $include-admin-cmp-gridfilter-filtertext: dynamic(true);;
 $include-admin-cmp-gridfilter-nofilter: dynamic(true);;
-$include-admin-cmp-gridfilter-custom-filteroperationselectfield: dynamic(true);;
-$include-admin-cmp-gridfilter-custom-filtertransactiontypeselectfield: dynamic(true);;
 $include-admin-cmp-toolbar-createbutton: dynamic(true);;
 $include-admin-cmp-toolbar-deletebutton: dynamic(true);;
 $include-admin-cmp-toolbar-editbutton: dynamic(true);;

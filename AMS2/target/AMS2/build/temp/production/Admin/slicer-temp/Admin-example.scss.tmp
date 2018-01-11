@@ -47,8 +47,6 @@ $include-admin-cmp-gridfilter-filternumber: dynamic(true);;
 $include-admin-cmp-gridfilter-filterselectfield: dynamic(true);;
 $include-admin-cmp-gridfilter-filtertext: dynamic(true);;
 $include-admin-cmp-gridfilter-nofilter: dynamic(true);;
-$include-admin-cmp-gridfilter-custom-filteroperationselectfield: dynamic(true);;
-$include-admin-cmp-gridfilter-custom-filtertransactiontypeselectfield: dynamic(true);;
 $include-admin-cmp-toolbar-createbutton: dynamic(true);;
 $include-admin-cmp-toolbar-deletebutton: dynamic(true);;
 $include-admin-cmp-toolbar-editbutton: dynamic(true);;
@@ -184,7 +182,6 @@ $include-admin-view-feesections-feeallocator-grid-feeallocatorgridtab: dynamic(t
 $include-admin-view-feesections-feeallocator-view-feeallocatordetails: dynamic(true);;
 $include-admin-view-feesections-feeallocator-view-feeallocatoreditor: dynamic(true);;
 $include-admin-view-feesections-feeallocator-view-feeallocatorviewtab: dynamic(true);;
-$include-admin-view-inventariossections-inventariocontroller: dynamic(true);;
 $include-admin-view-inventariossections-inventario-inventariocontainer: dynamic(true);;
 $include-admin-view-inventariossections-inventario-grid-inventariogrid: dynamic(true);;
 $include-admin-view-inventariossections-inventario-grid-inventariogridtab: dynamic(true);;

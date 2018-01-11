@@ -11,7 +11,7 @@ Ext.define('Admin.cmp.gridFilter.FilterBoolean', {
     },
     listeners: {
         specialkey: function (cmp, e) { 
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() == e.ENTER) {                
                  cmp.up().up().up().getStore().loadPage(1); 
             }
         } 

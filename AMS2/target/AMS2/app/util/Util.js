@@ -23,7 +23,7 @@ Ext.define('Admin.util.Util', {
         },
         formatBool: function (isPlatformLevel) {
                             if (isPlatformLevel) { 
-                                return "Yes";
+                                return "Si";
                             }
                             return "No";
                         }
