@@ -16,6 +16,7 @@ import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
 import org.hibernate.transform.Transformers;
 
 /**
@@ -58,7 +59,7 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
 
     public List<NomenclatorDTO> nomenclatorList(List<Criterion> expressions) {
         Criteria criteria = buildCriteria(expressions);
-
+        criteria.addOrder(Order.asc("name"));
         applyNomenclatorProjection(criteria);
 
         return criteria.list();

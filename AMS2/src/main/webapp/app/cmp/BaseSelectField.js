@@ -36,6 +36,7 @@ Ext.define('Admin.cmp.BaseSelectField', {
         this.callParent();
 
         var store = Ext.create('Admin.cmp.BaseSelectFieldStore', {});
+        
 
         store.proxy.url = WS.HOST + container.xtype + '/' + me.url + '/nomenclator';
          
@@ -55,7 +56,13 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 triggerTarget.setParams(me.getParamFromUrl() + rec.id);
                 triggerTarget.getStore().reload();
             }
-        }
+        }//,
+//       change: function ( me, newValue, oldValue, eOpts) {
+//           Ext.Msg.alert('Informaci&oacute;n', newValue);
+//           var filter = "name@is@(S)"+newValue;
+//           me.setParams(filter);
+//           me.getStore().reload();
+//       }
     },
     init: function (data) {
         var me = this,
@@ -207,6 +214,7 @@ Ext.define('Admin.cmp.BaseSelectField', {
 
 Ext.define('Admin.cmp.BaseSelectFieldStore', {
     extend: 'Ext.data.Store',
+    //remoteFilter : false,
     fields: [
         {name: 'id'},
         {name: 'name'}

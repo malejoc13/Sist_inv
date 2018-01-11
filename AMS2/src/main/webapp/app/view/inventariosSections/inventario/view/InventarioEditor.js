@@ -16,7 +16,7 @@
                     disabledOnEdit: true,
                     blankText : 'Este campo es obligatorio',
                     applyFilter: 'id@is@(L)',//filtro por el que se busca
-                    filterPropertyName: 'new.unidadId'//indicarle nque es nuevo y no depende de ningun tab
+                    filterPropertyName: 'new.unidadId'//indicarle que es nuevo y no depende de ningun tab
                  }, 
                 {
                     fieldLabel: 'Producto',

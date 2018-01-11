@@ -75,8 +75,8 @@
                 {
                     fieldLabel: 'Unidad de medida',
                     xtype: 'baseSelectField',
-                    name: 'un_medidaId', //referencia al atributo id en el DTO
-                    url: 'un_medida',// referencia al alias en el DAO para que busque en esa entidad y llene el combo
+                    name: 'un_medidaId', //referencia al alias en el DAO 
+                    url: 'un_medida',// para que busque en esa entidad y llene el combo
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
@@ -100,7 +100,8 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'
+                    blankText : 'Este campo es obligatorio',
+                    //queryParam : 'params'
                 },
                 {
                     xtype: 'idField'//para en caso de modificar ahi se va a guardar el ID
