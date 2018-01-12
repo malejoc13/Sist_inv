@@ -26,8 +26,6 @@ Ext.define('Admin.view.proveedoresSections.proveedor.view.ProveedorEditor', {
                     xtype: 'baseTextField',
                     fieldLabel: 'Tel&eacute;fono fijo',                  
                     name: 'telefono',
-                    allowBlank : false,
-                    blankText : 'Este campo es obligatorio',
                     regex : /^\d*$/,//solo numeros
                     regexText : "Solo se permiten valores num&eacute;ricos"
                 },
@@ -35,8 +33,6 @@ Ext.define('Admin.view.proveedoresSections.proveedor.view.ProveedorEditor', {
                     xtype: 'baseTextField',
                     fieldLabel: 'Tel&eacute;fono movil',                  
                     name: 'telefono_m',
-                    allowBlank : false,
-                    blankText : 'Este campo es obligatorio',
                     regex : /^\d*$/,//solo numeros
                     regexText : "Solo se permiten valores num&eacute;ricos"
                 }

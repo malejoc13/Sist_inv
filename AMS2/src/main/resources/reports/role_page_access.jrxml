@@ -5,6 +5,9 @@
 	<property name="ireport.y" value="0"/>
 	<field name="role" class="java.lang.String"/>
 	<field name="page_access" class="java.lang.String"/>
+	<field name="creat" class="java.lang.String"/>
+	<field name="upd" class="java.lang.String"/>
+	<field name="delt" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -15,14 +18,21 @@
 				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\vc-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="161" y="0" width="239" height="79" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
+				<reportElement x="141" y="0" width="197" height="79" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="26" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Rol - Accesos a páginas]]></text>
 			</staticText>
+			<image>
+				<reportElement x="351" y="0" width="87" height="79" uuid="b514fcac-6e74-46e8-a7ee-64f4fe57f1ff"/>
+				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\c-logo.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="438" y="0" width="134" height="20" forecolor="#6699FF" backcolor="#6699FF" uuid="5b58476c-3ac8-4435-8e08-8586ca4f2a17"/>
+			</rectangle>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="452" y="9" width="120" height="20" uuid="28e3b0e7-0c2e-422e-a3e4-417cac9846fc"/>
+				<reportElement x="452" y="0" width="120" height="20" forecolor="#F0F0F0" uuid="28e3b0e7-0c2e-422e-a3e4-417cac9846fc"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
@@ -33,33 +43,69 @@
 	<columnHeader>
 		<band height="44" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="20" width="560" height="24" backcolor="#CCCCCC" uuid="dcdd022a-f819-433f-aa31-657be0d4ed92"/>
+				<reportElement x="0" y="20" width="572" height="24" forecolor="#6699FF" backcolor="#6699FF" uuid="dcdd022a-f819-433f-aa31-657be0d4ed92"/>
 			</rectangle>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="20" width="210" height="24" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
+				<reportElement mode="Transparent" x="0" y="0" width="35" height="20" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="false"/>
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Rol]]></text>
+				<text><![CDATA[ Rol:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="210" y="20" width="282" height="24" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
+				<reportElement mode="Transparent" x="0" y="20" width="272" height="24" forecolor="#F0F0F0" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="false"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Páginas]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement isPrintRepeatedValues="false" x="35" y="0" width="210" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{role}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="272" y="20" width="100" height="24" forecolor="#F0F0F0" uuid="3d85eca6-00be-4a72-8519-4e9b7e73a311"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Crear]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="20" width="100" height="24" forecolor="#F0F0F0" uuid="e6f995fd-98fe-446a-ad12-7060aff3391c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actualizar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="20" width="100" height="24" forecolor="#F0F0F0" uuid="acf67d54-d06c-4c8c-b918-768d475f17ec"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Eliminar]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="210" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
-				<textFieldExpression><![CDATA[$F{role}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="210" y="0" width="282" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
+				<reportElement x="0" y="0" width="272" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
 				<textFieldExpression><![CDATA[$F{page_access}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="0" width="100" height="20" uuid="24b0c3ed-461c-42fc-8f43-bf64e48f5c0c"/>
+				<textFieldExpression><![CDATA[$F{creat}.equals( "true" )? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="100" height="20" uuid="10a5c8a9-29cb-4a4d-8c27-1ff829a0a98c"/>
+				<textFieldExpression><![CDATA[$F{upd}.equals( "true" )? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="100" height="20" uuid="b4f504da-f41d-419b-92b0-cd1bd030cd66"/>
+				<textFieldExpression><![CDATA[$F{delt}.equals( "true" )? "Si":"No"]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -68,13 +114,16 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="30" width="572" height="24" forecolor="#6699FF" backcolor="#6699FF" uuid="e0928e16-db65-4b6b-acd1-636a591e168f"/>
+			</rectangle>
 			<textField>
-				<reportElement x="452" y="34" width="80" height="20" uuid="a89d8172-21e8-4a42-99d2-1b3f32e8037c"/>
+				<reportElement x="452" y="34" width="80" height="20" forecolor="#F0F0F0" uuid="a89d8172-21e8-4a42-99d2-1b3f32e8037c"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="532" y="34" width="40" height="20" uuid="f4a04a75-c4b5-4e70-a10a-266508dc99c1"/>
+				<reportElement x="532" y="34" width="40" height="20" forecolor="#F0F0F0" uuid="f4a04a75-c4b5-4e70-a10a-266508dc99c1"/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>

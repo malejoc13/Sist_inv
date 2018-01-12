@@ -10,6 +10,7 @@ com\ams\web\mvc\controller\ReportController.class
 com\ams\manager\ReportManager.class
 com\ams\util\RolePage_accessExcelBuilder.class
 com\ams\util\Un_medidaExcelBuilder.class
+com\ams\util\InventarioExcelBuilder.class
 com\ams\reports\PDFView.class
 com\ams\util\ProveedorExcelBuilder.class
 com\ams\util\RoleExcelBuilder.class

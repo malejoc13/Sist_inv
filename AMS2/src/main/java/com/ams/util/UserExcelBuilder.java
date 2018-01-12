@@ -52,34 +52,38 @@ public class UserExcelBuilder extends AbstractExcelView{
         // create header row
         HSSFRow header = sheet.createRow(0);
 
-        header.createCell(0).setCellValue("Nombre");
+        header.createCell(0).setCellValue("Activo");
         header.getCell(0).setCellStyle(style);
-
-        header.createCell(1).setCellValue("Apellidos");
+        
+        header.createCell(1).setCellValue("Nombre");
         header.getCell(1).setCellStyle(style);
 
-        header.createCell(2).setCellValue("Usuario");
+        header.createCell(2).setCellValue("Apellidos");
         header.getCell(2).setCellStyle(style);
-        
-        header.createCell(3).setCellValue("Email");
+
+        header.createCell(3).setCellValue("Usuario");
         header.getCell(3).setCellStyle(style);
         
-        header.createCell(4).setCellValue("Unidad");
+        header.createCell(4).setCellValue("Email");
         header.getCell(4).setCellStyle(style);
         
-        header.createCell(5).setCellValue("Rol");
+        header.createCell(5).setCellValue("Unidad");
         header.getCell(5).setCellStyle(style);
+        
+        header.createCell(6).setCellValue("Rol");
+        header.getCell(6).setCellStyle(style);
        // create data rows
         int rowCount = 1;
 
         for (HashMap element : list) {
-            HSSFRow aRow = sheet.createRow(rowCount++);            
-            aRow.createCell(0).setCellValue(element.get("firstName") + "");
-            aRow.createCell(1).setCellValue(element.get("lastName") + "");
-            aRow.createCell(2).setCellValue(element.get("username") + ""); 
-            aRow.createCell(3).setCellValue(element.get("email") + "");  
-            aRow.createCell(4).setCellValue(element.get("unidad") + "");  
-            aRow.createCell(5).setCellValue(element.get("role") + "");
+            HSSFRow aRow = sheet.createRow(rowCount++);
+            aRow.createCell(0).setCellValue(((Boolean)element.get("active"))==true? "Si":"No");            
+            aRow.createCell(1).setCellValue(element.get("firstName") + "");
+            aRow.createCell(2).setCellValue(element.get("lastName") + "");
+            aRow.createCell(3).setCellValue(element.get("username") + ""); 
+            aRow.createCell(4).setCellValue(element.get("email") + "");  
+            aRow.createCell(5).setCellValue(element.get("unidad") + "");  
+            aRow.createCell(6).setCellValue(element.get("role") + "");
             
         }
     }

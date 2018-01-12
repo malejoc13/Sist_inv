@@ -51,19 +51,31 @@ public class RolePage_accessExcelBuilder extends AbstractExcelView{
         // create header row
         HSSFRow header = sheet.createRow(0);
 
-        header.createCell(0).setCellValue("Rol");
+        header.createCell(0).setCellValue("Rol : "+(String)list.get(0).get("role"));
         header.getCell(0).setCellStyle(style);
-
-        header.createCell(1).setCellValue("Acceso a página");
-        header.getCell(1).setCellStyle(style);
+        
+        HSSFRow header1 = sheet.createRow(1);
+        header1.createCell(0).setCellValue("Acceso a página");
+        header1.getCell(0).setCellStyle(style);
+        
+        header1.createCell(1).setCellValue("Crear");
+        header1.getCell(0).setCellStyle(style);
+        
+        header1.createCell(2).setCellValue("Actualizar");
+        header1.getCell(0).setCellStyle(style);
+        
+        header1.createCell(3).setCellValue("Eliminar");
+        header1.getCell(0).setCellStyle(style);
 
        // create data rows
-        int rowCount = 1;
+        int rowCount = 2;
 
         for (HashMap element : list) {
-            HSSFRow aRow = sheet.createRow(rowCount++);            
-            aRow.createCell(0).setCellValue(element.get("role") + "");
-            aRow.createCell(1).setCellValue(element.get("page_access") + "");       
+            HSSFRow aRow = sheet.createRow(rowCount++);
+            aRow.createCell(0).setCellValue(element.get("page_access") + "");
+            aRow.createCell(1).setCellValue(((Boolean)element.get("creat"))==true? "Si":"No");
+            aRow.createCell(2).setCellValue(((Boolean)element.get("upd"))==true? "Si":"No");
+            aRow.createCell(3).setCellValue(((Boolean)element.get("delt"))==true? "Si":"No");
         }
     }
 }

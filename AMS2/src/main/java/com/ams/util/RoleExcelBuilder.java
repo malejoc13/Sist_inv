@@ -51,19 +51,23 @@ public class RoleExcelBuilder extends AbstractExcelView{
         // create header row
         HSSFRow header = sheet.createRow(0);
 
-        header.createCell(0).setCellValue("Rol");
+        header.createCell(0).setCellValue("Acceso total");
         header.getCell(0).setCellStyle(style);
-
-        header.createCell(1).setCellValue("Descripción");
+        
+        header.createCell(1).setCellValue("Rol");
         header.getCell(1).setCellStyle(style);
+
+        header.createCell(2).setCellValue("Descripción");
+        header.getCell(2).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
 
         for (HashMap element : list) {
-            HSSFRow aRow = sheet.createRow(rowCount++);            
-            aRow.createCell(0).setCellValue(element.get("name") + "");
-            aRow.createCell(1).setCellValue(element.get("descripcion") + "");       
+            HSSFRow aRow = sheet.createRow(rowCount++); 
+            aRow.createCell(0).setCellValue( ((Boolean)element.get("access_all"))==true? "Si":"No");
+            aRow.createCell(1).setCellValue(element.get("name") + "");
+            aRow.createCell(2).setCellValue(element.get("descripcion") + "");       
         }
     }
 }
