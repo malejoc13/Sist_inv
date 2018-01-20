@@ -60,6 +60,10 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
 
     @Override
     protected void update(Inventario entity, Map<String, Object> data) { 
+       
+        if (entity.getCantidad() != null && entity.getCantidad() < (Integer) data.get("cantidad")) {
+            throw new RuntimeException("Est&aacute; intentando rebajar una cantidad mayor a ("+entity.getCantidad()+") que es la existente en el inventario" );
+        }
         entity.setCantidad((Integer) data.get("cantidad"));
         entity.setSaldo_ini((Integer) data.get("saldo_ini"));
         entity.setFecha_ini((Date) data.get("fecha_ini"));
@@ -71,5 +75,7 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
         entity.setProducto(prod);      
         entity.setUnidad(unidad);
     }
+    
+    
     
 }

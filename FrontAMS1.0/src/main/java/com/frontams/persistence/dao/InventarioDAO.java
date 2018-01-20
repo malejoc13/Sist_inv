@@ -59,6 +59,6 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                 .add(Restrictions.eq("unidad.id", unidadId))
                 .setMaxResults(1)
                 .uniqueResult() != null;
-    }
+    }    
     
 }

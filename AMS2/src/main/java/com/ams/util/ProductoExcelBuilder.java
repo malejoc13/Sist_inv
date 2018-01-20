@@ -53,48 +53,52 @@ public class ProductoExcelBuilder extends AbstractExcelView{
 
         // create header row
         HSSFRow header = sheet.createRow(0);
-
-        header.createCell(0).setCellValue("Nombre");
+        
+        header.createCell(0).setCellValue("Clave");
         header.getCell(0).setCellStyle(style);
 
-        header.createCell(1).setCellValue("Descripción");
+        header.createCell(1).setCellValue("Nombre");
         header.getCell(1).setCellStyle(style);
 
-        header.createCell(2).setCellValue("Fecha alta");
+        header.createCell(2).setCellValue("Descripción");
         header.getCell(2).setCellStyle(style);
-        
-        header.createCell(3).setCellValue("Precio costo");
+
+        header.createCell(3).setCellValue("Fecha alta");
         header.getCell(3).setCellStyle(style);
         
-        header.createCell(4).setCellValue("Precio");
+        header.createCell(4).setCellValue("Precio costo");
         header.getCell(4).setCellStyle(style);
         
-        header.createCell(5).setCellValue("Precio min");
+        header.createCell(5).setCellValue("Precio");
         header.getCell(5).setCellStyle(style);
         
-        header.createCell(6).setCellValue("Proveedor");
+        header.createCell(6).setCellValue("Precio min");
         header.getCell(6).setCellStyle(style);
         
-        header.createCell(7).setCellValue("UM");
+        header.createCell(7).setCellValue("Proveedor");
         header.getCell(7).setCellStyle(style);
         
-        header.createCell(8).setCellValue("Tipo");
+        header.createCell(8).setCellValue("UM");
         header.getCell(8).setCellStyle(style);
+        
+        header.createCell(9).setCellValue("Tipo");
+        header.getCell(9).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
 
         for (HashMap element : list) {
-            HSSFRow aRow = sheet.createRow(rowCount++);            
-            aRow.createCell(0).setCellValue(element.get("name") + "");
-            aRow.createCell(1).setCellValue(element.get("descripcion") + "");
-            aRow.createCell(2).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_alta").toString() )) ) + ""); 
-            aRow.createCell(3).setCellValue(element.get("precio_costo") + ""); 
-            aRow.createCell(4).setCellValue(element.get("precio_max") + ""); 
-            aRow.createCell(5).setCellValue(element.get("precio_min") + ""); 
-            aRow.createCell(6).setCellValue(element.get("proveedor") + ""); 
-            aRow.createCell(7).setCellValue(element.get("un_medida") + "");
-            aRow.createCell(8).setCellValue(element.get("tipo_prod") + "");        
+            HSSFRow aRow = sheet.createRow(rowCount++);
+            aRow.createCell(0).setCellValue(element.get("clave") + "");
+            aRow.createCell(1).setCellValue(element.get("name") + "");
+            aRow.createCell(2).setCellValue(element.get("descripcion") + "");
+            aRow.createCell(3).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_alta").toString() )) ) + ""); 
+            aRow.createCell(4).setCellValue(element.get("precio_costo") + ""); 
+            aRow.createCell(5).setCellValue(element.get("precio_max") + ""); 
+            aRow.createCell(6).setCellValue(element.get("precio_min") + ""); 
+            aRow.createCell(7).setCellValue(element.get("proveedor") + ""); 
+            aRow.createCell(8).setCellValue(element.get("un_medida") + "");
+            aRow.createCell(9).setCellValue(element.get("tipo_prod") + "");        
             
         }
     }
