@@ -27,6 +27,12 @@
     
     <bean id="tipo_prodExcelView" class="com.ams.util.Tipo_prodExcelBuilder"/>
     
+    <bean id="tipo_movPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/tipo_mov.jasper"
+          p:reportDataKey="datasource"/> 
+    
+    <bean id="tipo_movExcelView" class="com.ams.util.Tipo_movExcelBuilder"/>
+    
     <bean id="un_medidaPDFView" class="com.ams.reports.PDFView"
           p:url="classpath:reports/un_medida.jasper"
           p:reportDataKey="datasource"/> 

@@ -54,6 +54,9 @@ public class Tipo_prodExcelBuilder extends AbstractExcelView{
 
         header.createCell(0).setCellValue("Nombre");
         header.getCell(0).setCellStyle(style);
+        
+        header.createCell(1).setCellValue("Descripción");
+        header.getCell(1).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
@@ -61,6 +64,7 @@ public class Tipo_prodExcelBuilder extends AbstractExcelView{
         for (HashMap element : list) {
             HSSFRow aRow = sheet.createRow(rowCount++);            
             aRow.createCell(0).setCellValue(element.get("name") + "");
+            aRow.createCell(1).setCellValue(element.get("descripcion") + "");
                  
         }
     }

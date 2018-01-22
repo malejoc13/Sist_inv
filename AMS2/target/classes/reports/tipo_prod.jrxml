@@ -64,7 +64,7 @@
 				<reportElement x="0" y="0" width="248" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement x="248" y="2" width="324" height="20" uuid="20dc6959-51d0-4219-b21c-f11de7cb1838"/>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>

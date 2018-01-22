@@ -33,6 +33,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Prov
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Un_medidaDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\ProveedorManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\conf\spring\WebConfig.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Tipo_movDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\model\RolePage_access.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\Page_accessController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\RolePage_accessDAO.java
@@ -42,8 +43,10 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\In
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Un_medidaManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\enums\RoleEnum.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\conf\spring\ServiceConfig.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Tipo_movController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Tipo_prodManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Un_medidaController.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\Tipo_movDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\RoleDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\RoleManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\UserDTO.java
@@ -66,6 +69,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\RolePage_accessDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\ProveedorController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\manager\AbstractManager.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Tipo_mov.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\ProductoController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Tipo_prodDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\UnidadDTO.java
@@ -74,6 +78,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Inve
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\dto\NomenclatorDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\model\Page_access.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\conf\interceptors\RequestInterceptor.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Tipo_movManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\InventarioController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\businessLogic\enums\ResultCode.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\conf\spring\PersistenceConfig.java

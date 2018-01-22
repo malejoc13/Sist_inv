@@ -15,6 +15,8 @@ com\frontams\common\util\Constants.class
 com\frontams\persistence\security\service\AccessService.class
 com\frontams\web\api\ProveedorController.class
 com\frontams\common\enums\RoleEnum.class
+com\frontams\persistence\manager\Tipo_movManager.class
+com\frontams\web\api\Tipo_movController.class
 com\frontams\persistence\model\Tipo_prod.class
 com\frontams\businessLogic\enums\FeeAllocatorEnum.class
 com\frontams\persistence\security\model\User.class
@@ -23,6 +25,7 @@ com\frontams\persistence\dto\InventarioReportDTO.class
 com\frontams\persistence\security\dao\RoleDAO.class
 com\frontams\common\manager\AbstractManager.class
 com\frontams\businessLogic\TransactionService.class
+com\frontams\persistence\model\Tipo_mov.class
 com\frontams\persistence\security\dto\RolePage_accessDTO.class
 com\frontams\persistence\dao\InventarioDAO.class
 com\frontams\persistence\security\dao\Page_accessDAO.class
@@ -56,6 +59,7 @@ com\frontams\conf\spring\PersistenceConfig$1.class
 com\frontams\persistence\dto\Tipo_prodDTO.class
 com\frontams\web\api\UnidadController.class
 com\frontams\businessLogic\enums\Param.class
+com\frontams\persistence\dao\Tipo_movDAO.class
 com\frontams\persistence\dao\Tipo_prodDAO.class
 com\frontams\persistence\security\model\Page_access.class
 com\frontams\web\api\Un_medidaController.class
@@ -90,5 +94,6 @@ com\frontams\persistence\manager\UnidadManager.class
 com\frontams\persistence\dto\ProveedorDTO.class
 com\frontams\persistence\dto\Un_medidaDTO.class
 com\frontams\persistence\dto\chart\PieChartPoint.class
+com\frontams\persistence\dto\Tipo_movDTO.class
 com\frontams\common\model\BaseEntity.class
 com\frontams\web\security\Page_accessController.class
