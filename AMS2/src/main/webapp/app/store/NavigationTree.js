@@ -67,10 +67,42 @@ Ext.define('Admin.store.NavigationTree', {
                 leaf: true
             },
             {
+                text: 'Movimientos',
+                iconCls: 'x-fa fa-exchange',
+                expanded: false,
+                selectable: false,
+                children: [
+                    {
+                        text: 'Entradas',
+                        iconCls: 'x-fa fa-arrow-circle-o-right',
+                        viewType: 'entradas',
+                        leaf: true
+                    },
+                    {
+                        text: 'Salidas',
+                        iconCls: 'x-fa fa-arrow-circle-o-left',
+                        viewType: 'proveedores',
+                        leaf: true
+                    },
+                    {
+                        text: 'Transferencias',
+                        iconCls: 'x-fa fa-arrows',
+                        viewType: 'tipo_prods',
+                        leaf: true
+                    },
+                    {
+                        text: 'Ajustes',
+                        iconCls: 'x-fa fa-random',
+                        viewType: 'un_medidas',
+                        leaf: true
+                    }
+                ]
+            },
+            {
                 text: 'Nomencladores',
                 iconCls: 'x-fa fa-leanpub',
                 expanded: false,
-                selectable: false,//                
+                selectable: false,                
                 children: [
                     {
                         text: 'Unidades',
@@ -91,7 +123,7 @@ Ext.define('Admin.store.NavigationTree', {
                         leaf: true
                     },
                     {
-                        text: 'Unidadeds de medidas',
+                        text: 'Unidades de medidas',
                         iconCls: 'x-fa fa-underline',
                         viewType: 'un_medidas',
                         leaf: true
