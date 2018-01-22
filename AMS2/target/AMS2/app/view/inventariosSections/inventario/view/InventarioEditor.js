@@ -36,7 +36,7 @@
                 {
                     fieldLabel: 'Saldo inicial',                  
                     name: 'saldo_ini',
-                    xtype: 'baseIntegerField',                    
+                    xtype: 'baseDoubleField',                    
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio',
                     disabledOnEdit:true,
@@ -73,7 +73,7 @@
                 {
                     fieldLabel: 'Cantidad',                  
                     name: 'cantidad',
-                    xtype: 'baseIntegerField',                    
+                    xtype: 'baseDoubleField',                    
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio',
                     disabledOnCreate: true,

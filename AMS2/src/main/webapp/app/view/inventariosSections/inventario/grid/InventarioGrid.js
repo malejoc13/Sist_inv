@@ -26,13 +26,13 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
             {
                 text: "Saldo inicial",
                 dataIndex: 'saldo_ini',
-                filterType: 'filterInteger',
+                filterType: 'filterNumber',
                 width: '10%'
             },
             {
                 text: "Cantidad",
                 dataIndex: 'cantidad',
-                filterType: 'filterInteger',
+                filterType: 'filterNumber',
                 width: '10%'
             },
             {

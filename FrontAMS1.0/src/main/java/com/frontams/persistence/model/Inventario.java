@@ -43,9 +43,9 @@ public class Inventario extends BaseEntity{
     @Generated(GenerationTime.INSERT)
     private Long id;
     
-    private Integer cantidad;
+    private Double cantidad;
     
-    private Integer saldo_ini;
+    private Double saldo_ini;
     
     private Date fecha_ini;
     
@@ -77,28 +77,28 @@ public class Inventario extends BaseEntity{
     /**
      * @return the cantidad
      */
-    public Integer getCantidad() {
+    public Double getCantidad() {
         return cantidad;
     }
 
     /**
      * @param cantidad the cantidad to set
      */
-    public void setCantidad(Integer cantidad) {
+    public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
 
     /**
      * @return the saldo_ini
      */
-    public Integer getSaldo_ini() {
+    public Double getSaldo_ini() {
         return saldo_ini;
     }
 
     /**
      * @param saldo_ini the saldo_ini to set
      */
-    public void setSaldo_ini(Integer saldo_ini) {
+    public void setSaldo_ini(Double saldo_ini) {
         this.saldo_ini = saldo_ini;
     }
 
