@@ -72,6 +72,9 @@ public class Producto extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
     private List<Inventario> inventario;
     
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
+    private List<Mov_prod> mov_prod;
+    
      /**
      * @return the id
      */
@@ -238,6 +241,20 @@ public class Producto extends BaseEntity {
      */
     public void setInventario(List<Inventario> inventario) {
         this.inventario = inventario;
+    }
+
+    /**
+     * @return the mov_prod
+     */
+    public List<Mov_prod> getMov_prod() {
+        return mov_prod;
+    }
+
+    /**
+     * @param mov_prod the mov_prod to set
+     */
+    public void setMov_prod(List<Mov_prod> mov_prod) {
+        this.mov_prod = mov_prod;
     }
     
     

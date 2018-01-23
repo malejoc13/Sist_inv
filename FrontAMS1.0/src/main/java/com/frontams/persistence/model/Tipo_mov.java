@@ -44,6 +44,9 @@ public class Tipo_mov extends BaseEntity{
     private String name;
     
     private String descripcion;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tipo_mov")
+    private List<Movimiento> movimiento;
 
     /**
      * @return the id
@@ -85,6 +88,20 @@ public class Tipo_mov extends BaseEntity{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the movimiento
+     */
+    public List<Movimiento> getMovimiento() {
+        return movimiento;
+    }
+
+    /**
+     * @param movimiento the movimiento to set
+     */
+    public void setMovimiento(List<Movimiento> movimiento) {
+        this.movimiento = movimiento;
     }
     
 }

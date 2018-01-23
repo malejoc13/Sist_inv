@@ -52,11 +52,11 @@ public class Tipo_movManager extends AbstractManager<Tipo_mov, Tipo_movDTO>{
     
      @Override
     protected boolean inUse(Tipo_mov entity) { 
-//        if (entity.getProductos().isEmpty()) {
-//             return false;
-//        }
+        if (entity.getMovimiento().isEmpty()) {
+             return false;
+        }
         System.out.println("lista llena...");
-        return false;
+        return true;
     }
     
      @Override
