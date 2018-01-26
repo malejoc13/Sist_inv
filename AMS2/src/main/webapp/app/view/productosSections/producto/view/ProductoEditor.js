@@ -100,8 +100,7 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio',
-                    //queryParam : 'params'
+                    blankText : 'Este campo es obligatorio'
                 },
                 {
                     xtype: 'idField'//para en caso de modificar ahi se va a guardar el ID

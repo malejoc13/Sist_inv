@@ -21,7 +21,11 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 text: "Producto",
                 dataIndex: 'producto',
                 filter: 'producto.name',
-                width: '25%'
+                width: '25%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="' + record.get('descripcion') + '"';
+                    return value;
+                }
             },
             {
                 text: "Saldo inicial",

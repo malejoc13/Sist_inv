@@ -28,6 +28,7 @@ public class InventarioDTO implements Serializable{
     private Date fecha;
     
     private String producto;
+    private String descripcion;
     private String productoClave;
     private Long productoId;
     
@@ -172,6 +173,20 @@ public class InventarioDTO implements Serializable{
      */
     public void setProductoClave(String productoClave) {
         this.productoClave = productoClave;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

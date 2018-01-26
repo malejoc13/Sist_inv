@@ -81,19 +81,19 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: 'Salidas',
                         iconCls: 'x-fa fa-arrow-circle-o-left',
-                        viewType: 'proveedores',
+                        viewType: 'salidas',
                         leaf: true
                     },
                     {
                         text: 'Transferencias',
                         iconCls: 'x-fa fa-arrows',
-                        viewType: 'tipo_prods',
+                        viewType: 'transferencias',
                         leaf: true
                     },
                     {
                         text: 'Ajustes',
                         iconCls: 'x-fa fa-random',
-                        viewType: 'un_medidas',
+                        viewType: 'ajustes',
                         leaf: true
                     }
                 ]
