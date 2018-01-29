@@ -133,13 +133,13 @@ Ext.define('Admin.store.NavigationTree', {
                         iconCls: 'x-fa fa-folder-open-o',
                         viewType: 'productos',
                         leaf: true
-                    },
+                    }/*,
                     {
                         text: 'Tipos de movimientos',
                         iconCls: 'x-fa fa-list-ul',
                         viewType: 'tipo_movs',
                         leaf: true
-                    }
+                    }*/
                 ]
             },
             {

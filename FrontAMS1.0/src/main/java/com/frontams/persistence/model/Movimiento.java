@@ -46,9 +46,11 @@ public class Movimiento extends BaseEntity{
     
     private Date fecha;
     
-    @ManyToOne
-    @JoinColumn(name = "tipo_mov")
-    private Tipo_mov tipo_mov;
+    private Integer tipo_mov;
+    
+//    @ManyToOne
+//    @JoinColumn(name = "tipo_mov")
+//    private Tipo_mov tipo_mov;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "movimiento")
     private List<Mov_prod> mov_prod;
@@ -96,20 +98,6 @@ public class Movimiento extends BaseEntity{
     }
 
     /**
-     * @return the tipo_mov
-     */
-    public Tipo_mov getTipo_mov() {
-        return tipo_mov;
-    }
-
-    /**
-     * @param tipo_mov the tipo_mov to set
-     */
-    public void setTipo_mov(Tipo_mov tipo_mov) {
-        this.tipo_mov = tipo_mov;
-    }
-
-    /**
      * @return the mov_prod
      */
     public List<Mov_prod> getMov_prod() {
@@ -121,6 +109,20 @@ public class Movimiento extends BaseEntity{
      */
     public void setMov_prod(List<Mov_prod> mov_prod) {
         this.mov_prod = mov_prod;
+    }
+
+    /**
+     * @return the tipo_mov
+     */
+    public Integer getTipo_mov() {
+        return tipo_mov;
+    }
+
+    /**
+     * @param tipo_mov the tipo_mov to set
+     */
+    public void setTipo_mov(Integer tipo_mov) {
+        this.tipo_mov = tipo_mov;
     }
     
     

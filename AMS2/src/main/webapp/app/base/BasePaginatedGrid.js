@@ -26,9 +26,6 @@ Ext.define('Admin.base.BasePaginatedGrid', {
         borderStyle: 'solid',
         borderWidth: '1px'
     },
-//    selModel: {
-//        selType: 'checkboxmodel'
-//    },
     constructor: function (config) {
         var me = this;
         Ext.apply(me, config);

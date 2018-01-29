@@ -21,8 +21,8 @@ public class MovimientoDTO implements Serializable{
     
     private Date fecha;
     
-    private String tipo_mov;
-    private Long tipo_movId;
+    /*1 Entrada 2 Salida 3 Transferencia*/
+    private Integer tipo_mov;
 
     /**
      * @return the id
@@ -69,31 +69,15 @@ public class MovimientoDTO implements Serializable{
     /**
      * @return the tipo_mov
      */
-    public String getTipo_mov() {
+    public Integer getTipo_mov() {
         return tipo_mov;
     }
 
     /**
      * @param tipo_mov the tipo_mov to set
      */
-    public void setTipo_mov(String tipo_mov) {
+    public void setTipo_mov(Integer tipo_mov) {
         this.tipo_mov = tipo_mov;
     }
-
-    /**
-     * @return the tipo_movId
-     */
-    public Long getTipo_movId() {
-        return tipo_movId;
-    }
-
-    /**
-     * @param tipo_movId the tipo_movId to set
-     */
-    public void setTipo_movId(Long tipo_movId) {
-        this.tipo_movId = tipo_movId;
-    }
-    
-    
     
 }

@@ -3,6 +3,19 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
     alias: 'widget.inventarioGrid',
     height: '100%',
     storeClass: 'Admin.base.BaseStore20',
+    viewConfig: {
+        loadingText: 'Cargando...', 
+        getRowClass: function(record) { 
+            var me = this;
+            if (record.get('cantidad') < me.up().getLimit(record.get('saldo_ini'))) {
+               return 'warning-row'; 
+            }
+            if (record.get('cantidad') === record.get('saldo_ini')) {
+                 return 'new-row';
+            }
+            return ''; 
+        } 
+    },
     columns: {
         defaults: {
             align: 'center'
@@ -77,6 +90,31 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
             }
         });
         return searchParams;
+    },
+    getLimit: function(ini) {
+        
+        if (ini >= 5 && ini <= 9) {
+            return ini/2; //mitad            
+        }        
+        if (ini >= 10 && ini <= 40) {
+            return ini*20/100; //20%            
+        }
+        if (ini >= 41 && ini <= 50) {
+            return ini*15/100; //15%            
+        }
+        if (ini >= 51 && ini <= 110) {
+            return ini*10/100; //10%            
+        }
+        if (ini >= 111 && ini <= 300) {
+            return ini*5/100; //5%            
+        }
+        if (ini >= 301 && ini <= 1000) {
+            return ini*2/100; //2%            
+        } 
+        if (ini >= 1001) {
+            return ini/100; //1%            
+        }
+        return ini;//cuando es menos que 5
     }
 });
 
