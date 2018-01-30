@@ -45,7 +45,8 @@ public class Un_medidaManager extends AbstractManager<Un_medida, Un_medidaDTO>{
     @Override
     protected void update(Un_medida entity, Map<String, Object> data) { 
         entity.setNombre_um((String) data.get("nombre_um"));
-        entity.setDescipcion_um((String) data.get("descipcion_um"));        
+        entity.setDescipcion_um((String) data.get("descipcion_um"));
+        entity.setClave((String) data.get("clave"));
     }
     
     @Override

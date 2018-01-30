@@ -57,6 +57,7 @@ com\frontams\persistence\manager\MovimientoManager.class
 com\frontams\conf\spring\PersistenceConfig$1.class
 com\frontams\persistence\dto\Tipo_prodDTO.class
 com\frontams\web\api\UnidadController.class
+com\frontams\businessLogic\enums\Tipo_movEnum.class
 com\frontams\persistence\dao\Tipo_movDAO.class
 com\frontams\persistence\dao\Tipo_prodDAO.class
 com\frontams\persistence\security\model\Page_access.class

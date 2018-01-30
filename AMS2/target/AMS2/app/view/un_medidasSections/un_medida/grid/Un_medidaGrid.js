@@ -12,10 +12,16 @@ Ext.define('Admin.view.un_medidasSections.un_medida.grid.Un_medidaGrid', {
                 xtype: 'idGridColumn'
             },
             {
+                text: "Clave",
+                dataIndex: 'clave',
+                filterType: 'filterText',
+                width: '10%'
+            }, 
+            {
                 text: "Nombre",
                 dataIndex: 'nombre_um',
                 filterType: 'filterText',
-                width: '30%'
+                width: '20%'
             },            
             {
                 text: "Descripci&oacute;n",

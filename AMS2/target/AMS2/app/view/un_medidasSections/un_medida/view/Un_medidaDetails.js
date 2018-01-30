@@ -12,6 +12,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaDetails', {
                 '<div style="padding:20px">',
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
+                        '<td><b>Clave: </b> {clave}</td>',
                         '<td><b>Nombre: </b> {nombre_um}</td>',
                     '</tr>',                                        
                 '</table>',

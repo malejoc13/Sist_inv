@@ -21,6 +21,8 @@ public class Un_medidaDTO implements Serializable{
     private String nombre_um;
 
     private String descipcion_um;
+    
+    private String clave;
 
     /**
      * @return the id
@@ -62,6 +64,20 @@ public class Un_medidaDTO implements Serializable{
      */
     public void setDescipcion_um(String descipcion_um) {
         this.descipcion_um = descipcion_um;
+    }
+
+    /**
+     * @return the clave
+     */
+    public String getClave() {
+        return clave;
+    }
+
+    /**
+     * @param clave the clave to set
+     */
+    public void setClave(String clave) {
+        this.clave = clave;
     }
     
     

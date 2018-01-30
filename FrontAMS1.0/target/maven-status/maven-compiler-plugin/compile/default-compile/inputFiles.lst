@@ -8,6 +8,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\RoleCon
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\Page_accessManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\SecurityController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\InventarioReportManager.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\businessLogic\enums\Tipo_movEnum.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\InventarioReportDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\ProveedorDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\UnidadController.java

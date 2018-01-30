@@ -47,6 +47,8 @@ public class Un_medida extends BaseEntity {
     private String nombre_um;
 
     private String descipcion_um;
+    
+    private String clave;
 
    @OneToMany(fetch = FetchType.LAZY, mappedBy = "un_medida")
     private List<Producto> productos;
@@ -101,6 +103,20 @@ public class Un_medida extends BaseEntity {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the clave
+     */
+    public String getClave() {
+        return clave;
+    }
+
+    /**
+     * @param clave the clave to set
+     */
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
 }

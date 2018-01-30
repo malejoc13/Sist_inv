@@ -4,7 +4,14 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaEditor', {
     items: [
         {
             width: "50%",
-            items: [                
+            items: [  
+                {
+                    xtype     : 'baseTextField',
+                    fieldLabel: 'Clave',
+                    name: 'clave',
+                    allowBlank : false,
+                    blankText : 'Este campo es obligatorio'
+                },
                 {
                     xtype     : 'baseTextField',
                     fieldLabel: 'Nombre',

@@ -36,7 +36,8 @@ public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("nombre_um").as("nombre_um"))
-                .add(Projections.property("descipcion_um").as("descipcion_um"));
+                .add(Projections.property("descipcion_um").as("descipcion_um"))
+                .add(Projections.property("clave").as("clave"));
          
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(Un_medidaDTO.class));
