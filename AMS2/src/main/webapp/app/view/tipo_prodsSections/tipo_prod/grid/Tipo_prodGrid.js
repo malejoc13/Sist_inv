@@ -5,7 +5,7 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.grid.Tipo_prodGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

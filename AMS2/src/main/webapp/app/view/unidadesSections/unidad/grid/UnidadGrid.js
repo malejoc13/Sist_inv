@@ -5,7 +5,7 @@ Ext.define('Admin.view.unidadesSections.unidad.grid.UnidadGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

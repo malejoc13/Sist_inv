@@ -6,7 +6,7 @@ Ext.define('Admin.view.proveedoresSections.proveedor.grid.ProveedorGrid', {
     columns: {
         defaults: {
             width: '30%',
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

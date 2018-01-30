@@ -5,7 +5,7 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

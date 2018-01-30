@@ -19,6 +19,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
@@ -53,5 +54,12 @@ public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
                 .setResultTransformer(Transformers.aliasToBean(NomenclatorDTO.class));
 
     }
+    
+    public Boolean exist(String clave) {
+        return buildCriteria()
+                .add(Restrictions.eq("clave", clave))                
+                .setMaxResults(1)
+                .uniqueResult() != null;
+    } 
     
 }

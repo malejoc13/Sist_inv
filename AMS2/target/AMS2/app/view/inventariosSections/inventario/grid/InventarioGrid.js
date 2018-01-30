@@ -18,7 +18,7 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
     },
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

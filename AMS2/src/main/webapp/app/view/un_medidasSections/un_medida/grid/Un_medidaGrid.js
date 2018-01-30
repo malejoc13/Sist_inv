@@ -5,7 +5,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.grid.Un_medidaGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

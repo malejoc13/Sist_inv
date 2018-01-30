@@ -5,7 +5,7 @@ Ext.define('Admin.view.tipo_movsSection.tipo_mov.grid.Tipo_movGrid', {
     storeClass: 'Admin.base.BaseStore20',
     columns: {
         defaults: {
-            align: 'center'
+            align: 'left'
         },
         items: [
             {

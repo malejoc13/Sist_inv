@@ -37,13 +37,21 @@ public class Un_medidaManager extends AbstractManager<Un_medida, Un_medidaDTO>{
     @Override
     protected Un_medida create(Map<String, Object> data) throws Exception {
         Un_medida um = new Un_medida(); 
-        update(um, data);
-
+        if (um_DAO.exist((String) data.get("clave"))) {
+             throw new RuntimeException("Ya existe una Unidad de medida con esta clave");
+        } else {
+            update(um, data);
+        }
         return um;
     }
 
     @Override
     protected void update(Un_medida entity, Map<String, Object> data) { 
+        if (entity.getClave() != null) {
+            if (um_DAO.exist((String) data.get("clave")) && entity.getClave() != (String) data.get("clave")) {
+                 throw new RuntimeException("Ya existe una Unidad de medida con esta clave");
+            }
+        }
         entity.setNombre_um((String) data.get("nombre_um"));
         entity.setDescipcion_um((String) data.get("descipcion_um"));
         entity.setClave((String) data.get("clave"));
