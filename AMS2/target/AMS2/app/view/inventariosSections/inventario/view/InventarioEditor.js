@@ -27,7 +27,13 @@
                     emptyText : "Seleccione...",
                     editable : false,
                     blankText : 'Este campo es obligatorio',
-                    disabledOnEdit: true
+                    disabledOnEdit: true,
+                    listConfig : ({
+                    loadingText: 'Cargando...',
+                    getInnerTpl: function() {
+                            return '<div data-qtip="{name}">({clave}) {name}</div>';
+                        }
+                  })
                 }        
             ]
         },

@@ -30,6 +30,7 @@ public class InventarioDTO implements Serializable{
     private String producto;
     private String descripcion;
     private String productoClave;
+    private String productoClaveSat;
     private Long productoId;
     
     private String unidad;
@@ -187,6 +188,20 @@ public class InventarioDTO implements Serializable{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the productoClaveSat
+     */
+    public String getProductoClaveSat() {
+        return productoClaveSat;
+    }
+
+    /**
+     * @param productoClaveSat the productoClaveSat to set
+     */
+    public void setProductoClaveSat(String productoClaveSat) {
+        this.productoClaveSat = productoClaveSat;
     }
     
     

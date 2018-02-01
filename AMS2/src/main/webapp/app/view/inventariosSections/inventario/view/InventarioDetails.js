@@ -13,7 +13,7 @@ Ext.define('Admin.view.inventariosSections.inventario.view.InventarioDetails', {
                 '<div style="padding:20px">',
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
-                        '<td><b>Nombre: </b> {producto}</td>', 
+                        '<td><b>Nombre: </b>({productoClave}) {producto}</td>', 
                         '<td><b>Saldo inicial: </b> {saldo_ini}</td>',
                         '<td><b>Cantidad: </b> {cantidad}</td>', 
                     '</tr>',
