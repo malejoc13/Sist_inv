@@ -23,7 +23,9 @@ public class ProductoDTO implements Serializable{
     
     private String name;
     
-     private String clave;
+    private String clave;
+     
+    private String clave_sat;
 
     private String descripcion;
 
@@ -268,6 +270,20 @@ public class ProductoDTO implements Serializable{
      */
     public void setTipo_prodClave(String tipo_prodClave) {
         this.tipo_prodClave = tipo_prodClave;
+    }
+
+    /**
+     * @return the clave_sat
+     */
+    public String getClave_sat() {
+        return clave_sat;
+    }
+
+    /**
+     * @param clave_sat the clave_sat to set
+     */
+    public void setClave_sat(String clave_sat) {
+        this.clave_sat = clave_sat;
     }
     
     

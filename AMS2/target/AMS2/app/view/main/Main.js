@@ -94,8 +94,7 @@ Ext.define('Admin.view.main.Main', {
                     cls: 'header-right-profile-image',
                     height: 35,
                     width: 35,
-                    alt:'current user image',
-                    src: 'resources/images/user-profile/X.jpg'
+                    alt:'current user image'
                 }
             ]
         },

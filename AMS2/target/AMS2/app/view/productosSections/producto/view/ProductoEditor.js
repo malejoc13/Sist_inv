@@ -14,6 +14,11 @@
                 },
                 {
                     xtype     : 'baseTextField',
+                    fieldLabel: 'Clave SAT',
+                    name: 'clave_sat'                  
+                },
+                {
+                    xtype     : 'baseTextField',
                     fieldLabel: 'Nombre',
                     name: 'name',//le pongo de nombre el mismo valord el grid para que me lo cargue a la hora de modificar
                     allowBlank : false,
@@ -25,11 +30,6 @@
                     xtype: 'baseDoubleField',                    
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio'
-                },
-                {
-                    xtype     : 'baseTextAreaField',    //DE TIPO TEX AREA YA DEFINIDO EN CMP                
-                    name      : 'descripcion',
-                    fieldLabel: 'Descripci&oacute;n'              
                 }           
             ]
         },
@@ -67,6 +67,11 @@
                                     }
                             }                         
                      }
+                },
+                {
+                    xtype     : 'baseTextAreaField',    //DE TIPO TEX AREA YA DEFINIDO EN CMP                
+                    name      : 'descripcion',
+                    fieldLabel: 'Descripci&oacute;n'              
                 }
             ]
         },

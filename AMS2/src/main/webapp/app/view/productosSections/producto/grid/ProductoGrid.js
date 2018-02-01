@@ -15,7 +15,11 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "Clave",
                 dataIndex: 'clave',
                 filterType: 'filterText',//para cuando fitre sepa qe tipo de datos envia
-                width: '10%'
+                width: '10%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Clave SAT: ' + record.get('clave_sat') + '"';
+                    return value;
+                }
             },
             {
                 text: "Nombre",

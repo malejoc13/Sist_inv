@@ -52,15 +52,24 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
     @Override
     protected Producto create(Map<String, Object> data) throws Exception {
         Producto tp = new Producto(); 
-        update(tp, data);
-
+        if (productoDAO.exist((String) data.get("clave"))) {
+             throw new RuntimeException("Ya existe un Producto con esta clave");
+        } else {
+            update(tp, data);
+        }
         return tp;
     }
 
     @Override
     protected void update(Producto entity, Map<String, Object> data) { 
+        if (entity.getClave() != null) {
+            if (productoDAO.exist((String) data.get("clave")) && !entity.getClave().equals((String) data.get("clave"))) {
+                 throw new RuntimeException("Ya existe un Producto con esta clave");
+            }
+        }
         entity.setName((String) data.get("name"));
         entity.setClave((String) data.get("clave"));
+        entity.setClave_sat((String) data.get("clave_sat"));
         entity.setDescripcion((String) data.get("descripcion"));
         entity.setFecha_alta((Date) data.get("fecha_alta"));
         entity.setPrecio_max((Double) data.get("precio_max"));

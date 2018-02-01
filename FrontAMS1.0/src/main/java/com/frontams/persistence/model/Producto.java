@@ -46,6 +46,8 @@ public class Producto extends BaseEntity {
     private String name;
     
     private String clave;
+    
+    private String clave_sat;
 
     private String descripcion;
 
@@ -255,6 +257,20 @@ public class Producto extends BaseEntity {
      */
     public void setMov_prod(List<Mov_prod> mov_prod) {
         this.mov_prod = mov_prod;
+    }
+
+    /**
+     * @return the clave_sat
+     */
+    public String getClave_sat() {
+        return clave_sat;
+    }
+
+    /**
+     * @param clave_sat the clave_sat to set
+     */
+    public void setClave_sat(String clave_sat) {
+        this.clave_sat = clave_sat;
     }
     
     

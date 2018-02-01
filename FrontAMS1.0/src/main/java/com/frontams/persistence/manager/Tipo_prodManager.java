@@ -41,8 +41,6 @@ public class Tipo_prodManager extends AbstractManager<Tipo_prod, Tipo_prodDTO>{
         } else {
             update(tp, data);
         }
-        update(tp, data);
-
         return tp;
     }
 

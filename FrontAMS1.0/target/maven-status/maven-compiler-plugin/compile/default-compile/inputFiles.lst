@@ -70,6 +70,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\dao\BaseDAO.j
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\MovimientoDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\conf\spring\ServiceConfig.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Tipo_movController.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\dto\NomenclatorClaveDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\RoleDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\Principal.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\InventarioReportController.java

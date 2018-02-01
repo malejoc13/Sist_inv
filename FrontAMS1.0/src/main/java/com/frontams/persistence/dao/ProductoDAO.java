@@ -10,12 +10,14 @@ package com.frontams.persistence.dao;
  * @author Sistemas
  */
 import com.frontams.common.dao.AbstractBaseDAO;
+import com.frontams.common.dto.NomenclatorClaveDTO;
 import com.frontams.persistence.dto.ProductoDTO;  
 import com.frontams.persistence.model.Producto;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
@@ -43,6 +45,7 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
                 .add(Projections.property("id").as("id"))                                                
                 .add(Projections.property("name").as("name"))
                 .add(Projections.property("clave").as("clave"))
+                .add(Projections.property("clave_sat").as("clave_sat"))
                 .add(Projections.property("descripcion").as("descripcion"))
                 .add(Projections.property("fecha_alta").as("fecha_alta"))   
                 .add(Projections.property("precio_max").as("precio_max"))
@@ -59,6 +62,25 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
                                            //alias[.atrib]   //atributo en el DTO
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(ProductoDTO.class));
+    }
+    
+     @Override
+    protected void applyNomenclatorProjection(Criteria criteria) {
+        ProjectionList projectionList = Projections.projectionList()
+                .add(Projections.property("id").as("id"))
+                .add(Projections.property("name").as("name"))
+                .add(Projections.property("clave").as("clave"));
+                                          //atribUM       //atrib Nomencator
+        criteria.setProjection(projectionList)
+                .setResultTransformer(Transformers.aliasToBean(NomenclatorClaveDTO.class));
+
+    }
+    
+    public Boolean exist(String clave) {
+        return getCriteria()
+                .add(Restrictions.eq("clave", clave))                
+                .setMaxResults(1)
+                .uniqueResult() != null;
     }
     
 }
