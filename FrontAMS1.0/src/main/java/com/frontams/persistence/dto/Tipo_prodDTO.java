@@ -19,6 +19,8 @@ public class Tipo_prodDTO implements Serializable{
     private String name;
     
     private String descripcion;
+    
+    private String clave;
 
     /**
      * @return the id
@@ -60,6 +62,20 @@ public class Tipo_prodDTO implements Serializable{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the clave
+     */
+    public String getClave() {
+        return clave;
+    }
+
+    /**
+     * @param clave the clave to set
+     */
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
    

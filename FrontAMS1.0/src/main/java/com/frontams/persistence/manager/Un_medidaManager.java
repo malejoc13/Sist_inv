@@ -53,7 +53,7 @@ public class Un_medidaManager extends AbstractManager<Un_medida, Un_medidaDTO>{
             }
         }
         entity.setNombre_um((String) data.get("nombre_um"));
-        entity.setDescipcion_um((String) data.get("descipcion_um"));
+        entity.setDescripcion((String) data.get("descripcion"));
         entity.setClave((String) data.get("clave"));
     }
     

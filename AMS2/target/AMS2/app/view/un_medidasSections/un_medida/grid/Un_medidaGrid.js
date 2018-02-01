@@ -25,8 +25,9 @@ Ext.define('Admin.view.un_medidasSections.un_medida.grid.Un_medidaGrid', {
             },            
             {
                 text: "Descripci&oacute;n",
-                dataIndex: 'descipcion_um',
+                dataIndex: 'descripcion',
                 filterType: 'filterText',
+                xtype: 'toolTipColumn',
                 width: '69%'
             }
         ]

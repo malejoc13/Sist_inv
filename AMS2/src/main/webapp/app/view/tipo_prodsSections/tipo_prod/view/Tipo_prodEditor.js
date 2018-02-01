@@ -4,7 +4,14 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.view.Tipo_prodEditor', {
     items: [
         {
             width: "50%",
-            items: [                
+            items: [
+                {
+                    xtype     : 'baseTextField',
+                    fieldLabel: 'Clave',
+                    name: 'clave',
+                    allowBlank : false,
+                    blankText : 'Este campo es obligatorio'
+                },
                 {
                     xtype     : 'baseTextField',
                     fieldLabel: 'Nombre',

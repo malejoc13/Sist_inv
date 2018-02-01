@@ -26,7 +26,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaEditor', {
             items: [
                 {
                     xtype     : 'baseTextAreaField',                    
-                    name      : 'descipcion_um',
+                    name      : 'descripcion',
                     fieldLabel: 'Descripci&oacute;n'
                 },
                 {

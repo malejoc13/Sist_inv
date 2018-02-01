@@ -18,7 +18,7 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaDetails', {
                 '</table>',
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',                    
-                        '<td><b>Descripci&oacute;n: </b> {descipcion_um}</td>',                        
+                        '<td><b>Descripci&oacute;n: </b> {descripcion}</td>',                        
                     '</tr>',
                 '</table>',   
                 '<div>'

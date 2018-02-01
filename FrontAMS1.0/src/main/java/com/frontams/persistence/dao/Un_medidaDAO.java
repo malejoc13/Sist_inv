@@ -11,6 +11,7 @@ package com.frontams.persistence.dao;
  */
 
 import com.frontams.common.dao.AbstractBaseDAO;
+import com.frontams.common.dto.NomenclatorClaveDTO;
 import com.frontams.common.dto.NomenclatorDTO;
 import com.frontams.persistence.dto.Un_medidaDTO; 
 import com.frontams.persistence.model.Un_medida;
@@ -37,7 +38,7 @@ public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("nombre_um").as("nombre_um"))
-                .add(Projections.property("descipcion_um").as("descipcion_um"))
+                .add(Projections.property("descripcion").as("descripcion"))
                 .add(Projections.property("clave").as("clave"));
          
         criteria.setProjection(projectionList)
@@ -48,10 +49,11 @@ public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
     protected void applyNomenclatorProjection(Criteria criteria) {
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
-                .add(Projections.property("nombre_um").as("name"));
+                .add(Projections.property("nombre_um").as("name"))
+                .add(Projections.property("clave").as("clave"));
                                           //atribUM       //atrib Nomencator
         criteria.setProjection(projectionList)
-                .setResultTransformer(Transformers.aliasToBean(NomenclatorDTO.class));
+                .setResultTransformer(Transformers.aliasToBean(NomenclatorClaveDTO.class));
 
     }
     

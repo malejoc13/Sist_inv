@@ -5,8 +5,12 @@ Ext.define('Admin.cmp.BaseSelectField', {
     displayField: 'name',
     valueField: 'id',
     labelAlign : "top" ,
-    listConfig : ({loadingText: 'Cargando...'
-                    }),
+    listConfig : ({
+                    loadingText: 'Cargando...',
+                    getInnerTpl: function() {
+                            return '<div data-qtip="{name}">{name}</div>';
+                        }
+                  }),
     url: '',
     prefix: '(L)',
     applyFilter: null, //if true, apply the parent tab's filter

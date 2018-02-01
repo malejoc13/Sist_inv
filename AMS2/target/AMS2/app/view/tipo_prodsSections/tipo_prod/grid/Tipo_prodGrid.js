@@ -12,15 +12,22 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.grid.Tipo_prodGrid', {
                 xtype: 'idGridColumn'
             },
             {
+                text: "Clave",
+                dataIndex: 'clave',
+                filterType: 'filterText',
+                width: '7%'
+            },
+            {
                 text: "Nombre",
                 dataIndex: 'name',
                 filterType: 'filterText',
-                width: '30%'
+                width: '43%'
             },            
             {
                 text: "Descripci&oacute;n",
                 dataIndex: 'descripcion',
                 filterType: 'filterText',
+                xtype: 'toolTipColumn',
                 width: '69%'
             }
         ]

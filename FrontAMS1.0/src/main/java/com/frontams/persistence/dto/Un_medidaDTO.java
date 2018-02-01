@@ -20,7 +20,7 @@ public class Un_medidaDTO implements Serializable{
     
     private String nombre_um;
 
-    private String descipcion_um;
+    private String descripcion;
     
     private String clave;
 
@@ -53,17 +53,17 @@ public class Un_medidaDTO implements Serializable{
     }
 
     /**
-     * @return the descipcion_um
+     * @return the descripcion
      */
-    public String getDescipcion_um() {
-        return descipcion_um;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     /**
-     * @param descipcion_um the descipcion_um to set
+     * @param descripcion the descripcion to set
      */
-    public void setDescipcion_um(String descipcion_um) {
-        this.descipcion_um = descipcion_um;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     /**

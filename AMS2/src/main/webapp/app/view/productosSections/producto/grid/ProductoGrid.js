@@ -51,19 +51,28 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "UM",
                 dataIndex: 'un_medida',
                 filter: 'un_medida.nombre_um',//para cuando valla a filtrar por esa columna ese es el valo que manda como criterio de busqueda
-                width: '5%'
+                width: '8%',  
+                renderer: function(value, metaData, record) {
+                                metaData.tdAttr = 'data-qtip="(' + record.get('un_medidaClave') + ') '+ record.get('un_medida')+'"';
+                                return value;
+                            }
+                
             },
             {
                 text: "Tipo",
                 dataIndex: 'tipo_prod',
                 filter: 'tipo_prod.name',
-                width: '10%'
+                width: '10%',  
+                renderer: function(value, metaData, record) {
+                                metaData.tdAttr = 'data-qtip="(' + record.get('tipo_prodClave') + ') '+ record.get('tipo_prod')+'"';
+                                return value;
+                            }
             },
             {
                 text: "Proveedor",
                 dataIndex: 'proveedor',
                 filter: 'proveedor.name',
-                width: '21%'
+                width: '30%'
             }
         ]
     }

@@ -12,6 +12,7 @@ Ext.define('Admin.view.tipo_prodsSection.tipo_prod.view.Tipo_prodDetails', {
                 '<div style="padding:20px">',
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
+                        '<td><b>Clave: </b> {clave}</td>',
                         '<td><b>Nombre: </b> {name}</td>',
                     '</tr>',
                 '</table>',

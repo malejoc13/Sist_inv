@@ -80,8 +80,14 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'
-                 },
+                    blankText : 'Este campo es obligatorio',
+                    listConfig : ({
+                    loadingText: 'Cargando...',
+                    getInnerTpl: function() {
+                            return '<div data-qtip="{name}">({clave}) {name}</div>';
+                        }
+                  })
+                },
                 {
                     fieldLabel: 'Tipo de producto',
                     xtype: 'baseSelectField',
@@ -90,7 +96,13 @@
                     allowBlank : false,                    
                     emptyText : "Seleccione...",
                     editable : false,
-                    blankText : 'Este campo es obligatorio'
+                    blankText : 'Este campo es obligatorio',
+                    listConfig : ({
+                    loadingText: 'Cargando...',
+                    getInnerTpl: function() {
+                            return '<div data-qtip="{name}">({clave}) {name}</div>';
+                        }
+                  })                 
                 },
                 {
                     fieldLabel: 'Proveedor',

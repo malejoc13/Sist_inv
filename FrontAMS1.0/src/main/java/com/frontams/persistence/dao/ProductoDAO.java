@@ -52,8 +52,10 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
                 .add(Projections.property("proveedor.id").as("proveedorId"))
                 .add(Projections.property("un_medida.nombre_um").as("un_medida"))
                 .add(Projections.property("un_medida.id").as("un_medidaId"))
+                .add(Projections.property("un_medida.clave").as("un_medidaClave"))
                 .add(Projections.property("tipo_prod.name").as("tipo_prod"))
-                .add(Projections.property("tipo_prod.id").as("tipo_prodId"));
+                .add(Projections.property("tipo_prod.id").as("tipo_prodId"))
+                .add(Projections.property("tipo_prod.clave").as("tipo_prodClave"));
                                            //alias[.atrib]   //atributo en el DTO
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(ProductoDTO.class));

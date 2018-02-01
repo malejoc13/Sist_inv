@@ -37,12 +37,14 @@ public class ProductoDTO implements Serializable{
     //atributos de las clases con que se relaciona
     private String un_medida;
     private Long un_medidaId;
+    private String un_medidaClave;
     
     private String tipo_prod;
     private Long tipo_prodId;
     
     private String proveedor;
     private Long proveedorId;
+    private String tipo_prodClave;
 
     /**
      * @return the id
@@ -238,6 +240,34 @@ public class ProductoDTO implements Serializable{
      */
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    /**
+     * @return the un_medidaClave
+     */
+    public String getUn_medidaClave() {
+        return un_medidaClave;
+    }
+
+    /**
+     * @param un_medidaClave the un_medidaClave to set
+     */
+    public void setUn_medidaClave(String un_medidaClave) {
+        this.un_medidaClave = un_medidaClave;
+    }
+
+    /**
+     * @return the tipo_prodClave
+     */
+    public String getTipo_prodClave() {
+        return tipo_prodClave;
+    }
+
+    /**
+     * @param tipo_prodClave the tipo_prodClave to set
+     */
+    public void setTipo_prodClave(String tipo_prodClave) {
+        this.tipo_prodClave = tipo_prodClave;
     }
     
     
