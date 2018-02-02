@@ -4,7 +4,8 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="nombre_um" class="java.lang.String"/>
-	<field name="descipcion_um" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="clave" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -43,30 +44,41 @@
 				<reportElement x="0" y="20" width="572" height="24" forecolor="#6699FF" backcolor="#6699FF" uuid="dcdd022a-f819-433f-aa31-657be0d4ed92"/>
 			</rectangle>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="20" width="272" height="24" forecolor="#F0F0F0" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
+				<reportElement mode="Transparent" x="67" y="20" width="163" height="24" forecolor="#F0F0F0" uuid="6b6e40c9-8f76-46c5-b8a0-9ae74babf95f"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ Nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="272" y="20" width="300" height="24" forecolor="#F0F0F0" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
+				<reportElement mode="Transparent" x="230" y="20" width="342" height="24" forecolor="#F0F0F0" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="20" width="67" height="24" forecolor="#F0F0F0" uuid="6fbbf704-d354-4cfa-a91f-1b6c72e39f7a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Clave]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="22" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="272" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
+				<reportElement x="67" y="0" width="163" height="20" uuid="09c3e49f-9466-43f1-8397-0807f9dd240b"/>
 				<textFieldExpression><![CDATA[$F{nombre_um}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="272" y="0" width="300" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
-				<textFieldExpression><![CDATA[$F{descipcion_um}]]></textFieldExpression>
+				<reportElement x="230" y="0" width="342" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="67" height="20" uuid="a58bf914-cb03-42c9-bc95-da9232c943a3"/>
+				<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
