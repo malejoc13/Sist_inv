@@ -20,7 +20,7 @@ public class InventarioReportDTO implements Serializable{
     
     private Long id;
     
-    private Integer cantidad; 
+    private Double cantidad; 
     
     private String producto;
     private String productoClave;
@@ -45,19 +45,6 @@ public class InventarioReportDTO implements Serializable{
         this.id = id;
     }
 
-    /**
-     * @return the cantidad
-     */
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    /**
-     * @param cantidad the cantidad to set
-     */
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
-    }
 
     /**
      * @return the producto
@@ -141,6 +128,20 @@ public class InventarioReportDTO implements Serializable{
      */
     public void setUnidadId(Long unidadId) {
         this.unidadId = unidadId;
+    }
+
+    /**
+     * @return the cantidad
+     */
+    public Double getCantidad() {
+        return cantidad;
+    }
+
+    /**
+     * @param cantidad the cantidad to set
+     */
+    public void setCantidad(Double cantidad) {
+        this.cantidad = cantidad;
     }
     
     
