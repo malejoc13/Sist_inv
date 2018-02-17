@@ -15,8 +15,8 @@ Ext.define('Admin.cmp.toolbar.ReportButton', {
                     url = "/AMS/report/" + entity + "_r.htm?params=" + params;
             if (params) {
                var total = grid.getStore().totalCount;
-            if (total > 50) {
-                if (confirm('Est&aacute; a punto de generar un reporte de m&aacute;s de  ' + total + ' registros, desea continuar?')) {
+            if (total > 500) {
+                if (confirm('Está a punto de generar un reporte de m&aacute;s de  ' + total + ' registros, desea continuar?')) {
                     window.open(url, 'window', 'HEIGHT=660,resizable=yes,scrollbars=yes,WIDTH=900,target="blank_"');
                 }
             } else {

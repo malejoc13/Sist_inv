@@ -87,7 +87,7 @@
                           saldoIni =  this.up().up().getForm().findField ( 'saldo_ini' ).getValue();
                           //Ext.Msg.alert('Informaci&oacute;n', saldoIni);
                             if (val){
-                                    if (parseInt(val) <= saldoIni) {           
+                                    if (parseFloat(val) <= saldoIni) {           
                                         return true;
                                     }else{
                                          return "La cantidad debe ser menor o igual al Saldo inicial";
