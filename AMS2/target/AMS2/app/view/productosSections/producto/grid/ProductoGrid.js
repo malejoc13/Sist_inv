@@ -35,12 +35,12 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 filterType: 'filterDate',
                 width: '12%'
             },
-            {
-                text: "Precio costo",
-                dataIndex: 'precio_costo',
-                filterType: 'filterNumber',
-                width: '10%'
-            },
+//            {
+//                text: "Precio costo",
+//                dataIndex: 'precio_costo',
+//                filterType: 'filterNumber',
+//                width: '10%'
+//            },
             {
                 text: "Precio",
                 dataIndex: 'precio_max',
@@ -66,7 +66,7 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "Tipo",
                 dataIndex: 'tipo_prod',
                 filter: 'tipo_prod.name',
-                width: '10%',  
+                width: '20%',  
                 renderer: function(value, metaData, record) {
                                 metaData.tdAttr = 'data-qtip="(' + record.get('tipo_prodClave') + ') '+ record.get('tipo_prod')+'"';
                                 return value;
@@ -76,7 +76,11 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "Proveedor",
                 dataIndex: 'proveedor',
                 filter: 'proveedor.name',
-                width: '30%'
+                width: '30%',  
+                renderer: function(value, metaData, record) {
+                                metaData.tdAttr = 'data-qtip="' + record.get('proveedor') + '"';
+                                return value;
+                            }
             }
         ]
     }

@@ -10,7 +10,7 @@ Ext.define('Admin.view.authentication.Login', {
         'Ext.button.Button'
     ],
 
-    title: 'JURAMICUA PURE S.C.',
+    title: 'CONSTRUCTORA JURAMICUA P'+"'"+'URE S.C. / MATERIALES PARA CONSTRUCCIÒN Y RENTA DE MAQUINARIA LOS COMPADRES',
     defaultFocus: 'authdialog', // Focus the Auth Form to force field focus as well
     // controller: 'authentication',
     items: [

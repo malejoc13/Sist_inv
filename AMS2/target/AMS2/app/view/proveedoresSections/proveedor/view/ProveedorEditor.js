@@ -45,7 +45,7 @@ Ext.define('Admin.view.proveedoresSections.proveedor.view.ProveedorEditor', {
                     xtype: 'baseTextField',
                     fieldLabel: 'Email',                  
                     name: 'email',
-                    regex : /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/,//solo email
+                    regex : /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\._-]{2,})\.([a-z]{2,3})$/,//solo email
                     regexText : "Solo se permiten direcciones de correo v&aacute;lidos"                 
                 },
                 {

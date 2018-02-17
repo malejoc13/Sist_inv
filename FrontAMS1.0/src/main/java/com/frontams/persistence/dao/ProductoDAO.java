@@ -35,7 +35,7 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
 
     //criterio para ordenar
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("name"));
+        criteria.addOrder(Order.asc("clave"));
     } 
 
     //campos a devolver en la consulta

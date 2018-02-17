@@ -8,7 +8,7 @@ Ext.define('Admin.store.NavigationTree', {
     custom: function () {
         var me = this; 
         me.getRootNode().removeAll();
-        if (!Session.Principal.accessAll) {
+        //if (!Session.Principal.accessAll) {
 
             me.config.children.forEach(function (node) {
 
@@ -31,11 +31,11 @@ Ext.define('Admin.store.NavigationTree', {
                     }
                 }
             });
-        }else{
-            me.config.children.forEach(function (node) {
-                me.getRootNode().appendChild(node);
-            });
-        }   
+//        }else{
+//            me.config.children.forEach(function (node) {
+//                me.getRootNode().appendChild(node);
+//            });
+//        }   
     },
     hasAccess: function (node) {
         var Principal = Session.Principal,

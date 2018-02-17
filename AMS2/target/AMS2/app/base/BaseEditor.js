@@ -45,6 +45,7 @@ Ext.define('Admin.base.BaseEditor', {
         {
             text: 'Aceptar',           
             ui: 'green',
+            formBind: true,
             handler: function () {
                 var me = this,
                     editor = me.up().up(),

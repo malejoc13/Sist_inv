@@ -23,14 +23,14 @@
                     name: 'name',//le pongo de nombre el mismo valord el grid para que me lo cargue a la hora de modificar
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio'                    
-                },
-                {
-                    fieldLabel: 'Precio costo',                  
-                    name: 'precio_costo',
-                    xtype: 'baseDoubleField',                    
-                    allowBlank : false,
-                    blankText : 'Este campo es obligatorio'
-                }           
+                }//,
+//                {
+//                    fieldLabel: 'Precio costo',                  
+//                    name: 'precio_costo',
+//                    xtype: 'baseDoubleField',                    
+//                    allowBlank : false,
+//                    blankText : 'Este campo es obligatorio'
+//                }           
             ]
         },
         {

@@ -48,35 +48,35 @@ Ext.define('Admin.view.main.Main', {
                  '->',
                  {//nombre empresa
                     xtype: 'component',
-                    html: '<h1 class="sencha-company">JURAMICUA PURE S.C.</h1>'
+                    html: '<h1 class="sencha-company">JURAMICUA P'+"'"+'URE S.C.</h1>'
                 },
-                {
-                    iconCls:'x-fa fa-search',
-                    ui: 'header',
-                    //href: '#searchresults',
-                    hrefTarget: '_self',
-                    tooltip: 'See latest search'
-                },
-                {
-                    iconCls:'x-fa fa-envelope',
-                    ui: 'header',
-                    //href: '#email',
-                    hrefTarget: '_self',
-                    tooltip: 'Check your email'
-                },
-                {
-                    iconCls:'x-fa fa-question',
-                    ui: 'header',
-                    //href: '#faq',
-                    hrefTarget: '_self',
-                    tooltip: 'Help / FAQ\'s'
-                },
+//                {
+//                    iconCls:'x-fa fa-search',
+//                    ui: 'header',
+//                    //href: '#searchresults',
+//                    hrefTarget: '_self',
+//                    tooltip: 'See latest search'
+//                },
+//                {
+//                    iconCls:'x-fa fa-envelope',
+//                    ui: 'header',
+//                    //href: '#email',
+//                    hrefTarget: '_self',
+//                    tooltip: 'Check your email'
+//                },
+//                {
+//                    iconCls:'x-fa fa-question',
+//                    ui: 'header',
+//                    //href: '#faq',
+//                    hrefTarget: '_self',
+//                    tooltip: 'Help / FAQ\'s'
+//                },
                 {
                     iconCls:'x-fa fa-sign-out',
                     ui: 'header',
                    // href: '#profile',
                     hrefTarget: '_self',
-                    tooltip: 'Log Out',
+                    tooltip: 'Salir',
                     listeners:{
                         click:function(){                            
                           Ext.GlobalEvents.fireEvent('logOut');
