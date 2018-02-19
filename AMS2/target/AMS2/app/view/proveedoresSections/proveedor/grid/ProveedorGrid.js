@@ -36,6 +36,16 @@ Ext.define('Admin.view.proveedoresSections.proveedor.grid.ProveedorGrid', {
                 width: '15%'
             },
             {
+                text: "Contacto",
+                dataIndex: 'contacto',
+                filterType: 'filterText',
+                width: '29%',                
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="' + record.get('contacto') + '"';
+                    return value;
+                }
+            },
+            {
                 text: "Email",
                 dataIndex: 'email',
                 filterType: 'filterText',

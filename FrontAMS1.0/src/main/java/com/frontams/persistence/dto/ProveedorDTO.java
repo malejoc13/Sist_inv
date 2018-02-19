@@ -25,6 +25,8 @@ public class ProveedorDTO implements Serializable{
     private String telefono_m;
     
     private String email;
+    
+    private String contacto;
 
     /**
      * @return the id
@@ -109,6 +111,20 @@ public class ProveedorDTO implements Serializable{
      */
     public void setTelefono_m(String telefono_m) {
         this.telefono_m = telefono_m;
+    }
+
+    /**
+     * @return the contacto
+     */
+    public String getContacto() {
+        return contacto;
+    }
+
+    /**
+     * @param contacto the contacto to set
+     */
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
     }
     
         

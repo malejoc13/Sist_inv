@@ -49,6 +49,7 @@ public class ProveedorManager extends AbstractManager<Proveedor, ProveedorDTO>{
         entity.setTelefono((String) data.get("telefono"));
         entity.setTelefono_m((String) data.get("telefono_m"));
         entity.setEmail((String) data.get("email"));
+        entity.setContacto((String) data.get("contacto"));
         
     }
     

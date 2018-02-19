@@ -49,6 +49,11 @@ Ext.define('Admin.view.proveedoresSections.proveedor.view.ProveedorEditor', {
                     regexText : "Solo se permiten direcciones de correo v&aacute;lidos"                 
                 },
                 {
+                    xtype     : 'baseTextField',
+                    fieldLabel: 'Contacto',
+                    name: 'contacto'
+                },
+                {
                     xtype: 'idField'//para en caso de modificar ahi se va a guardar el ID
                 }
             ]

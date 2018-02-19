@@ -53,6 +53,8 @@ public class Proveedor extends BaseEntity{
     
     private String email;
     
+    private String contacto;
+    
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "proveedor")
     private List<Producto> productos;
 
@@ -153,6 +155,20 @@ public class Proveedor extends BaseEntity{
      */
     public void setTelefono_m(String telefono_m) {
         this.telefono_m = telefono_m;
+    }
+
+    /**
+     * @return the contacto
+     */
+    public String getContacto() {
+        return contacto;
+    }
+
+    /**
+     * @param contacto the contacto to set
+     */
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
     }
     
      
