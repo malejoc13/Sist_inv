@@ -65,8 +65,11 @@ public class ProveedorExcelBuilder extends AbstractExcelView{
         header.createCell(3).setCellValue("Teléfono movil");
         header.getCell(3).setCellStyle(style);
         
-        header.createCell(4).setCellValue("Email");
+        header.createCell(4).setCellValue("Contacto");
         header.getCell(4).setCellStyle(style);
+        
+        header.createCell(5).setCellValue("Email");
+        header.getCell(5).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
@@ -76,8 +79,9 @@ public class ProveedorExcelBuilder extends AbstractExcelView{
             aRow.createCell(0).setCellValue(element.get("name") + "");
             aRow.createCell(1).setCellValue(element.get("direccion") + "");
             aRow.createCell(2).setCellValue(element.get("telefono") + ""); 
-            aRow.createCell(3).setCellValue(element.get("telefono_m") + ""); 
-            aRow.createCell(4).setCellValue(element.get("email") + ""); 
+            aRow.createCell(3).setCellValue(element.get("telefono_m") + "");
+            aRow.createCell(4).setCellValue(element.get("contacto") + ""); 
+            aRow.createCell(5).setCellValue(element.get("email") + ""); 
         }
     }
     
