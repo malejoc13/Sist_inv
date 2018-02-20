@@ -47,8 +47,8 @@ public class Tipo_prodManager extends AbstractManager<Tipo_prod, Tipo_prodDTO>{
     @Override
     protected void update(Tipo_prod entity, Map<String, Object> data) { 
         if (entity.getClave() != null) {
-            if (tipo_prodDAO.exist((String) data.get("clave")) && entity.getClave() != (String) data.get("clave")) {
-                 throw new RuntimeException("Ya existe un Tipo de producto con esta clave");
+            if (tipo_prodDAO.exist((String) data.get("clave")) && !entity.getClave().equals((String) data.get("clave"))) {
+                 throw new RuntimeException("Ya existe un Tipo de producto con esta clave"+entity.getClave()+data.get("clave"));
             }
         }
         entity.setName((String) data.get("name"));
