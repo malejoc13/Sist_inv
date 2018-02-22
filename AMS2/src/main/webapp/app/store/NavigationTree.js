@@ -67,6 +67,12 @@ Ext.define('Admin.store.NavigationTree', {
                 leaf: true
             },
             {
+                text: 'Clientes',
+                iconCls: 'x-fa fa-street-view',
+                viewType: 'clientes',
+                leaf: true
+            },
+            {
                 text: 'Movimientos',
                 iconCls: 'x-fa fa-exchange',
                 expanded: false,

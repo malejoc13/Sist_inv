@@ -1,11 +1,13 @@
 com\frontams\common\util\response\WebResponseDataList.class
 com\frontams\web\api\ProductoController.class
 com\frontams\web\security\RolePage_accessController.class
+com\frontams\persistence\dao\ClienteDAO.class
 com\frontams\conf\interceptors\ExceptionInterceptor.class
 com\frontams\persistence\security\manager\RoleManager.class
 com\frontams\businessLogic\services\MapUtil.class
 com\frontams\persistence\manager\ProveedorManager.class
 com\frontams\persistence\security\manager\Page_accessManager.class
+com\frontams\web\api\ClienteController.class
 com\frontams\persistence\security\model\Role.class
 com\frontams\persistence\manager\InventarioReportManager.class
 com\frontams\common\util\GRUtil.class
@@ -32,6 +34,7 @@ com\frontams\persistence\dto\UnidadDTO.class
 com\frontams\persistence\manager\InventarioManager.class
 com\frontams\persistence\manager\Un_medidaManager.class
 com\frontams\persistence\security\dao\UserDAO.class
+com\frontams\persistence\model\Cliente.class
 com\frontams\persistence\dao\ProductoDAO.class
 com\frontams\persistence\manager\Tipo_prodManager.class
 com\frontams\web\api\InventarioController.class
@@ -56,6 +59,7 @@ com\frontams\conf\interceptors\RequestInterceptor.class
 com\frontams\web\api\InventarioReportController.class
 com\frontams\persistence\manager\MovimientoManager.class
 com\frontams\conf\spring\PersistenceConfig$1.class
+com\frontams\persistence\manager\ClienteManager.class
 com\frontams\persistence\dto\Tipo_prodDTO.class
 com\frontams\web\api\UnidadController.class
 com\frontams\businessLogic\enums\Tipo_movEnum.class
@@ -72,6 +76,7 @@ com\frontams\businessLogic\transactions\Sale.class
 com\frontams\persistence\dto\chart\Point.class
 com\frontams\persistence\security\dto\Page_accessDTO.class
 com\frontams\persistence\dao\Mov_prodDAO.class
+com\frontams\persistence\dto\ClienteDTO.class
 com\frontams\persistence\security\model\RolePage_access.class
 com\frontams\persistence\security\service\LoginService.class
 com\frontams\persistence\model\Un_medida.class

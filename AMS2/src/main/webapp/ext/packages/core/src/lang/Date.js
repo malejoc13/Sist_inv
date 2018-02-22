@@ -563,13 +563,13 @@ utilDate = {
      *     ];
      */
     dayNames : [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado"
     ],
     //</locale>
 
@@ -588,18 +588,18 @@ utilDate = {
      *     ];
      */
     monthNames : [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
     ],
     //</locale>
 
@@ -623,29 +623,30 @@ utilDate = {
      *     };
      */
     monthNumbers : {
-        January: 0,
-        Jan: 0,
-        February: 1,
+        Enero: 0,
+        Ene: 0,
+        Febrero: 1,
         Feb: 1,
-        March: 2,
+        Marzo: 2,
         Mar: 2,
-        April: 3,
-        Apr: 3,
+        Abril: 3,
+        Abr: 3,
+        Mayo: 4,
         May: 4,
-        June: 5,
+        Junio: 5,
         Jun: 5,
-        July: 6,
+        Julio: 6,
         Jul: 6,
-        August: 7,
-        Aug: 7,
-        September: 8,
+        Agosto: 7,
+        Ago: 7,
+        Septiembre: 8,
         Sep: 8,
-        October: 9,
+        Octubre: 9,
         Oct: 9,
-        November: 10,
+        Noviembre: 10,
         Nov: 10,
-        December: 11,
-        Dec: 11
+        Diciembre: 11,
+        Dic: 11
     },
     //</locale>
     

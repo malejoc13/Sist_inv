@@ -78,4 +78,10 @@
           p:reportDataKey="datasource"/>
    
     <bean id="inventarioExcelView" class="com.ams.util.InventarioExcelBuilder"/>
+    
+    <bean id="clientePDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/cliente.jasper"
+          p:reportDataKey="datasource"/>
+    
+    <bean id="clienteExcelView" class="com.ams.util.ClienteExcelBuilder"/>
 </beans>
