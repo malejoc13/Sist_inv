@@ -10,24 +10,15 @@ package com.frontams.persistence.model;
  * @author Sistemas
  */
 import com.frontams.common.model.BaseEntity;
-import com.frontams.persistence.model.Unidad;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "cliente", schema = "persistence")

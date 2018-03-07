@@ -45,7 +45,7 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "Precio",
                 dataIndex: 'precio_max',
                 filterType: 'filterNumber',
-                width: '10%',
+                width: '7%',
                 renderer: function(value, metaData, record, rowIdx, colIdx, store) {
                     metaData.tdAttr = 'data-qtip="Precio mínimo: $' + record.get('precio_min') + '"';
                     return value;
@@ -55,7 +55,7 @@ Ext.define('Admin.view.productosSections.producto.grid.ProductoGrid', {
                 text: "UM",
                 dataIndex: 'un_medida',
                 filter: 'un_medida.nombre_um',//para cuando valla a filtrar por esa columna ese es el valo que manda como criterio de busqueda
-                width: '8%',  
+                width: '13%',  
                 renderer: function(value, metaData, record) {
                                 metaData.tdAttr = 'data-qtip="(' + record.get('un_medidaClave') + ') '+ record.get('un_medida')+'"';
                                 return value;
