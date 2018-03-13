@@ -14,5 +14,6 @@ com\ams\util\UserExcelBuilder.class
 com\ams\manager\ReportManager$1.class
 com\ams\util\ProductoExcelBuilder.class
 com\ams\web\mvc\controller\ReportController.class
+com\ams\util\ClienteExcelBuilder.class
 com\ams\util\ProveedorExcelBuilder.class
 com\ams\util\Tipo_prodExcelBuilder.class

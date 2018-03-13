@@ -29,6 +29,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Tipo_prodManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Un_medidaController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\Tipo_movDAO.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\TestController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Mov_prodManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\RoleManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\UserDTO.java

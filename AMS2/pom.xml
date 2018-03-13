@@ -10,11 +10,11 @@
     </parent>-->
     
     <groupId>com.ams</groupId>
-    <artifactId>AMS2</artifactId>
+    <artifactId>AMS</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>AMS2</name>
+    <name>AMS</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -275,7 +275,7 @@
     </dependencies>
 
     <build>
-        <finalName>AMS2</finalName>
+        <finalName>AMS</finalName>
         <plugins>
 
             <plugin>

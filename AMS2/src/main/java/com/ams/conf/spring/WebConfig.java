@@ -35,7 +35,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public ViewResolver viewResolver() {
-        System.out.println("--------- AMS creating view resolver ----------");
+        System.out.println("--------- creating view resolver ----------");
         final InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setViewClass(JstlView.class);
         bean.setPrefix("/");

@@ -96,6 +96,7 @@ com\frontams\persistence\manager\Mov_prodManager.class
 com\frontams\persistence\dao\MovimientoDAO.class
 com\frontams\web\security\RoleController.class
 com\frontams\persistence\model\Inventario.class
+com\frontams\web\api\TestController.class
 com\frontams\common\dao\AbstractBaseDAO.class
 com\frontams\conf\spring\WebConfig.class
 com\frontams\persistence\manager\UnidadManager.class

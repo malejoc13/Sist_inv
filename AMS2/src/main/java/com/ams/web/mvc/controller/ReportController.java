@@ -39,8 +39,8 @@ public class ReportController {
         String url = request.getRequestURL().toString(); 
 
         System.out.println("%url = " + url);
-        System.out.println("%params = " + params);
-        System.out.println("%report = " + report);
+        //System.out.println("%params = " + params);
+       // System.out.println("%report = " + report);
         if (url.contains("/AMS/")) {
             url = url.split("/AMS/")[0]; 
         }
@@ -48,7 +48,7 @@ public class ReportController {
         List list = reportManager.getReport(url,entity,report, params);
 
         if(report != null && report.equalsIgnoreCase("excel")){//si selecciono en excel
-            System.out.println("AMS.ReportController -> return ExcelView");
+            System.out.println("ReportController -> return ExcelView");
             return new ModelAndView(entity + "ExcelView", "list", list);
         }else{//por defecto da el report en pdf
             Map<String, Object> parameterMap = new HashMap<>();
