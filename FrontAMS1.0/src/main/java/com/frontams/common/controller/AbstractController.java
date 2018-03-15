@@ -110,9 +110,16 @@ public abstract class AbstractController<D> {
     public WebResponseDataList nomenclator(
             @PathVariable("pageId") String pageId,
             @RequestParam(value = "params", defaultValue = "") String params,
+            @RequestParam(value = "query", defaultValue = "") String query,
             HttpSession session) throws Exception {
-        //System.out.println("Params ... "+params);    
-        List<Criterion> expressions = GRUtil.parseParamsToExpressions( params );      
+        System.out.println("Params ... "+params); 
+        
+        if ( query != null && !query.endsWith("(S)")) {
+            System.out.println("Query ... "+query);
+            List<Criterion> expressions = GRUtil.parseParamsToExpressions( query );
+             return new WebResponseDataList<NomenclatorDTO>(getAbstractManager().nomenclatorList(expressions));
+        }
+            List<Criterion> expressions = GRUtil.parseParamsToExpressions( params );
         return new WebResponseDataList<NomenclatorDTO>(getAbstractManager().nomenclatorList(expressions));        
     }
 

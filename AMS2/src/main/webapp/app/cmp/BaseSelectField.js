@@ -60,12 +60,22 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 triggerTarget.setParams(me.getParamFromUrl() + rec.id);
                 triggerTarget.getStore().reload();
             }
-        }//,
+        },
+         beforequery: function  ( queryPlan, eOpts ){
+            // Ext.Msg.alert('Informaci&oacute;n', queryPlan.query );
+            // queryPlan.cancel = true;
+            queryPlan.query = "name@is@(S)"+ queryPlan.query;
+         }
+
 //       change: function ( me, newValue, oldValue, eOpts) {
-//           Ext.Msg.alert('Informaci&oacute;n', newValue);
-//           var filter = "name@is@(S)"+newValue;
-//           me.setParams(filter);
-//           me.getStore().reload();
+//           //Ext.Msg.alert('Informaci&oacute;n', newValue);            
+//                if (isNaN(parseInt(newValue))) {
+//                    var filter = newValue;             
+//                    //me.setParams(filter);
+//                    
+//                    me.getStore().reload();
+//                }  
+//                   
 //       }
     },
     init: function (data) {
@@ -237,9 +247,9 @@ Ext.define('Admin.cmp.BaseSelectFieldStore', {
 
         if (url.indexOf('?params=') > -1) {
             url = url.split('?params=')[0];
-        }
-
+        }        
         me.proxy.url = url + '?params=' + param;
+  
     }
 });
 

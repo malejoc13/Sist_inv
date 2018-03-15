@@ -24,14 +24,15 @@
                     name: 'productoId', //referencia al atributo id en el DTO
                     url: 'producto',// referencia al alias en el DAO para que busque en esa entidad y llene el combo
                     allowBlank : false,                    
-                    emptyText : "Seleccione...",
-                    editable : false,
+                    emptyText : "Seleccione...",                   
+                    forceSelection:true,
+                    typeAhead: true,
                     blankText : 'Este campo es obligatorio',
                     disabledOnEdit: true,
                     listConfig : ({
                     loadingText: 'Cargando...',
                     getInnerTpl: function() {
-                            return '<div data-qtip="{name}">({clave}) {name}</div>';
+                            return '<div data-qtip="{descripcion}">({clave}) {name}</div>';
                         }
                   })
                 }        

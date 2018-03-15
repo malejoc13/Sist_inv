@@ -114,15 +114,15 @@ Ext.define('Admin.base.BaseEditor', {
                 });
                 }
             }
-        },
-        {//This is a separator (need time to research on a better way to do it)
-            text: '',
-            width: 60,
-            style: {
-                'background-color': 'white',
-                'border-width': '0px'
-            }
-        }
+           }//,
+//        {//This is a separator (need time to research on a better way to do it)
+//            text: '',
+//            width: 60,
+//            style: {
+//                'background-color': 'white',
+//                'border-width': '0px'
+//            }
+//        }
     ],
     init: function (data) {
         var me = this;

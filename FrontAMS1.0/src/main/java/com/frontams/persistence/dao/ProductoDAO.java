@@ -69,7 +69,8 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("name").as("name"))
-                .add(Projections.property("clave").as("clave"));
+                .add(Projections.property("clave").as("clave"))
+                .add(Projections.property("descripcion").as("descripcion"));
                                           //atribUM       //atrib Nomencator
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(NomenclatorClaveDTO.class));

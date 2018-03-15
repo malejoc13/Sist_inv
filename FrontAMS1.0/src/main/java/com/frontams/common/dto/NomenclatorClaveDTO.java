@@ -14,6 +14,7 @@ public class NomenclatorClaveDTO{
     private Long id;
     private String name;
     private String clave;
+    private String descripcion;
     
     public NomenclatorClaveDTO(){}
     
@@ -21,6 +22,13 @@ public class NomenclatorClaveDTO{
         this.id = id;
         this.name = name;
         this.clave = clave;
+    }
+    
+    public NomenclatorClaveDTO(Long id, String name, String clave, String descrp){
+        this.id = id;
+        this.name = name;
+        this.clave = clave;
+        this.descripcion = descrp;
     }
 
     /**
@@ -63,6 +71,20 @@ public class NomenclatorClaveDTO{
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
 }
