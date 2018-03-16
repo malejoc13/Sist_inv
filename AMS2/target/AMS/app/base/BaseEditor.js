@@ -58,15 +58,14 @@ Ext.define('Admin.base.BaseEditor', {
                 if (viewTab.additionalValues) {
                     Ext.apply(formData.typedValues, editor.getAdditionalValues());
                 }
-
+                Ext.getBody().mask("Guardando...");
                 Request.load({
                     url: viewTab.up().xtype + '/' + viewTab.entity + '/save',
                     method: 'POST',
                     jsonData: formData.typedValues,
                     ignoreError: true,
-                    loadingMask: true,
-                    loadingText: "Guardando...",
                     success: function (response) {
+                       Ext.getBody().unmask();
                         if (response.status === 500) {//en caso de lanzar una exepcion
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                          }else{
