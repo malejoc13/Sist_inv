@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
         <meta charset="UTF-8">
         <link rel="shortcut icon" type="image/x-icon" href="resources/images/minilogo.png">
-        <link rel="stylesheet" href="sass/common.scss">
+       <!-- <link rel="stylesheet" href="sass/common.scss">-->
         <title>Sistema Inventario</title> 
         <script type="text/javascript">
             var Ext = Ext || {}; // Ext namespace won't be defined yet...
@@ -57,6 +57,94 @@
                 //};
             };
         </script>
+        <style>
+            .preload-body {
+                background-image: url(resources/images/lock-screen-background.jpg);
+                background-size: cover;
+                background-repeat: no-repeat; 
+                margin: 0px!important;
+            }
+            
+            .warning-row .x-grid-cell { 
+                color: #C30 !important;
+
+            }
+
+            .new-row .x-grid-cell { 
+                color: #35baf6 !important;
+            }
+
+            .x-list-plain{ 
+                border:1px solid #808080;
+            } 
+
+            .x-boundlist-item{
+                background-color: white;
+                height: 25px;
+                padding: 5px;
+            }
+
+            .x-boundlist-item-hover{
+                background-color:#d0d8ed!important;
+            }
+
+            .x-treelist-item-text{
+                margin-right: 0px;
+            }
+
+            .x-treelist-item-wrap{
+                margin-left: 30px!important;
+            }
+
+            .x-treelist-navigation .x-treelist-item-text{
+                margin-right: 0px!important;
+            }
+
+            .x-treelist-row{
+                padding-left: 0px!important;
+            }
+
+            .disabled-button{
+                background-color: rgb(192,192,192)!important;
+                border-color: rgb(192,192,192)!important;
+            }
+
+            .active-button{
+                background-color:#35baf6!important;
+                border-color:#35baf6!important; 
+            }
+
+            .active-button span span span{
+                color:white!important
+            }
+
+            .check-active{
+                background-color:#3b5999!important;
+                border-color:#3b5999!important; 
+            }
+
+            .cash-active{
+                background-color:red!important;
+                border-color:red!important; 
+            }
+
+            .card2bank-active{
+                background-color:green!important;
+                border-color:green!important; 
+            }
+
+            .commission-active{
+                background-color:orange!important;
+                border-color:orange!important; 
+            }
+
+            .check-active span span span,
+            .cash-active span span span,
+            .card2bank-active span span span,
+            .commission-active span span span{
+                color:white!important
+            }
+        </style>
 <!-- The line below must be kept intact for Sencha Cmd to build your application -->
         <script id="microloader" type="text/javascript" src="bootstrap.js"></script> 
 

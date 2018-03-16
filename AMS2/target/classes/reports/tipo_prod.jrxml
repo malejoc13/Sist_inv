@@ -13,7 +13,7 @@
 		<band height="79" splitType="Stretch">
 			<image>
 				<reportElement mode="Transparent" x="0" y="14" width="141" height="65" uuid="567c8039-eeea-4528-a95c-3249f03d9d88"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\vc-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/vc-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="162" y="0" width="156" height="79" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
@@ -24,7 +24,7 @@
 			</staticText>
 			<image>
 				<reportElement x="335" y="0" width="87" height="79" uuid="88e1e935-0b02-4fc8-890c-83b4def81d96"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\c-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/c-logo.jpg"]]></imageExpression>
 			</image>
 			<rectangle>
 				<reportElement x="432" y="0" width="140" height="20" forecolor="#6699FF" backcolor="#6699FF" uuid="7241124e-5618-4028-bb1a-0f0f02b390dc"/>

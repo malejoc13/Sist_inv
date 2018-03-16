@@ -15,19 +15,20 @@ Ext.define('Admin.cmp.toolbar.ReportButton', {
                     url = "/AMS/report/" + entity + "_r.htm?params=" + params;
             if (params) {
                var total = grid.getStore().totalCount;
-            if (total > 200) {
-                if (confirm('Está a punto de generar un reporte de mas de  ' + total + ' registros, desea continuar?')) {
-                    window.open(url, 'window', 'HEIGHT=660,resizable=yes,scrollbars=yes,WIDTH=900,target="blank_"');
-                }
+            if (total > 500) {
+                Ext.Msg.confirm("Aviso", 'Está a punto de generar un reporte de mas de  ' + total + ' registros, desea continuar?', function(btn){
+                    if (btn == "yes") {
+                            window.open(url, '_blank');
+                    } 
+                });
             } else {
-                window.open(url, 'window', 'HEIGHT=660,resizable=yes,scrollbars=yes,WIDTH=900,target="blank_"');
-            } 
+                window.open(url, '_blank');
+            }
             } else {
                 Ext.Msg.alert('Informaci&oacute;n', "Debe filtrar primeramente por una Unidad");
             }
            
-
         }
     }
 });
-
+  

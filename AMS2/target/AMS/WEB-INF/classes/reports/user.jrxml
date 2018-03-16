@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab479676-fa42-4b63-ab11-2cad81b7bde4">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="101"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="firstName" class="java.lang.String"/>
 	<field name="lastName" class="java.lang.String"/>
@@ -17,7 +17,7 @@
 		<band height="79" splitType="Stretch">
 			<image>
 				<reportElement mode="Transparent" x="0" y="14" width="141" height="65" uuid="567c8039-eeea-4528-a95c-3249f03d9d88"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\vc-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/vc-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="184" y="4" width="156" height="36" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
@@ -28,7 +28,7 @@
 			</staticText>
 			<image>
 				<reportElement x="406" y="0" width="87" height="79" uuid="e7720792-fb12-4f85-bd34-20dc40a41abe"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\c-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/c-logo.jpg"]]></imageExpression>
 			</image>
 			<rectangle>
 				<reportElement x="612" y="0" width="140" height="20" forecolor="#6699FF" backcolor="#6699FF" uuid="3050867b-eb38-454b-ba9c-ecf9d0af24c9"/>

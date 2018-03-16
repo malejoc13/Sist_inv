@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab479676-fa42-4b63-ab11-2cad81b7bde4">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="101"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="productoClave" class="java.lang.String"/>
 	<field name="producto" class="java.lang.String"/>
@@ -15,10 +15,6 @@
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
-			<image>
-				<reportElement mode="Transparent" x="0" y="14" width="141" height="65" uuid="567c8039-eeea-4528-a95c-3249f03d9d88"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\vc-logo.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="205" y="29" width="156" height="36" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -26,10 +22,6 @@
 				</textElement>
 				<text><![CDATA[Inventario]]></text>
 			</staticText>
-			<image>
-				<reportElement x="450" y="0" width="87" height="79" uuid="3695018f-c2e3-484a-b16d-c00ffe2fa5e3"/>
-				<imageExpression><![CDATA["D:\\Proyecto\\Sist_inv\\AMS2\\src\\main\\resources\\reports\\c-logo.jpg"]]></imageExpression>
-			</image>
 			<rectangle>
 				<reportElement x="612" y="0" width="140" height="20" forecolor="#6699FF" backcolor="#6699FF" uuid="fef81d84-1012-4286-95b5-777c73ad0773"/>
 			</rectangle>
@@ -37,6 +29,14 @@
 				<reportElement x="629" y="0" width="100" height="20" forecolor="#F0F0F0" uuid="28e3b0e7-0c2e-422e-a3e4-417cac9846fc"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="30" y="20" width="130" height="59" uuid="2948a3f7-ee7d-45e6-b50d-a20d67dcffb5"/>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/vc-logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="415" y="1" width="106" height="78" uuid="ddcfb3ce-55bb-4488-9d35-e97e48e2faa6"/>
+				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/c-logo.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

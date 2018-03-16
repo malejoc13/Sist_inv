@@ -13,16 +13,15 @@ Ext.define('Admin.cmp.toolbar.ExcelReportButton', {
                     url = "/AMS/report/" + entity + ".htm?report=excel&params=" + params;
             
             var total = grid.getStore().totalCount;
-           
-           if (total > 200) {
-               if (confirm('Está a punto de generar un reporte de mas de  ' + total + ' registros, desea continuar?')) {
-                    window.open(url, '_blank');
-                }
-            }else{
+           if (total > 500) {
+                Ext.Msg.confirm("Aviso", 'Está a punto de generar un reporte de mas de  ' + total + ' registros, desea continuar?', function(btn){
+                    if (btn == "yes") {
+                            window.open(url, '_blank');
+                    } 
+                });
+            } else {
                 window.open(url, '_blank');
             }
-
-
         }
     }
 });

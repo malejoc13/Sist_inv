@@ -61,22 +61,9 @@ Ext.define('Admin.cmp.BaseSelectField', {
                 triggerTarget.getStore().reload();
             }
         },
-         beforequery: function  ( queryPlan, eOpts ){
-            // Ext.Msg.alert('Informaci&oacute;n', queryPlan.query );
-            // queryPlan.cancel = true;
+         beforequery: function  ( queryPlan, eOpts ){           
             queryPlan.query = "name@is@(S)"+ queryPlan.query;
          }
-
-//       change: function ( me, newValue, oldValue, eOpts) {
-//           //Ext.Msg.alert('Informaci&oacute;n', newValue);            
-//                if (isNaN(parseInt(newValue))) {
-//                    var filter = newValue;             
-//                    //me.setParams(filter);
-//                    
-//                    me.getStore().reload();
-//                }  
-//                   
-//       }
     },
     init: function (data) {
         var me = this,
