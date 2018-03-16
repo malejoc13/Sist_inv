@@ -93,13 +93,14 @@ Ext.define('Admin.base.BaseController', {
             }
         Ext.Msg.confirm("Eliminar", "¿Est&aacute; seguro que desea eliminar?", function(btn){
             if (btn == "yes") {
-                
+                Ext.getBody().mask("Eliminando...");
                 Request.load({
                     url: me.getView().xtype + '/' + currentTab.entity + '/delete',
                     method: 'POST',            
                     jsonData:'{"id":"(L)'+data.id+'"}',
                     ignoreError: true,
                     success: function (response) {
+                        Ext.getBody().unmask();
                         if (response.status === 450 || response.status === 550 || response.status === 500) {
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                         } else {
