@@ -17,7 +17,6 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
@@ -37,19 +36,13 @@ public class InventarioReportDAO extends AbstractBaseDAO<Inventario, InventarioR
     
     @Override
     public void applyListProjection(Criteria criteria) {
-        ProjectionList projectionList = Projections.projectionList()
-                //.add(Projections.property("id").as("id"))                                                
+        ProjectionList projectionList = Projections.projectionList()                                                
                 .add(Projections.property("cantidad").as("cantidad"))
-                //.add(Projections.property("saldo_ini").as("saldo_ini"))
-                //.add(Projections.property("fecha_ini").as("fecha_ini"))
-                //.add(Projections.property("fecha").as("fecha"))
-                .add(Projections.property("producto.name").as("producto"))                
-                //.add(Projections.property("producto.id").as("productoId"))
+                .add(Projections.property("producto.name").as("producto"))
                 .add(Projections.property("producto.clave").as("productoClave"))
+                .add(Projections.property("producto.descripcion").as("prodDescr"))
                 .add(Projections.property("tipo_prod.name").as("tipo_prod"))
                 .add(Projections.property("unidad.name").as("unidad"));
-               // .add(Projections.property("unidad.id").as("unidadId"));
-                                           //alias[.atrib]   //atributo en el DTO
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(InventarioReportDTO.class));
     }

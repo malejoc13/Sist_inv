@@ -8,6 +8,7 @@
 	<field name="tipo_prod" class="java.lang.String"/>
 	<field name="cantidad" class="java.lang.String"/>
 	<field name="unidad" class="java.lang.String"/>
+	<field name="prodDescr" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -71,42 +72,42 @@
 				<text><![CDATA[ Clave]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="62" y="20" width="124" height="24" forecolor="#F0F0F0" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
+				<reportElement mode="Transparent" x="62" y="20" width="141" height="24" forecolor="#F0F0F0" uuid="25380ad2-133d-498c-a0f3-e1996a97e20e"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Producto]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="186" y="20" width="114" height="24" forecolor="#F0F0F0" uuid="11c9a0ce-415d-4eef-94f6-67dc3b810b10"/>
+				<reportElement mode="Transparent" x="203" y="20" width="147" height="24" forecolor="#F0F0F0" uuid="11c9a0ce-415d-4eef-94f6-67dc3b810b10"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tipo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="300" y="20" width="79" height="24" forecolor="#F0F0F0" uuid="92f6c61f-0eda-4bc5-81c0-4646bd58855f"/>
+				<reportElement mode="Transparent" x="350" y="20" width="62" height="24" forecolor="#F0F0F0" uuid="92f6c61f-0eda-4bc5-81c0-4646bd58855f"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cantidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="379" y="20" width="77" height="24" forecolor="#F0F0F0" uuid="d72270e6-04ed-42a6-8683-d5c6c114f492"/>
+				<reportElement mode="Transparent" x="412" y="20" width="77" height="24" forecolor="#F0F0F0" uuid="d72270e6-04ed-42a6-8683-d5c6c114f492"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Conteo1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="456" y="20" width="76" height="24" forecolor="#F0F0F0" uuid="ad077c8e-ed54-4d22-baf5-2f034367e931"/>
+				<reportElement mode="Transparent" x="489" y="20" width="76" height="24" forecolor="#F0F0F0" uuid="ad077c8e-ed54-4d22-baf5-2f034367e931"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Conteo2]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="532" y="20" width="202" height="24" forecolor="#F0F0F0" uuid="68c253ec-cd53-4799-b19e-574a720794c8"/>
+				<reportElement mode="Transparent" x="565" y="20" width="187" height="24" forecolor="#F0F0F0" uuid="68c253ec-cd53-4799-b19e-574a720794c8"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -121,15 +122,16 @@
 				<textFieldExpression><![CDATA[$F{productoClave}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="62" y="0" width="124" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
-				<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+				<reportElement x="62" y="0" width="141" height="20" uuid="bbf83b19-144a-4f8e-a470-163f5f0255bf"/>
+				<textFieldExpression><![CDATA[$F{producto}+" "+$F{prodDescr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="186" y="0" width="114" height="20" uuid="0fd8047a-67ff-4645-966c-8d03c82ab58c"/>
+				<reportElement mode="Transparent" x="203" y="0" width="147" height="20" uuid="0fd8047a-67ff-4645-966c-8d03c82ab58c"/>
 				<textFieldExpression><![CDATA[$F{tipo_prod}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="300" y="0" width="79" height="20" uuid="12a98208-4f3f-4837-a30f-9c84a9556cc4"/>
+				<reportElement x="350" y="0" width="62" height="20" uuid="12a98208-4f3f-4837-a30f-9c84a9556cc4"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
 			</textField>
 		</band>

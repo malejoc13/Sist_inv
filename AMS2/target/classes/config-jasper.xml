@@ -43,6 +43,10 @@
           p:url="classpath:reports/producto.jasper"
           p:reportDataKey="datasource"/> 
     
+    <bean id="producto_rPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/producto_r.jasper"
+          p:reportDataKey="datasource"/> 
+    
     <bean id="productoExcelView" class="com.ams.util.ProductoExcelBuilder"/>
     
     <bean id="userPDFView" class="com.ams.reports.PDFView"

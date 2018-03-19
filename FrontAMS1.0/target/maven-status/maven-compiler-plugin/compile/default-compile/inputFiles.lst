@@ -8,6 +8,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\RoleCon
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\Page_accessManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\SecurityController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\InventarioReportManager.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\ProductoReportDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Cliente.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\businessLogic\enums\Tipo_movEnum.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\InventarioReportDAO.java
@@ -20,6 +21,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\ClienteContr
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\UserController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Un_medidaDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\ProveedorManager.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\ProductoReportManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Tipo_movDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\Page_accessController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\RolePage_accessDAO.java
@@ -30,6 +32,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Un_medidaController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\Tipo_movDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\TestController.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\ProductoReportDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Mov_prodManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\RoleManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\UserDTO.java
@@ -62,6 +65,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\chart\EarningChartPoint.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\MovimientoController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\util\GRUtil.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\ProductoReportController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\Page_accessDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\InventarioDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\service\AccessService.java

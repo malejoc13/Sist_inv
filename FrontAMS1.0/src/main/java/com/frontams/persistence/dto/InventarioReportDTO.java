@@ -18,33 +18,15 @@ public class InventarioReportDTO implements Serializable{
     
     }
     
-    private Long id;
-    
     private Double cantidad; 
     
     private String producto;
+    private String prodDescr;
     private String productoClave;
-    private Long productoId;
     
     private String tipo_prod;
     
     private String unidad;
-    private Long unidadId;
-
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 
     /**
      * @return the producto
@@ -75,20 +57,6 @@ public class InventarioReportDTO implements Serializable{
     }
 
     /**
-     * @return the productoId
-     */
-    public Long getProductoId() {
-        return productoId;
-    }
-
-    /**
-     * @param productoId the productoId to set
-     */
-    public void setProductoId(Long productoId) {
-        this.productoId = productoId;
-    }
-
-    /**
      * @return the tipo_prod
      */
     public String getTipo_prod() {
@@ -116,21 +84,7 @@ public class InventarioReportDTO implements Serializable{
         this.unidad = unidad;
     }
 
-    /**
-     * @return the unidadId
-     */
-    public Long getUnidadId() {
-        return unidadId;
-    }
-
-    /**
-     * @param unidadId the unidadId to set
-     */
-    public void setUnidadId(Long unidadId) {
-        this.unidadId = unidadId;
-    }
-
-    /**
+     /**
      * @return the cantidad
      */
     public Double getCantidad() {
@@ -142,6 +96,20 @@ public class InventarioReportDTO implements Serializable{
      */
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
+    }
+
+    /**
+     * @return the prodDescr
+     */
+    public String getProdDescr() {
+        return prodDescr;
+    }
+
+    /**
+     * @param prodDescr the prodDescr to set
+     */
+    public void setProdDescr(String prodDescr) {
+        this.prodDescr = prodDescr;
     }
     
     
