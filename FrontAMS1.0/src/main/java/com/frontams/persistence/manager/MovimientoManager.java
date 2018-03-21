@@ -33,10 +33,7 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
     @Autowired
     private MovimientoDAO movimientoDAO;
     
-    @Autowired
-    private Tipo_movDAO tipo_movDAO;
-    
-    @Override
+   @Override
     public AbstractBaseDAO dao() {
         return movimientoDAO;
     }

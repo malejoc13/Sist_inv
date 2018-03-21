@@ -81,6 +81,6 @@ Ext.define('Admin.util.Request', {
     },
     onRequestexception: function (conn, response, options, eOpts) {
         
-        alert('Server is down. Please contact customer service.');
+        alert('Servidor caido. Pro favor contacte al Administrador.');
     }
 });

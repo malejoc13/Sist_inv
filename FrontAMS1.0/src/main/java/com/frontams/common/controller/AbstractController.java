@@ -15,7 +15,6 @@ import com.frontams.common.util.response.WebResponseDataList;
 import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.security.service.AccessService;
 import java.text.ParseException; 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
@@ -137,6 +136,8 @@ public abstract class AbstractController<D> {
             throw new Exception("Acceso denegado, no tiene permitido realizar esta operaci&oacute;n");
         }
     }
+    
+    
 
     
     public abstract AbstractManager getAbstractManager();

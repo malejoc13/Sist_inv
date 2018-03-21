@@ -33,12 +33,6 @@ public class Mov_prodManager extends AbstractManager<Mov_prod, Mov_prodDTO>{
     @Autowired
     private Mov_prodDAO mov_prodDAO;
     
-    @Autowired
-    private MovimientoDAO movimientoDAO;
-    
-    @Autowired
-    private ProductoDAO productoDAO;
-    
     @Override
     public AbstractBaseDAO dao() {
         return mov_prodDAO;

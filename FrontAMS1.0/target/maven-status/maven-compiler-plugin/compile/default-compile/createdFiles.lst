@@ -40,6 +40,7 @@ com\frontams\persistence\manager\Tipo_prodManager.class
 com\frontams\web\api\InventarioController.class
 com\frontams\persistence\dto\InventarioDTO.class
 com\frontams\web\security\UserController.class
+com\frontams\web\api\KeepController.class
 com\frontams\persistence\security\util\GSession.class
 com\frontams\persistence\model\Movimiento.class
 com\frontams\persistence\model\Unidad.class

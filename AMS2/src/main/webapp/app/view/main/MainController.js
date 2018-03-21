@@ -14,8 +14,20 @@ Ext.define('Admin.view.main.MainController', {
     lastView: null,
     init: function () {
         var me = this;
+        
         Ext.GlobalEvents.on('logOut', 'onLogout', me);
         Ext.GlobalEvents.on('logIn', 'onLogin', me);
+    },
+    kepp_alive: function (){    
+        setInterval(function(){
+            Request.load({
+                url: '/alive/keep_alive',
+                ignoreError: true,
+                success: function (response) { 
+                    //alert(response);
+                }
+            });
+        },30000,"JavaScript");
     },
     setCurrentView: function (hashTag) {
         var me = this;
@@ -173,6 +185,7 @@ Ext.define('Admin.view.main.MainController', {
     },
     onLogin: function (view) {
         this.doSetView(view);
+        this.kepp_alive();
     },
     onRouteChange: function (id) {
         console.log('onRouteChange');
