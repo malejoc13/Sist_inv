@@ -45,6 +45,17 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 }
             },
             {
+                text: "UM",
+                dataIndex: 'umNombre',
+                filter: 'un_medida.nombre_um',//para cuando valla a filtrar por esa columna ese es el valo que manda como criterio de busqueda
+                width: '13%',  
+                renderer: function(value, metaData, record) {
+                                metaData.tdAttr = 'data-qtip="(' + record.get('umClave') + ') '+ record.get('umNombre')+'"';
+                                return value;
+                            }
+                
+            },
+            {
                 text: "Saldo inicial",
                 dataIndex: 'saldo_ini',
                 filterType: 'filterNumber',

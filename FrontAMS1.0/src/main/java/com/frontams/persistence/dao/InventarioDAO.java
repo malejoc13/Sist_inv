@@ -28,6 +28,7 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
     public Criteria buildCriteria() {
         return getCriteria()  //entidad   //alias
                 .createAlias("producto", "producto")
+                .createAlias("producto.un_medida", "un_medida")
                 .createAlias("unidad", "unidad");
     }
     
@@ -48,6 +49,8 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                 .add(Projections.property("producto.clave").as("productoClave"))
                 .add(Projections.property("producto.clave_sat").as("productoClaveSat"))
                 .add(Projections.property("producto.descripcion").as("descripcion"))
+                .add(Projections.property("un_medida.clave").as("umClave"))
+                .add(Projections.property("un_medida.nombre_um").as("umNombre"))
                 .add(Projections.property("unidad.name").as("unidad"))
                 .add(Projections.property("unidad.id").as("unidadId"));
                                            //alias[.atrib]   //atributo en el DTO
