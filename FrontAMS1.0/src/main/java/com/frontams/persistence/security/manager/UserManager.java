@@ -45,18 +45,18 @@ public class UserManager extends AbstractManager<User, UserDTO> {
     }
 
     @Override
-    protected User create(Map<String, Object> data) throws Exception {
+    protected User create(Map<String, Object> data, Principal principal) throws Exception {
         if (userDAO.exist((String)data.get("username"))) {
             throw new RuntimeException("Ya existe un usuario con ese identificador, introduzca otro");
         }
         User user = new User(); 
-        update(user, data);
+        update(user, data, principal);
 
         return user;
     }
 
     @Override
-    protected void update(User entity, Map<String, Object> data) {
+    protected void update(User entity, Map<String, Object> data, Principal principal) {
                  
         entity.setFirstName((String) data.get("firstName"));
         entity.setLastName((String) data.get("lastName"));

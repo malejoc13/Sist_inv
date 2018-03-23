@@ -36,15 +36,15 @@ public class Tipo_movManager extends AbstractManager<Tipo_mov, Tipo_movDTO>{
     }
     
     @Override
-    protected Tipo_mov create(Map<String, Object> data) throws Exception {
+    protected Tipo_mov create(Map<String, Object> data, Principal principal) throws Exception {
         Tipo_mov tp = new Tipo_mov(); 
-        update(tp, data);
+        update(tp, data, principal);
 
         return tp;
     }
 
     @Override
-    protected void update(Tipo_mov entity, Map<String, Object> data) { 
+    protected void update(Tipo_mov entity, Map<String, Object> data, Principal principal) { 
         entity.setName((String) data.get("name"));
         entity.setDescripcion((String) data.get("descripcion"));
         

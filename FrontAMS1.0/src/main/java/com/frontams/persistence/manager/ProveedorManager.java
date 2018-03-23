@@ -35,15 +35,15 @@ public class ProveedorManager extends AbstractManager<Proveedor, ProveedorDTO>{
     }
     
     @Override
-    protected Proveedor create(Map<String, Object> data) throws Exception {
+    protected Proveedor create(Map<String, Object> data, Principal principal) throws Exception {
         Proveedor tp = new Proveedor(); 
-        update(tp, data);
+        update(tp, data, principal);
 
         return tp;
     }
 
     @Override
-    protected void update(Proveedor entity, Map<String, Object> data) { 
+    protected void update(Proveedor entity, Map<String, Object> data, Principal principal) { 
         entity.setName((String) data.get("name"));
         entity.setDireccion((String) data.get("direccion"));
         entity.setTelefono((String) data.get("telefono"));

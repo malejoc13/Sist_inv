@@ -53,8 +53,8 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
 
     public abstract AbstractBaseDAO dao();
     //reimplementar en todas las Manager
-    protected T create(Map<String, Object> data) throws Exception{ return null;}
-    protected void update(T entity, Map<String, Object> data) throws Exception{}    
+    protected T create(Map<String, Object> data, Principal principal) throws Exception{ return null;}
+    protected void update(T entity, Map<String, Object> data, Principal principal) throws Exception{}    
     protected boolean inUse(T entity) throws Exception{ return false;}
     protected WebResponseData del(T entity, Principal principal) throws Exception{ 
         dao().delete(entity);
@@ -69,7 +69,7 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
         return del(entity, principal);        
     }
 
-    public Long save(Map<String, Object> data) throws Exception {
+    public Long save(Map<String, Object> data, Principal principal) throws Exception {
         System.out.println("AbstractManager -> creating...");
         System.out.println(data);
         T entity;
@@ -78,13 +78,13 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
        
         if (creating) {
             
-            entity = create(data);
+            entity = create(data, principal);
            
         } else {
             Long id = (Long) data.get("id");
             entity = (T) dao().findById(id); 
             if (entity != null) {
-                update(entity, data);
+                update(entity, data, principal);
             }
         }
 

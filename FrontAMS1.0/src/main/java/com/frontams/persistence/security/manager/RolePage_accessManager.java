@@ -45,19 +45,19 @@ public class RolePage_accessManager extends AbstractManager<RolePage_access, Rol
     }
     
     @Override
-    protected RolePage_access create(Map<String, Object> data) throws Exception {
+    protected RolePage_access create(Map<String, Object> data, Principal principal) throws Exception {
              
         RolePage_access rolepage = new RolePage_access(); 
         if (rolepageDAO.exist((Long) data.get("roleId"), (Long) data.get("page_accessId")) != null) {
                 throw new RuntimeException("Esta asociaci&oacute;n ya existe.");
             }
-        update(rolepage, data);
+        update(rolepage, data, principal);
 
         return rolepage;
     }
 
     @Override
-    protected void update(RolePage_access entity, Map<String, Object> data) {
+    protected void update(RolePage_access entity, Map<String, Object> data, Principal principal) {
         Long roleId = (Long) data.get("roleId");
         Long pageAccessId = (Long) data.get("page_accessId");       
                  

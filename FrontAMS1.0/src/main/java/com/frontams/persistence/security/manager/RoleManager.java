@@ -37,15 +37,15 @@ public class RoleManager extends AbstractManager<Role, RoleDTO>{
     }
     
     @Override
-    protected Role create(Map<String, Object> data) throws Exception {
+    protected Role create(Map<String, Object> data, Principal principal) throws Exception {
         Role tp = new Role(); 
-        update(tp, data);
+        update(tp, data, principal);
 
         return tp;
     }
 
     @Override
-    protected void update(Role entity, Map<String, Object> data) { 
+    protected void update(Role entity, Map<String, Object> data, Principal principal) { 
         entity.setName((String) data.get("name"));
         entity.setDescripcion((String) data.get("descripcion"));
         entity.setAccess_all((Boolean) data.get("access_all"));

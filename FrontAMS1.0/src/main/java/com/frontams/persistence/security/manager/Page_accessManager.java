@@ -38,15 +38,15 @@ public class Page_accessManager extends AbstractManager<Page_access, Page_access
     }
     
     @Override
-    protected Page_access create(Map<String, Object> data) throws Exception {
+    protected Page_access create(Map<String, Object> data, Principal principal) throws Exception {
         Page_access page = new Page_access(); 
-        update(page, data);
+        update(page, data, principal);
 
         return page;
     }
 
     @Override
-    protected void update(Page_access entity, Map<String, Object> data) {
+    protected void update(Page_access entity, Map<String, Object> data, Principal principal) {
               
         entity.setName((String) data.get("name"));
         entity.setIdPage((String) data.get("idPage"));         

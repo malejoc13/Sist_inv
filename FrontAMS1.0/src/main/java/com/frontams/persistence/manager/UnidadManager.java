@@ -34,15 +34,15 @@ public class UnidadManager extends AbstractManager<Unidad, UnidadDTO>{
     }
     
     @Override
-    protected Unidad create(Map<String, Object> data) throws Exception {
+    protected Unidad create(Map<String, Object> data, Principal principal) throws Exception {
         Unidad tp = new Unidad(); 
-        update(tp, data);
+        update(tp, data, principal);
 
         return tp;
     }
 
     @Override
-    protected void update(Unidad entity, Map<String, Object> data) { 
+    protected void update(Unidad entity, Map<String, Object> data, Principal principal) { 
         entity.setName((String) data.get("name"));
         entity.setDireccion((String) data.get("direccion"));
         entity.setTelefono((String) data.get("telefono"));  

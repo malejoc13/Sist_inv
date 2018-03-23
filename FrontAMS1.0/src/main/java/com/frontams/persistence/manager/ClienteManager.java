@@ -35,15 +35,15 @@ public class ClienteManager extends AbstractManager<Cliente, ClienteDTO>{
     }
     
     @Override
-    protected Cliente create(Map<String, Object> data) throws Exception {
+    protected Cliente create(Map<String, Object> data, Principal principal) throws Exception {
         Cliente tp = new Cliente(); 
-        update(tp, data);
+        update(tp, data, principal);
 
         return tp;
     }
     
     @Override
-    protected void update(Cliente entity, Map<String, Object> data) { 
+    protected void update(Cliente entity, Map<String, Object> data, Principal principal) { 
         entity.setName((String) data.get("name"));
         entity.setLastName((String) data.get("lastName"));
         entity.setDireccion((String) data.get("direccion"));

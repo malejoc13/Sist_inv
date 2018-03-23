@@ -89,7 +89,7 @@ Ext.define('Admin.cmp.gridFilter.FilterDate', {
                                listeners: {
                                     click: {
                                         fn: function (component, e, eOpts) { 
-                                            //this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);                                            
+                                            this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);                                            
                                             this.up().destroy();
                                         }
                                     }
@@ -107,9 +107,9 @@ Ext.define('Admin.cmp.gridFilter.FilterDate', {
                                listeners: {
                                     click: {
                                         fn: function (component, e, eOpts) { 
-                                            this.up().items.items[0].reset();
-                                            this.up().items.items[1].reset();
-                                            this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);
+                                            //this.up().items.items[0].reset();
+                                            //this.up().items.items[1].reset();
+                                            //this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);
                                             this.up().destroy();
                                         }
                                     }

@@ -10,6 +10,9 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
             if (record.get('cantidad') < me.up().getLimit(record.get('saldo_ini'))) {
                return 'warning-row'; 
             }
+            if (record.get('saldo_ini') < 5) {
+                 return 'warning-row';
+            }
             if (record.get('cantidad') === record.get('saldo_ini')) {
                  return 'new-row';
             }

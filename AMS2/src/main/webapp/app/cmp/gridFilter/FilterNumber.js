@@ -112,7 +112,7 @@ Ext.define('Admin.cmp.gridFilter.FilterNumber', {
                                                 button.setText('');
                                                 button.addCls('disabled-button');
                                             }
-                                            //button.up().up().up().up().getStore().loadPage(1);
+                                            button.up().up().up().up().getStore().loadPage(1);
                                             w.destroy();
                                         }
                                     }
@@ -130,10 +130,10 @@ Ext.define('Admin.cmp.gridFilter.FilterNumber', {
                                 listeners: {
                                     click: {
                                         fn: function (component, e, eOpts) {
-                                            alert(this.up().items.items[0].items.items[0].getXTypes());
-                                           this.up().items.items[0].items.items[0].reset();
-                                            this.up().items.items[0].items.items[0].reset();
-                                            this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);
+                                            //alert(this.up().items.items[0].items.items[0].getXTypes());
+                                           //this.up().items.items[0].items.items[0].reset();
+                                           // this.up().items.items[0].items.items[0].reset();
+                                           // this.up().config.triggerButton.up().up().up().up().getStore().loadPage(1);
                                             this.up().destroy();
                                         }
                                     }

@@ -80,7 +80,7 @@ public abstract class AbstractController<D> {
                 checkAuth(session, pageId, "create");
             }else {checkAuth(session, pageId, "update");}
             
-            return new WebResponseData(getAbstractManager().save(data));
+            return new WebResponseData(getAbstractManager().save(data, principal));
         } catch (Exception e) {
             e.printStackTrace();
             return WebResponse.forException(e);

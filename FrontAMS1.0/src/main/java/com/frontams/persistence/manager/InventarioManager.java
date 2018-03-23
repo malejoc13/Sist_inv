@@ -47,23 +47,33 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     }
     
     @Override
-    protected Inventario create(Map<String, Object> data) throws Exception {
+    protected Inventario create(Map<String, Object> data, Principal principal) throws Exception {
         Inventario tp = new Inventario(); 
         if (inventarioDAO.exist((Long) data.get("productoId"), (Long) data.get("unidadId"))) {
             throw new RuntimeException("Ya tiene este producto en inventario");
         } else {
             System.out.println("InventarioManager -> creating...");
-            update(tp, data);
+            update(tp, data, principal);
         }
         return tp;
     }
 
     @Override
-    protected void update(Inventario entity, Map<String, Object> data) { 
+    protected void update(Inventario entity, Map<String, Object> data, Principal principal) { 
        
-        if (entity.getCantidad() != null && entity.getCantidad() < (Double) data.get("cantidad")) {
-            throw new RuntimeException("Est&aacute; intentando rebajar una cantidad mayor a ("+entity.getCantidad()+") que es la existente en el inventario" );
+        if (principal.getAccessAll()) {
+            upd(entity, data);
+        }else {
+            if (entity.getCantidad() != null &&
+                entity.getCantidad() <= (Double) data.get("cantidad")) {
+                throw new RuntimeException("Est&aacute; intentando rebajar una cantidad mayor o igual a ("+entity.getCantidad()+") que es la existente en el inventario" );
+            }
+            upd(entity, data);
         }
+        
+    }
+    
+    private void upd(Inventario entity, Map<String, Object> data){
         entity.setCantidad((Double) data.get("cantidad"));
         entity.setSaldo_ini((Double) data.get("saldo_ini"));
         entity.setFecha_ini((Date) data.get("fecha_ini"));
@@ -75,7 +85,6 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
         entity.setProducto(prod);      
         entity.setUnidad(unidad);
     }
-    
     
     
 }
