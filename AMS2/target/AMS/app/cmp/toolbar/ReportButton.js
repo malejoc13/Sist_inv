@@ -15,7 +15,7 @@ Ext.define('Admin.cmp.toolbar.ReportButton', {
              var total = grid.getStore().totalCount;
            
             if (gridTab.getXType()=== "inventarioGridTab") {                
-                if (params) { 
+                if (params && params.indexOf("unidad.name") !== -1) { 
                     me.getReport(url,total);
                 } else {
                     Ext.Msg.alert('Informaci&oacute;n', "Debe filtrar primeramente por una Unidad");

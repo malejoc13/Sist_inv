@@ -60,21 +60,30 @@ public class InventarioExcelBuilder  extends AbstractExcelView{
 
         header.createCell(1).setCellValue("Producto");
         header.getCell(1).setCellStyle(style);
-
-        header.createCell(2).setCellValue("Saldo inicial");
+        
+        header.createCell(2).setCellValue("Descripción");
         header.getCell(2).setCellStyle(style);
         
-        header.createCell(3).setCellValue("Cantidad");
+        header.createCell(3).setCellValue("UM");
         header.getCell(3).setCellStyle(style);
-        
-        header.createCell(4).setCellValue("Fecha alta");
+
+        header.createCell(4).setCellValue("Saldo inicial");
         header.getCell(4).setCellStyle(style);
         
-        header.createCell(5).setCellValue("Fecha");
+        header.createCell(5).setCellValue("Cantidad");
         header.getCell(5).setCellStyle(style);
         
-        header.createCell(6).setCellValue("Unidad");
+        header.createCell(6).setCellValue("Rotación");
         header.getCell(6).setCellStyle(style);
+        
+        header.createCell(7).setCellValue("Fecha alta");
+        header.getCell(7).setCellStyle(style);
+        
+        header.createCell(8).setCellValue("Fecha");
+        header.getCell(8).setCellStyle(style);
+        
+        header.createCell(9).setCellValue("Unidad");
+        header.getCell(9).setCellStyle(style);
 
        // create data rows
         int rowCount = 1;
@@ -83,11 +92,14 @@ public class InventarioExcelBuilder  extends AbstractExcelView{
             HSSFRow aRow = sheet.createRow(rowCount++);            
             aRow.createCell(0).setCellValue(element.get("productoClave") + "");
             aRow.createCell(1).setCellValue(element.get("producto") + "");
-            aRow.createCell(2).setCellValue(element.get("saldo_ini") + ""); 
-            aRow.createCell(3).setCellValue(element.get("cantidad") + ""); 
-            aRow.createCell(4).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_ini").toString() )) )+ ""); 
-            aRow.createCell(5).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha").toString() )) ) + ""); 
-            aRow.createCell(6).setCellValue(element.get("unidad") + "");       
+            aRow.createCell(2).setCellValue(element.get("descripcion") + "");
+            aRow.createCell(3).setCellValue(element.get("umNombre") + "");
+            aRow.createCell(4).setCellValue(element.get("saldo_ini") + ""); 
+            aRow.createCell(5).setCellValue(element.get("cantidad") + ""); 
+            aRow.createCell(6).setCellValue(element.get("rotacion") + ""); 
+            aRow.createCell(7).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha_ini").toString() )) )+ ""); 
+            aRow.createCell(8).setCellValue(sdf.format(new Date(Long.parseLong(element.get("fecha").toString() )) ) + ""); 
+            aRow.createCell(9).setCellValue(element.get("unidad") + "");       
             
         }
     }

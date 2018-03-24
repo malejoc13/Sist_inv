@@ -62,7 +62,11 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 text: "Saldo inicial",
                 dataIndex: 'saldo_ini',
                 filterType: 'filterNumber',
-                width: '10%'
+                width: '10%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Rotación: ' + record.get('rotacion') + '"';
+                    return value;
+                }
             },
             {
                 text: "Cantidad",

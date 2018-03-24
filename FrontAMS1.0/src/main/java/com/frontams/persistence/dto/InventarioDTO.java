@@ -38,6 +38,8 @@ public class InventarioDTO implements Serializable{
     
     private String unidad;
     private Long unidadId;
+    
+    private Integer rotacion;
 
     /**
      * @return the id
@@ -233,6 +235,20 @@ public class InventarioDTO implements Serializable{
      */
     public void setUmNombre(String umNombre) {
         this.umNombre = umNombre;
+    }
+
+    /**
+     * @return the rotacion
+     */
+    public Integer getRotacion() {
+        return rotacion;
+    }
+
+    /**
+     * @param rotacion the rotacion to set
+     */
+    public void setRotacion(Integer rotacion) {
+        this.rotacion = rotacion;
     }
     
     

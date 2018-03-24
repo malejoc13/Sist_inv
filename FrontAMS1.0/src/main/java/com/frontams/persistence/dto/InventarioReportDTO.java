@@ -26,6 +26,8 @@ public class InventarioReportDTO implements Serializable{
     
     private String tipo_prod;
     
+    private String umNombre;
+    
     private String unidad;
 
     /**
@@ -110,6 +112,20 @@ public class InventarioReportDTO implements Serializable{
      */
     public void setProdDescr(String prodDescr) {
         this.prodDescr = prodDescr;
+    }
+
+    /**
+     * @return the umNombre
+     */
+    public String getUmNombre() {
+        return umNombre;
+    }
+
+    /**
+     * @param umNombre the umNombre to set
+     */
+    public void setUmNombre(String umNombre) {
+        this.umNombre = umNombre;
     }
     
     

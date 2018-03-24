@@ -42,6 +42,7 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                 .add(Projections.property("id").as("id"))                                                
                 .add(Projections.property("cantidad").as("cantidad"))
                 .add(Projections.property("saldo_ini").as("saldo_ini"))
+                .add(Projections.property("rotacion").as("rotacion"))
                 .add(Projections.property("fecha_ini").as("fecha_ini"))
                 .add(Projections.property("fecha").as("fecha"))
                 .add(Projections.property("producto.name").as("producto"))                
@@ -65,5 +66,7 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                 .setMaxResults(1)
                 .uniqueResult() != null;
     }    
+    
+    
     
 }

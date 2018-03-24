@@ -27,6 +27,7 @@ public class InventarioReportDAO extends AbstractBaseDAO<Inventario, InventarioR
         return getCriteria()  //entidad   //alias
                 .createAlias("producto", "producto")
                 .createAlias("producto.tipo_prod", "tipo_prod")
+                .createAlias("producto.un_medida", "un_medida")
                 .createAlias("unidad", "unidad");
     }
     
@@ -42,6 +43,7 @@ public class InventarioReportDAO extends AbstractBaseDAO<Inventario, InventarioR
                 .add(Projections.property("producto.clave").as("productoClave"))
                 .add(Projections.property("producto.descripcion").as("prodDescr"))
                 .add(Projections.property("tipo_prod.name").as("tipo_prod"))
+                .add(Projections.property("un_medida.nombre_um").as("umNombre"))
                 .add(Projections.property("unidad.name").as("unidad"));
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(InventarioReportDTO.class));

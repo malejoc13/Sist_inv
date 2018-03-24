@@ -23,6 +23,7 @@ import com.frontams.persistence.model.Producto;
 import com.frontams.persistence.model.Unidad;
 import java.util.Date;
 import java.util.Map;
+import java.util.Objects;
 import org.mockito.cglib.beans.BulkBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,29 +49,33 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     
     @Override
     protected Inventario create(Map<String, Object> data, Principal principal) throws Exception {
-        Inventario tp = new Inventario(); 
+        Inventario entity = new Inventario(); 
         if (inventarioDAO.exist((Long) data.get("productoId"), (Long) data.get("unidadId"))) {
             throw new RuntimeException("Ya tiene este producto en inventario");
         } else {
             System.out.println("InventarioManager -> creating...");
-            update(tp, data, principal);
+            upd(entity, data);
+            entity.setRotacion(0);
         }
-        return tp;
+        return entity;
     }
 
     @Override
     protected void update(Inventario entity, Map<String, Object> data, Principal principal) { 
-       
+      
+        if (!Objects.equals(entity.getSaldo_ini(), (Double) data.get("saldo_ini"))) {
+            System.out.println("Rotating...");
+            rotate(entity);            
+        }
+        
         if (principal.getAccessAll()) {
             upd(entity, data);
         }else {
-            if (entity.getCantidad() != null &&
-                entity.getCantidad() <= (Double) data.get("cantidad")) {
+            if (entity.getCantidad() <= (Double) data.get("cantidad")) {
                 throw new RuntimeException("Est&aacute; intentando rebajar una cantidad mayor o igual a ("+entity.getCantidad()+") que es la existente en el inventario" );
             }
             upd(entity, data);
-        }
-        
+        }   
     }
     
     private void upd(Inventario entity, Map<String, Object> data){
@@ -84,6 +89,10 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
         
         entity.setProducto(prod);      
         entity.setUnidad(unidad);
+    }
+    
+    private void rotate(Inventario entity){
+        entity.setRotacion(entity.getRotacion()+1);    
     }
     
     

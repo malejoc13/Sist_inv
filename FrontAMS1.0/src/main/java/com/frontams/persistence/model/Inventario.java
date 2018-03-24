@@ -51,6 +51,8 @@ public class Inventario extends BaseEntity{
     
     private Date fecha;
     
+    private Integer rotacion;
+    
     @ManyToOne
     @JoinColumn(name = "producto")
     private Producto producto;
@@ -156,6 +158,20 @@ public class Inventario extends BaseEntity{
      */
     public void setUnidad(Unidad unidad) {
         this.unidad = unidad;
+    }
+
+    /**
+     * @return the rotacion
+     */
+    public Integer getRotacion() {
+        return rotacion;
+    }
+
+    /**
+     * @param rotacion the rotacion to set
+     */
+    public void setRotacion(Integer rotacion) {
+        this.rotacion = rotacion;
     }
     
     
