@@ -39,7 +39,7 @@
             ]
         },
         {
-            items: [
+            items: [                
                 {
                     fieldLabel: 'Saldo inicial',                  
                     name: 'saldo_ini',
@@ -54,7 +54,7 @@
                             }                                                    
                         }
                     }
-                },
+                },                
                 {
                     fieldLabel: 'Fecha de alta',                  
                     name: 'fecha_ini',
@@ -72,6 +72,11 @@
                             }                                                    
                         }
                     }
+                },
+                {
+                    xtype     : 'baseCheckboxField',
+                    fieldLabel: 'Rotar',
+                    name: 'rotate'                   
                 }
             ]
         },

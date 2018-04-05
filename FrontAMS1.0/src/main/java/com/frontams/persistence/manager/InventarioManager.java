@@ -63,7 +63,7 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     @Override
     protected void update(Inventario entity, Map<String, Object> data, Principal principal) { 
       
-        if (!Objects.equals(entity.getSaldo_ini(), (Double) data.get("saldo_ini"))) {
+        if ((Boolean) data.get("rotate")) {
             System.out.println("Rotating...");
             rotate(entity);            
         }
