@@ -59,7 +59,7 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
 
     public List<NomenclatorDTO> nomenclatorList(List<Criterion> expressions) {
         Criteria criteria = buildCriteria(expressions);
-        criteria.addOrder(Order.asc("name"));
+        //criteria.addOrder(Order.asc("name"));
         applyNomenclatorProjection(criteria);
 
         return criteria.list();
@@ -125,6 +125,7 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
     }
 
     protected void applyNomenclatorProjection(Criteria criteria) {
+        criteria.addOrder(Order.asc("name"));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("name").as("name"));

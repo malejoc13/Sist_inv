@@ -59,6 +59,16 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 
             },
             {
+                text: "Precio",
+                dataIndex: 'precio_max',
+                filterType: 'filterNumber',
+                width: '7%',
+                renderer: function(value, metaData, record, rowIdx, colIdx, store) {
+                    metaData.tdAttr = 'data-qtip="Precio mínimo: $' + record.get('precio_min') + '"';
+                    return value;
+                }
+            },
+            {
                 text: "Saldo inicial",
                 dataIndex: 'saldo_ini',
                 filterType: 'filterNumber',

@@ -47,6 +47,7 @@ public class Un_medidaDAO extends AbstractBaseDAO<Un_medida, Un_medidaDTO> {
     //reimplemento la funcion de su padre para adaptarlo a los atributos de esta clase
     @Override
     protected void applyNomenclatorProjection(Criteria criteria) {
+        criteria.addOrder(Order.asc("clave"));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("nombre_um").as("name"))

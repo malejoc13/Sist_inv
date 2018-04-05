@@ -92,6 +92,7 @@ public class UserDAO extends AbstractBaseDAO<User, UserDTO> {
     
     @Override
     protected void applyNomenclatorProjection(Criteria criteria) {
+        criteria.addOrder(Order.asc("name"));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("username").as("name"));

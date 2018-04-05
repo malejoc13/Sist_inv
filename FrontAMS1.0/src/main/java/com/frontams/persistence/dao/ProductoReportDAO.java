@@ -32,7 +32,7 @@ public class ProductoReportDAO extends AbstractBaseDAO<Producto, ProductoReportD
     }
     
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("tipo_prod.name"));
+        criteria.addOrder(Order.asc("clave"));
     }
     
     @Override

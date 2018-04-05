@@ -66,12 +66,14 @@ public class ProductoDAO extends AbstractBaseDAO<Producto, ProductoDTO>{
     
      @Override
     protected void applyNomenclatorProjection(Criteria criteria) {
+        criteria.addOrder(Order.asc("clave"));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("name").as("name"))
                 .add(Projections.property("clave").as("clave"))
                 .add(Projections.property("descripcion").as("descripcion"));
                                           //atribUM       //atrib Nomencator
+        
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(NomenclatorClaveDTO.class));
 

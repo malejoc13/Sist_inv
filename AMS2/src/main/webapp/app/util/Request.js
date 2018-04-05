@@ -81,6 +81,6 @@ Ext.define('Admin.util.Request', {
     },
     onRequestexception: function (conn, response, options, eOpts) {
         
-        alert('Servidor caido. Pro favor contacte al Administrador.');
+        alert('Servidor caido. Por favor contacte al Administrador.');
     }
 });

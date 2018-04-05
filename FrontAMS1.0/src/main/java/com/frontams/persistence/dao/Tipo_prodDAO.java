@@ -53,6 +53,7 @@ public class Tipo_prodDAO extends AbstractBaseDAO<Tipo_prod, Tipo_prodDTO> {
     
     @Override
     protected void applyNomenclatorProjection(Criteria criteria) {
+        criteria.addOrder(Order.asc("clave"));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("name").as("name"))

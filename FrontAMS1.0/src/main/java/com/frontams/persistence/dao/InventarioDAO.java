@@ -33,7 +33,7 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
     }
     
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("unidad.name"));
+        criteria.addOrder(Order.asc("producto.clave"));
     }
     
     @Override
@@ -50,6 +50,8 @@ public class InventarioDAO extends AbstractBaseDAO<Inventario, InventarioDTO>{
                 .add(Projections.property("producto.clave").as("productoClave"))
                 .add(Projections.property("producto.clave_sat").as("productoClaveSat"))
                 .add(Projections.property("producto.descripcion").as("descripcion"))
+                .add(Projections.property("producto.precio_max").as("precio_max"))
+                .add(Projections.property("producto.precio_min").as("precio_min"))
                 .add(Projections.property("un_medida.clave").as("umClave"))
                 .add(Projections.property("un_medida.nombre_um").as("umNombre"))
                 .add(Projections.property("unidad.name").as("unidad"))

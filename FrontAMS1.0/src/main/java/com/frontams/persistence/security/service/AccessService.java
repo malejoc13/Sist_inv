@@ -40,10 +40,10 @@ public class AccessService {
         Long idPageAccess = pageAccessDAO.getIdByPageId(pageId);        
         Long idRole = principal.getRoleId();
        
-        if (principal.getAccessAll()) {//implementar permisos  determinadas funcionalidades
-            return true;
-        } else {            
+//        if (principal.getAccessAll()) {//implementar permisos  determinadas funcionalidades
+//            return true;
+//        } else {            
             return rolePageAccessDAO.getPermission(idRole, idPageAccess, operation);
-        }
+//        }
     }
 }

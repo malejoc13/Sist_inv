@@ -32,6 +32,8 @@ public class InventarioDTO implements Serializable{
     private String productoClave;
     private String productoClaveSat;
     private Long productoId;
+    private Double precio_max;    
+    private Double precio_min;
     
     private String umClave;
     private String umNombre;
@@ -249,6 +251,34 @@ public class InventarioDTO implements Serializable{
      */
     public void setRotacion(Integer rotacion) {
         this.rotacion = rotacion;
+    }
+
+    /**
+     * @return the precio_max
+     */
+    public Double getPrecio_max() {
+        return precio_max;
+    }
+
+    /**
+     * @param precio_max the precio_max to set
+     */
+    public void setPrecio_max(Double precio_max) {
+        this.precio_max = precio_max;
+    }
+
+    /**
+     * @return the precio_min
+     */
+    public Double getPrecio_min() {
+        return precio_min;
+    }
+
+    /**
+     * @param precio_min the precio_min to set
+     */
+    public void setPrecio_min(Double precio_min) {
+        this.precio_min = precio_min;
     }
     
     
