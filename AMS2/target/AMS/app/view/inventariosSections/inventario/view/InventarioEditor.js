@@ -88,27 +88,46 @@
                     xtype: 'baseDoubleField',                    
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio',
-                    disabledOnCreate: true,
-                    validator:function (val) { 
-                          saldoIni =  this.up().up().getForm().findField ( 'saldo_ini' ).getValue();
+                    disabledOnCreate: true//,
+                   // validator:function (val) { 
+                          //saldoIni =  this.up().up().getForm().findField ( 'saldo_ini' ).getValue();
                           //Ext.Msg.alert('Informaci&oacute;n', saldoIni);
-                            if (val){
-                                    if (parseFloat(val) <= saldoIni) {           
-                                        return true;
-                                    }else{
-                                         return "La cantidad debe ser menor o igual al Saldo inicial";
-                                    }
-                            }                         
-                     }
+//                            if (val){
+//                                    if (parseFloat(val) <= saldoIni) {           
+//                                        return true;
+//                                    }else{
+//                                         return "La cantidad debe ser menor o igual al Saldo inicial";
+//                                    }
+//                            }                         
+                    // }
                 },
                 {
                     fieldLabel: 'Fecha',                  
                     name: 'fecha',
-                    xtype: 'baseDateField',                  
+                    xtype: 'baseDateField',
                     maxValue: new Date(),
                     allowBlank : false,
                     blankText : 'Este campo es obligatorio',
                     disabledOnCreate: true,
+                    init: function (data) {
+                        var me = this,
+                                date = new Date();
+                        me.setValue(date);
+                        if (!Session.Principal.accessAll){ 
+                           if (data && data.id) {//si esta editando
+                               me.disabledOnCreate=false;
+                               if (me.disabledOnEdit) {
+                                   me.disable();               
+                               }
+                           } else {//si esta creando
+                               me.disabledOnEdit=false;
+                               if (me.disabledOnCreate) {
+                                   me.disable();
+
+                               }
+                           }
+                       }
+                    },
                     validator:function (val) { 
                           fechaIni = new Date(parseInt(this.up().up().getValues().values['fecha_ini']));                          
                          
