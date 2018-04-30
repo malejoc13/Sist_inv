@@ -7,7 +7,7 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
         loadingText: 'Cargando...', 
         getRowClass: function(record) { 
             var me = this;
-            if (record.get('cantidad') < me.up().getLimit(record.get('saldo_ini'))) {
+            if (record.get('cantidad') < me.up().getLimit(record.get('cantidad'))) {
                return 'warning-row'; 
             }
             if (record.get('saldo_ini') < 5) {
