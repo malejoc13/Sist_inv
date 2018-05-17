@@ -10,11 +10,11 @@
     </parent> -->
     
     <groupId>com.frontams</groupId>
-    <artifactId>Front</artifactId>
+    <artifactId>FrontAMS1.0</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>Front</name>
+    <name>FrontAMS1.0</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

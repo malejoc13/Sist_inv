@@ -52,6 +52,7 @@ com\frontams\common\dao\BaseDAO.class
 com\frontams\persistence\model\Producto.class
 com\frontams\persistence\security\dto\Principal.class
 com\frontams\web\api\Tipo_prodController.class
+com\frontams\web\api\Inv_historicoController.class
 com\frontams\web\api\Mov_prodController.class
 com\frontams\persistence\dao\UnidadDAO.class
 com\frontams\persistence\dto\ProductoDTO.class
@@ -76,6 +77,7 @@ com\frontams\persistence\dto\chart\BaseChartPoint.class
 com\frontams\web\security\SecurityController.class
 com\frontams\businessLogic\transactions\Sale.class
 com\frontams\persistence\dto\chart\Point.class
+com\frontams\persistence\model\Inv_historico.class
 com\frontams\persistence\security\dto\Page_accessDTO.class
 com\frontams\persistence\dao\Mov_prodDAO.class
 com\frontams\persistence\dto\ClienteDTO.class
@@ -94,6 +96,7 @@ com\frontams\common\util\Main.class
 com\frontams\persistence\dao\ProductoReportDAO.class
 com\frontams\persistence\manager\ProductoReportManager.class
 com\frontams\common\controller\AbstractController.class
+com\frontams\persistence\dao\Inv_historicoDAO.class
 com\frontams\persistence\security\dto\RoleDTO.class
 com\frontams\persistence\dto\ProductoReportDTO.class
 com\frontams\common\dto\NomenclatorDTO.class
@@ -107,9 +110,11 @@ com\frontams\conf\spring\WebConfig.class
 com\frontams\persistence\manager\UnidadManager.class
 com\frontams\web\api\MovimientoController.class
 com\frontams\persistence\dto\ProveedorDTO.class
+com\frontams\persistence\dto\Inv_historicoDTO.class
 com\frontams\persistence\dto\Un_medidaDTO.class
 com\frontams\persistence\dto\chart\PieChartPoint.class
 com\frontams\persistence\dto\Tipo_movDTO.class
 com\frontams\common\model\BaseEntity.class
 com\frontams\web\security\Page_accessController.class
 com\frontams\persistence\dto\Mov_prodDTO.class
+com\frontams\persistence\manager\Inv_historicoManager.class

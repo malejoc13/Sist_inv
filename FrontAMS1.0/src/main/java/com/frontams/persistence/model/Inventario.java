@@ -59,11 +59,10 @@ public class Inventario extends BaseEntity{
     
     @ManyToOne
     @JoinColumn(name = "unidad")
-    private Unidad unidad;
+    private Unidad unidad;    
 
-    /**
-     * @return the id
-     */
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventario")
+    private List<Inv_historico> inv_historico;
     
     public Long getId() {
         return id;
@@ -172,6 +171,20 @@ public class Inventario extends BaseEntity{
      */
     public void setRotacion(Integer rotacion) {
         this.rotacion = rotacion;
+    }
+
+    /**
+     * @return the inv_historico
+     */
+    public List<Inv_historico> getInv_historico() {
+        return inv_historico;
+    }
+
+    /**
+     * @param inv_historico the inv_historico to set
+     */
+    public void setInv_historico(List<Inv_historico> inv_historico) {
+        this.inv_historico = inv_historico;
     }
     
     
