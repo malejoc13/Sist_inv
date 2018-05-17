@@ -28,6 +28,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\chart\BaseChartPoint.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Inventario.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Un_medidaManager.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Inv_historicoController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Tipo_prodManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\Un_medidaController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\Tipo_movDAO.java
@@ -38,6 +39,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dto\UserDTO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\util\Constants.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\util\response\WebResponse.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\Inv_historicoDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Movimiento.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\util\GSession.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dao\InventarioDAO.java
@@ -64,6 +66,7 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Tipo_prod.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\dao\UserDAO.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\chart\EarningChartPoint.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\Inv_historicoManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\MovimientoController.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\common\util\GRUtil.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\api\ProductoReportController.java
@@ -110,3 +113,5 @@ D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\char
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\security\manager\UserManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\manager\InventarioManager.java
 D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\web\security\RolePage_accessController.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\dto\Inv_historicoDTO.java
+D:\Proyecto\Sist_inv\FrontAMS1.0\src\main\java\com\frontams\persistence\model\Inv_historico.java

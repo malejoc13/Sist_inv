@@ -59,11 +59,8 @@ public class Inventario extends BaseEntity{
     
     @ManyToOne
     @JoinColumn(name = "unidad")
-    private Unidad unidad;
+    private Unidad unidad;    
 
-    /**
-     * @return the id
-     */
     
     public Long getId() {
         return id;
