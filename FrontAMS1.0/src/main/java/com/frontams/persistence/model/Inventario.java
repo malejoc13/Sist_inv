@@ -61,8 +61,10 @@ public class Inventario extends BaseEntity{
     @JoinColumn(name = "unidad")
     private Unidad unidad;    
 
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventario")
     private List<Inv_historico> inv_historico;
+
     
     public Long getId() {
         return id;

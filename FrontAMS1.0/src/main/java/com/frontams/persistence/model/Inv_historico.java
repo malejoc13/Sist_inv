@@ -47,6 +47,7 @@ public class Inv_historico extends BaseEntity {
     private Double cantidad_old;
     
     private Double cantidad_new;
+
     
     @ManyToOne
     @JoinColumn(name = "inventario")
@@ -109,6 +110,7 @@ public class Inv_historico extends BaseEntity {
         this.cantidad_new = cantidad_new;
     }
 
+
     /**
      * @return the inventario
      */
@@ -122,5 +124,6 @@ public class Inv_historico extends BaseEntity {
     public void setInventario(Inventario inventario) {
         this.inventario = inventario;
     }
+
     
 }
