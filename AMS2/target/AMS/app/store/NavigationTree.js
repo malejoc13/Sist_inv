@@ -63,15 +63,23 @@ Ext.define('Admin.store.NavigationTree', {
             {
                 text: 'Inventario',
                 iconCls: 'x-fa fa-file-text-o',
-                viewType: 'inventarios',
-                leaf: true
-            },
-            {
-                text: 'Clientes',
-                iconCls: 'x-fa fa-street-view',
-                viewType: 'clientes',
-                leaf: true
-            },
+                expanded: true,
+                selectable: false,
+                children: [
+                    {
+                        text: 'Inventario',
+                        iconCls: 'x-fa fa-list-ol',
+                        viewType: 'inventarios',
+                        leaf: true
+                    },
+                    {
+                        text: 'Histórico',
+                        iconCls: 'x-fa fa-indent',
+                        viewType: 'inventarios',
+                        leaf: true
+                    }
+                ]
+            },            
             {
                 text: 'Movimientos',
                 iconCls: 'x-fa fa-exchange',
@@ -105,11 +113,17 @@ Ext.define('Admin.store.NavigationTree', {
                 ]
             },
             {
-                text: 'Nomencladores',
+                text: 'Catálogo general',
                 iconCls: 'x-fa fa-leanpub',
                 expanded: false,
                 selectable: false,                
                 children: [
+                    {
+                        text: 'Clientes',
+                        iconCls: 'x-fa fa-street-view',
+                        viewType: 'clientes',
+                        leaf: true
+                    },
                     {
                         text: 'Unidades',
                         iconCls: 'x-fa fa-shopping-cart',
