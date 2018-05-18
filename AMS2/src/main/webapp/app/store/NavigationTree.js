@@ -75,7 +75,7 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: 'Histórico',
                         iconCls: 'x-fa fa-indent',
-                        viewType: 'inventarios',
+                        viewType: 'inv_historicos',
                         leaf: true
                     }
                 ]

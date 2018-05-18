@@ -17,11 +17,14 @@ import com.frontams.persistence.model.Inv_historico;
 import com.frontams.persistence.model.Producto;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.CriteriaQuery;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
+
+import org.hibernate.criterion.SQLCriterion;
 
 @Repository
 public class Inv_historicoDAO extends AbstractBaseDAO<Inv_historico, Inv_historicoDTO>{
@@ -35,8 +38,9 @@ public class Inv_historicoDAO extends AbstractBaseDAO<Inv_historico, Inv_histori
     }
     
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("producto.clave"));
-    }
+       criteria.addOrder(Order.desc("fecha"));        
+    }    
+   
     
     @Override
     public void applyListProjection(Criteria criteria) {

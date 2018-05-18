@@ -7,9 +7,16 @@ Ext.define('Admin.view.inventariosSections.inv_historico.grid.Inv_historicoGrid'
         loadingText: 'Cargando...', 
         getRowClass: function(record) { 
             var me = this;
-            if (record.get('cantidad_new') < me.up().getLimit(record.get('cantidad_new'))) {
-               return 'warning-row'; 
-            }           
+            if (record.get('cantidad_old') > record.get('cantidad_new')) {               
+               return record.get('cantidad_new') < me.up().getLimit(record.get('cantidad_old')) ? 'warning-row':''; 
+            }
+                       
+            if (record.get('cantidad_new') < 5) {
+                 return 'warning-row';
+            }
+            if (record.get('cantidad_new') === record.get('cantidad_old')) {
+                 return 'new-row';
+            }
             return ''; 
         } 
     },
@@ -49,23 +56,24 @@ Ext.define('Admin.view.inventariosSections.inv_historico.grid.Inv_historicoGrid'
                 
             },
             {
-                text: "Cantidad anterior",
+                text: "Saldo ini",
                 dataIndex: 'cantidad_old',
                 filterType: 'filterNumber',
-                width: '10%'
+                width: '8%'
             },
             {
-                text: "Cantidad nueva",
+                text: "Saldo",
                 dataIndex: 'cantidad_new',
                 filterType: 'filterNumber',
-                width: '10%'
+                width: '8%'
             },
             {
                 xtype: 'dateGridColumn',
-                text: "Fecha de moificación",
+                text: "Fecha",
                 dataIndex: 'fecha',
+                format: 'd/m/Y g:i:s a',                
                 filterType: 'filterDate',
-                width: '12%'
+                width: '18%'
             }, 
             {
                 text: "Unidad",//implementar un render para qeu muetre o oculte la columna en caso de quiene sta autenticado

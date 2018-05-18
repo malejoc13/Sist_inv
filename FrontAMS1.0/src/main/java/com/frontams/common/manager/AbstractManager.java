@@ -90,12 +90,9 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
 
         entity = (T) dao().saveOrUpdate(entity);
 
-        if (creating) {
-            afterCreate(entity);
-        }
+        afterCreate(entity);        
 
-        return entity.getId();
-       
+        return entity.getId();       
     }
 
     public T findById(Long id) {
@@ -108,4 +105,5 @@ public abstract class AbstractManager<T extends BaseEntity, D> {
 
     protected void afterCreate(T entity) {
     } //Redefine if need to do something after save
+    
 }

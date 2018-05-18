@@ -116,7 +116,7 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
     public void addOrder(Criteria criteria) {
         //Override this if need to add Order to the list
     }
-
+    
     public NomenclatorDTO getNomenclatorById(Long id) {
         Criteria criteria = getCriteria();
         criteria.add(Restrictions.eq("id", id));

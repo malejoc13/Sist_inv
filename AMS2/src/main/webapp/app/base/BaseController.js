@@ -66,16 +66,18 @@ Ext.define('Admin.base.BaseController', {
     onGridItemDblClick: function (data, grid) {
         var me = this,
                 tab = grid.up();
+       if (String(tab.entity) !== 'inv_historico') {
+           
+            me.executingDblClick = true;
+            clearTimeout(me.singleClickTask); //to diferenciate between click and double click
 
-        me.executingDblClick = true;
-        clearTimeout(me.singleClickTask); //to diferenciate between click and double click
+            if (!tab.isShowingOnBottom()) {//Actualizar superTab.entityId solo cuando el click sea en el grid de arriba.
+                tab.entityId = data.id;  //Important (don't remove)
+                tab.superData = data;
+            }
 
-        if (!tab.isShowingOnBottom()) {//Actualizar superTab.entityId solo cuando el click sea en el grid de arriba.
-            tab.entityId = data.id;  //Important (don't remove)
-            tab.superData = data;
-        }
-
-        me.openViewTab(data, grid);
+            me.openViewTab(data, grid);
+        }  
     },
     openSingleView: function (cmp) {
         var me = this;
@@ -85,13 +87,18 @@ Ext.define('Admin.base.BaseController', {
        var me = this,
            grid = cmp.up().up().items.items[0],
            currentTab = grid.up(),
+           message = "¿Est&aacute; seguro que desea eliminar?",
            data = grid.getSelectionModel().getSelection();
            if (data.length !== 1) {//si no ha selecciondo nada
                 return;
             } else {
                 data = data[0].data;
             }
-        Ext.Msg.confirm("Eliminar", "¿Est&aacute; seguro que desea eliminar?", function(btn){
+        if (String(currentTab.entity) === 'inventario') {
+            //alert('inv.');
+            message = "¿Est&aacute; seguro que desea eliminar?<br/>Tenga en cuenta que también eliminará todas sus entradas en el Histórico"
+        }
+        Ext.Msg.confirm("Eliminar", message, function(btn){
             if (btn == "yes") {
                 Ext.getBody().mask("Eliminando...");
                 Request.load({

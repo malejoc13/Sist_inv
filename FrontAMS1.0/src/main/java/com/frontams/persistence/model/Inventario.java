@@ -13,6 +13,7 @@ package com.frontams.persistence.model;
 import com.frontams.common.model.BaseEntity;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,7 +39,7 @@ public class Inventario extends BaseEntity{
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "invenario_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "pk_sequence", sequenceName = "inventario_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
     @Generated(GenerationTime.INSERT)
     private Long id;
@@ -62,7 +63,7 @@ public class Inventario extends BaseEntity{
     private Unidad unidad;    
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventario")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "inventario")
     private List<Inv_historico> inv_historico;
 
     

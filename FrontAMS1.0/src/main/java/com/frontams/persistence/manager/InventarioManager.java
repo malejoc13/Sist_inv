@@ -13,10 +13,12 @@ package com.frontams.persistence.manager;
 import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
+import com.frontams.persistence.dao.Inv_historicoDAO;
 import com.frontams.persistence.dao.InventarioDAO;
 import com.frontams.persistence.dao.ProductoDAO;
 import com.frontams.persistence.dao.UnidadDAO;
 import com.frontams.persistence.dto.InventarioDTO;
+import com.frontams.persistence.model.Inv_historico;
 import com.frontams.persistence.security.dto.Principal;
 import com.frontams.persistence.model.Inventario;
 import com.frontams.persistence.model.Producto;
@@ -37,10 +39,15 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     private InventarioDAO inventarioDAO;
     
     @Autowired
+    private Inv_historicoDAO inventario_histDAO;
+    
+    @Autowired
     private ProductoDAO productoDAO;
     
     @Autowired
     private UnidadDAO unidadDAO;
+    
+    private Double cantidad_old = 0.0;
       
     @Override
     public AbstractBaseDAO dao() {
@@ -50,6 +57,7 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
     @Override
     protected Inventario create(Map<String, Object> data, Principal principal) throws Exception {
         Inventario entity = new Inventario(); 
+       
         if (inventarioDAO.exist((Long) data.get("productoId"), (Long) data.get("unidadId"))) {
             throw new RuntimeException("Ya tiene este producto en inventario");
         } else {
@@ -62,13 +70,13 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
 
     @Override
     protected void update(Inventario entity, Map<String, Object> data, Principal principal) { 
-      
+        cantidad_old = entity.getCantidad();
         if ((Boolean) data.get("rotate")) {
             System.out.println("Rotating...");
             rotate(entity);            
         }
         
-        if (principal.getAccessAll()) {
+        if (principal.getAccessAll()) {            
             upd(entity, data);
         }else {
             if (entity.getCantidad() <= (Double) data.get("cantidad")) {
@@ -91,9 +99,40 @@ public class InventarioManager extends AbstractManager<Inventario, InventarioDTO
         entity.setUnidad(unidad);
     }
     
+    @Override
+    protected void afterCreate(Inventario entity){
+        Inv_historico inv_hist = new Inv_historico();
+        System.out.println("InventarioHistoricoManager -> creating...");
+        inv_hist.setCantidad_new(entity.getCantidad());
+        inv_hist.setCantidad_old(cantidad_old);
+        inv_hist.setFecha(entity.getFecha());
+        inv_hist.setInventario(entity);
+        
+        inv_hist = inventario_histDAO.saveOrUpdate(inv_hist);
+        cantidad_old = 0.0;
+    }
+    
     private void rotate(Inventario entity){
         entity.setRotacion(entity.getRotacion()+1);    
     }
     
+    @Override
+    protected boolean inUse(Inventario entity) { 
+        if (entity.getInv_historico().isEmpty()) {
+             return false;
+        }
+        //entity.getInv_historico().remove(1);
+        System.out.println("lista llena..."+entity.getInv_historico().size());
+        return true;  
+    }
     
+    @Override
+     protected WebResponseData del(Inventario entity, Principal principal) throws Exception{ 
+        //if (!inUse(entity)) {                
+            dao().delete(entity);
+            
+            return new WebResponseData();
+        //}       
+        // return new WebResponseData(450, "No se puede eliminar esta entrada del inventario, exiten históricos asociados a él");
+     }
 }
