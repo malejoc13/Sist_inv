@@ -80,8 +80,14 @@
     <bean id="inventario_rPDFView" class="com.ams.reports.PDFView"
           p:url="classpath:reports/inventario_r.jasper"
           p:reportDataKey="datasource"/>
+    
+    <bean id="inv_historicoPDFView" class="com.ams.reports.PDFView"
+          p:url="classpath:reports/inv_historico.jasper"
+          p:reportDataKey="datasource"/>
    
     <bean id="inventarioExcelView" class="com.ams.util.InventarioExcelBuilder"/>
+    
+    <bean id="inv_historicoExcelView" class="com.ams.util.Inv_historicoExcelBuilder"/>
     
     <bean id="clientePDFView" class="com.ams.reports.PDFView"
           p:url="classpath:reports/cliente.jasper"
