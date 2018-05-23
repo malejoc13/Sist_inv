@@ -49,4 +49,13 @@ public class Mov_prodDAO extends AbstractBaseDAO<Mov_prod, Mov_prodDTO>{
                 .setResultTransformer(Transformers.aliasToBean(Mov_prodDTO.class));
     }
     
+    public Long exist(Long idProd, Long idMov) {
+        return (Long) buildCriteria()
+                .add(Restrictions.eq("producto.id", idProd))
+                .add(Restrictions.eq("movimiento.id", idMov))
+                .setProjection(Projections.property("id"))
+                .setMaxResults(1)
+                .uniqueResult();
+    }
+    
 }

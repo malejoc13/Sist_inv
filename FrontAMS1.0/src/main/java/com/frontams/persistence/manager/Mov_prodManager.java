@@ -17,6 +17,8 @@ import com.frontams.persistence.dao.MovimientoDAO;
 import com.frontams.persistence.dao.ProductoDAO;
 import com.frontams.persistence.dto.Mov_prodDTO;
 import com.frontams.persistence.model.Mov_prod;
+import com.frontams.persistence.model.Movimiento;
+import com.frontams.persistence.model.Producto;
 
 import com.frontams.persistence.security.dto.Principal;
 import java.util.Date;
@@ -33,9 +35,42 @@ public class Mov_prodManager extends AbstractManager<Mov_prod, Mov_prodDTO>{
     @Autowired
     private Mov_prodDAO mov_prodDAO;
     
+    @Autowired
+    private MovimientoDAO movimientoDAO;
+    
+    @Autowired
+    private ProductoDAO productoDAO;
+    
     @Override
     public AbstractBaseDAO dao() {
         return mov_prodDAO;
+    }
+    
+    @Override
+    protected Mov_prod create(Map<String, Object> data, Principal principal) throws Exception {
+             
+        Mov_prod mov_prod = new Mov_prod(); 
+        if (mov_prodDAO.exist((Long) data.get("productoId"), (Long) data.get("movimientoId")) != null) {
+                throw new RuntimeException("Esta asociaci&oacute;n ya existe.");
+            }
+        update(mov_prod, data, principal);
+
+        return mov_prod;
+    }
+    
+    @Override
+    protected void update(Mov_prod entity, Map<String, Object> data, Principal principal) {
+        Long productoId = (Long) data.get("productoId");
+        Long movimientoId = (Long) data.get("movimientoId");       
+                 
+        entity.setCantidad((Double) data.get("cantidad"));
+        entity.setSaldo_prod((Double) data.get("saldo_prod"));
+        
+        Producto prod = productoDAO.findById(productoId);
+        entity.setProducto(prod);     
+        
+        Movimiento mov = movimientoDAO.findById(movimientoId);
+        entity.setMovimiento(mov); 
     }
     
 }

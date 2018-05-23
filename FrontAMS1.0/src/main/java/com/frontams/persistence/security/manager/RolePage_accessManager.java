@@ -70,13 +70,6 @@ public class RolePage_accessManager extends AbstractManager<RolePage_access, Rol
         Page_access page = pageDAO.findById(pageAccessId);
         entity.setPage_access(page); 
     }
-    
-    @Override
-     protected WebResponseData del(RolePage_access entity, Principal principal) throws Exception{ 
-                     
-            dao().delete(entity);
-            return new WebResponseData();
-     }
-      
+         
     
 }

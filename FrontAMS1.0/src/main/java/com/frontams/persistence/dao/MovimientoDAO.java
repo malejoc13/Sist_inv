@@ -38,8 +38,8 @@ public class MovimientoDAO extends AbstractBaseDAO<Movimiento, MovimientoDTO>{
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("fecha").as("fecha"))   
-                .add(Projections.property("saldo").as("saldo"));
-                //.add(Projections.property("tipo_mov").as("tipo_mov"));
+                .add(Projections.property("saldo").as("saldo"))
+                .add(Projections.property("tipo_mov").as("tipo_mov"));
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(MovimientoDTO.class));
     }

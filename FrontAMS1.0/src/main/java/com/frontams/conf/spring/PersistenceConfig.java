@@ -68,11 +68,11 @@ public class PersistenceConfig {
     }
 
     Properties hibernateProperties() {
-        return new Properties() {
+        return new Properties() {            
             {
-                setProperty("hibernate.hbm2ddl.auto", "update");
-//                setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-                //     setProperty("hibernate.hbm2ddl.auto", "create");
+                setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+               // setProperty("hibernate.hbm2ddl.auto", "update");
+                //setProperty("hibernate.hbm2ddl.auto", "create");
                 setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
                 setProperty("hibernate.show_sql", "true");
                 setProperty("hibernate.type", "trace");

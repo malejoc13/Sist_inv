@@ -38,6 +38,38 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
         return movimientoDAO;
     }
     
+    @Override
+    protected Movimiento create(Map<String, Object> data, Principal principal) throws Exception {
+        Movimiento mov = new Movimiento(); 
+        update(mov, data, principal);
+
+        return mov;
+    }
     
+    @Override
+    protected void update(Movimiento entity, Map<String, Object> data, Principal principal) {
+              
+        entity.setFecha((Date) data.get("fecha"));
+        entity.setSaldo((Double) data.get("saldo"));
+        entity.setTipo_mov((Integer) data.get("tipo_mov"));
+    }
+    
+    @Override
+    protected boolean inUse(Movimiento entity) { 
+        if (entity.getMov_prod().isEmpty()) {
+             return false; 
+        }
+        System.out.println("lista llena...");
+        return true;
+    }
+    
+    @Override
+     protected WebResponseData del(Movimiento entity, Principal principal) throws Exception{ 
+        if (!inUse(entity)) {                
+            dao().delete(entity);
+            return new WebResponseData();
+        }       
+         return new WebResponseData(450, "El movimiento no se puede eliminar");
+     }
     
 }
