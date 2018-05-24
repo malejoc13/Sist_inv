@@ -46,6 +46,12 @@ public class Movimiento extends BaseEntity{
     
     private Date fecha;
     
+    private String descripcion;
+    /*tipo_mov:
+    1 Entradas
+    2 Salidas
+    3 Transferencias
+    4 Ajustes*/
     private Integer tipo_mov;
     
 //    @ManyToOne
@@ -58,6 +64,7 @@ public class Movimiento extends BaseEntity{
     /**
      * @return the id
      */
+    @Override
     public Long getId() {
         return id;
     }
@@ -123,6 +130,20 @@ public class Movimiento extends BaseEntity{
      */
     public void setTipo_mov(Integer tipo_mov) {
         this.tipo_mov = tipo_mov;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

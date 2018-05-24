@@ -21,7 +21,9 @@ public class MovimientoDTO implements Serializable{
     
     private Date fecha;
     
-    /*1 Entrada 2 Salida 3 Transferencia*/
+    private String descripcion;
+    
+    /*1 Entrada 2 Salida 3 Transferencia 4 Ajustes*/
     private Integer tipo_mov;
 
     /**
@@ -78,6 +80,20 @@ public class MovimientoDTO implements Serializable{
      */
     public void setTipo_mov(Integer tipo_mov) {
         this.tipo_mov = tipo_mov;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
 }

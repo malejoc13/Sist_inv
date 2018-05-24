@@ -36,7 +36,7 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
         if (request.getLimit() != 0) {
             criteria.setMaxResults(request.getLimit());
         }
-
+        
         applyListProjection(criteria);
 
         addOrder(criteria);

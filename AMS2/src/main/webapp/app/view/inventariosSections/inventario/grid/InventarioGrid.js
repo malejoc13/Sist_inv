@@ -70,7 +70,7 @@ Ext.define('Admin.view.inventariosSections.inventario.grid.InventarioGrid', {
                 }
             },
             {
-                text: "Saldo inicial",
+                text: "Cantidad ini",
                 dataIndex: 'saldo_ini',
                 filterType: 'filterNumber',
                 width: '10%',

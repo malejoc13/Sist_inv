@@ -5,7 +5,7 @@ Ext.define('Admin.base.BasePaginatedGrid', {
     storeClass: 'Admin.base.BaseStore',
     frame: false,
     header: false,
-    height: 350,
+    height: 300,
     width: '100%',
     titleAlign: 'center',
     viewConfig: {

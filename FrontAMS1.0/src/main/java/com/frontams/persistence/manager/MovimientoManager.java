@@ -13,7 +13,6 @@ import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.MovimientoDAO;
-import com.frontams.persistence.dao.Tipo_movDAO;
 import com.frontams.persistence.dto.MovimientoDTO;
 import com.frontams.persistence.model.Movimiento;
 
@@ -51,6 +50,7 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
               
         entity.setFecha((Date) data.get("fecha"));
         entity.setSaldo((Double) data.get("saldo"));
+        entity.setDescripcion((String) data.get("descripcion"));
         entity.setTipo_mov((Integer) data.get("tipo_mov"));
     }
     

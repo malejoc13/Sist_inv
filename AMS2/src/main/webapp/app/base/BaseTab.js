@@ -36,7 +36,7 @@ Ext.define('Admin.base.BaseTab', {
 
             if (me.isShowingOnBottom()) { // When !isShowingOnBottom(), show a small table
                 if ((me.items.items[0] instanceof Admin.base.BasePaginatedGrid)) {
-                    me.items.items[0].setHeight(250);
+                    me.items.items[0].setHeight(300);
                     if (me.items.items[0].getStore()) {
                         me.items.items[0].getStore().pageSize = 5;
                     }

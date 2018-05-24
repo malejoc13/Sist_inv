@@ -24,7 +24,8 @@ public class Mov_prodDTO implements Serializable{
     private Long movimientoId;
     
     private String producto;
-    private Double productoPrecio;
+    private String descripcion;
+    private String productoClave;
     private Long productoId;
 
     /**
@@ -126,17 +127,31 @@ public class Mov_prodDTO implements Serializable{
     }
 
     /**
-     * @return the productoPrecio
+     * @return the descripcion
      */
-    public Double getProductoPrecio() {
-        return productoPrecio;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     /**
-     * @param productoPrecio the productoPrecio to set
+     * @param descripcion the descripcion to set
      */
-    public void setProductoPrecio(Double productoPrecio) {
-        this.productoPrecio = productoPrecio;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the productoClave
+     */
+    public String getProductoClave() {
+        return productoClave;
+    }
+
+    /**
+     * @param productoClave the productoClave to set
+     */
+    public void setProductoClave(String productoClave) {
+        this.productoClave = productoClave;
     }
     
 }

@@ -56,13 +56,13 @@ Ext.define('Admin.view.inventariosSections.inv_historico.grid.Inv_historicoGrid'
                 
             },
             {
-                text: "Saldo ini",
+                text: "Cantidad ini",
                 dataIndex: 'cantidad_old',
                 filterType: 'filterNumber',
-                width: '8%'
+                width: '10%'
             },
             {
-                text: "Saldo",
+                text: "Cantidad",
                 dataIndex: 'cantidad_new',
                 filterType: 'filterNumber',
                 width: '8%'
@@ -79,7 +79,7 @@ Ext.define('Admin.view.inventariosSections.inv_historico.grid.Inv_historicoGrid'
                 text: "Unidad",//implementar un render para qeu muetre o oculte la columna en caso de quiene sta autenticado
                 dataIndex: 'unidad',
                 filter: 'unidad.name',
-                width: '25%'
+                width: '22%'
             }
         ]
     },

@@ -24,26 +24,30 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class Mov_prodDAO extends AbstractBaseDAO<Mov_prod, Mov_prodDTO>{
     
+    
     public Criteria buildCriteria() {
         return getCriteria()  //entidad   //alias
                 .createAlias("movimiento", "movimiento")
                 .createAlias("producto", "producto");
     }
     
+    @Override
     public void addOrder(Criteria criteria) {
         criteria.addOrder(Order.asc("cantidad"));
     }
     
     @Override
     public void applyListProjection(Criteria criteria) {
+        //System.out.println("apply list projection");
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
                 .add(Projections.property("cantidad").as("cantidad"))   
                 .add(Projections.property("saldo_prod").as("saldo_prod"))
-                .add(Projections.property("movimiento.name").as("movimiento"))
+                .add(Projections.property("movimiento.descripcion").as("movimiento"))
                 .add(Projections.property("movimiento.id").as("movimientoId"))
                 .add(Projections.property("producto.name").as("producto"))
-                .add(Projections.property("producto.precio_max").as("productoPrecio"))
+                .add(Projections.property("producto.clave").as("productoClave"))
+                .add(Projections.property("producto.descripcion").as("descripcion"))
                 .add(Projections.property("producto.id").as("productoId"));
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(Mov_prodDTO.class));
