@@ -64,7 +64,6 @@ public class Mov_prodManager extends AbstractManager<Mov_prod, Mov_prodDTO>{
         Long movimientoId = (Long) data.get("movimientoId");       
                  
         entity.setCantidad((Double) data.get("cantidad"));
-        entity.setSaldo_prod((Double) data.get("saldo_prod"));
         
         Producto prod = productoDAO.findById(productoId);
         entity.setProducto(prod);     

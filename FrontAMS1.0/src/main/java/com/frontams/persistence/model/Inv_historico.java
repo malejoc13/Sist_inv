@@ -29,7 +29,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "inv_historico", schema = "persistence")
+@Table(name = "invhistorico", schema = "persistence")
 @XmlRootElement
 public class Inv_historico extends BaseEntity {
     
@@ -37,8 +37,8 @@ public class Inv_historico extends BaseEntity {
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "inv_historico_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_inv_historico", sequenceName = "inv_historico_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_inv_historico")
     @Generated(GenerationTime.INSERT)
     private Long id;
     

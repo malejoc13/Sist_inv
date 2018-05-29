@@ -29,7 +29,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "mov_prod", schema = "persistence")
+@Table(name = "movprod", schema = "persistence")
 @XmlRootElement
 public class Mov_prod extends BaseEntity{
     
@@ -37,14 +37,12 @@ public class Mov_prod extends BaseEntity{
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "mov_prod_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_mov_prod", sequenceName = "mov_prod_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_mov_prod")
     @Generated(GenerationTime.INSERT)
     private Long id;
     
     private Double cantidad;
-    
-    private Double saldo_prod;
     
     @ManyToOne
     @JoinColumn(name = "movimiento")
@@ -80,20 +78,6 @@ public class Mov_prod extends BaseEntity{
      */
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
-    }
-
-    /**
-     * @return the saldo_prod
-     */
-    public Double getSaldo_prod() {
-        return saldo_prod;
-    }
-
-    /**
-     * @param saldo_prod the saldo_prod to set
-     */
-    public void setSaldo_prod(Double saldo_prod) {
-        this.saldo_prod = saldo_prod;
     }
 
     /**

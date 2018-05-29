@@ -31,7 +31,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "un_medida", schema = "persistence")
+@Table(name = "unmedida", schema = "persistence")
 @XmlRootElement
 public class Un_medida extends BaseEntity {
 
@@ -39,8 +39,8 @@ public class Un_medida extends BaseEntity {
     }
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "un_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_un_medida", sequenceName = "un_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_un_medida")
     @Generated(GenerationTime.INSERT)
     private Long id;
     

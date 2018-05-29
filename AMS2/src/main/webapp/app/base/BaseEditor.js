@@ -12,6 +12,7 @@ Ext.define('Admin.base.BaseEditor', {
     layout: 'hbox',
     hidden: true, //Editors will be always hidden when the ViewTab starts
     border: '1px solid #32404e',
+    superEntityId: null,
     style: {
         'padding': '10px'
     }, 
@@ -47,6 +48,7 @@ Ext.define('Admin.base.BaseEditor', {
             ui: 'green',
             formBind: true,
             handler: function () {
+                
                 var me = this,
                     editor = me.up().up(),
                     viewTab = editor.up(),
@@ -58,13 +60,14 @@ Ext.define('Admin.base.BaseEditor', {
                 if (viewTab.additionalValues) {
                     Ext.apply(formData.typedValues, editor.getAdditionalValues());
                 }
+                
                 Ext.getBody().mask("Guardando...");
                 Request.load({
                     url: viewTab.up().xtype + '/' + viewTab.entity + '/save',
                     method: 'POST',
                     jsonData: formData.typedValues,
                     ignoreError: true,
-                    success: function (response) {
+                    success: function (response) {//DEVUELVE EL ID
                        Ext.getBody().unmask();
                         if (response.status === 500) {//en caso de lanzar una exepcion
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
@@ -126,13 +129,12 @@ Ext.define('Admin.base.BaseEditor', {
     init: function (data) {
         var me = this;
         data = data || {};
-
-        if (me.initData) {
+        
+        if (me.initData) {            
             Ext.apply(data, me.initData());
-        }
-
-        me.getForm().setValues(data);
-
+        }      
+        me.getForm().setValues(data);        
+        
         Ext.each(me.getForm().getFields().items, function (field) {
             if (field.init) {
                 field.init(data);

@@ -45,11 +45,14 @@ Ext.define('Admin.base.BaseViewTab', {
         } 
     },
     init: function (data) {
+        
         var me = this,
                 baseEditor = me.down('baseEditor'),
                 baseDetails = me.down('baseDetails'),
                 subPanel = me.down('baseSubPanel');
-
+        
+           baseEditor.superEntityId=me.superEntityId;
+        
         if (baseEditor) {
             baseEditor.init(data);
         }

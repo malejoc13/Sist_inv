@@ -40,11 +40,12 @@ public class Unidad extends BaseEntity{
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "unidad_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_unidad", sequenceName = "unidad_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_unidad")
     @Generated(GenerationTime.INSERT)
     private Long id;
     
+    @Column(name="nombre")
     private String name;
     
     private String direccion;

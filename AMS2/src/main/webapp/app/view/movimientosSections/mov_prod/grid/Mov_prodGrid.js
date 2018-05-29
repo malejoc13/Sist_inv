@@ -26,16 +26,16 @@ Ext.define('Admin.view.movimientosSections.mov_prod.grid.Mov_prodGrid', {
                 }
             },
             {
+                text: "($) Precio",
+                dataIndex: 'precio',
+                filterType: 'filterNumber',
+                width: '24%'
+            },
+            {
                 text: "Cantidad",
                 dataIndex: 'cantidad',
                 filterType: 'filterNumber',
                 width: '25%'
-            },
-            {
-                text: "($) Saldo",
-                dataIndex: 'saldo_prod',
-                filterType: 'filterNumber',
-                width: '24%'
             }
         ]
     }

@@ -38,11 +38,12 @@ public class Producto extends BaseEntity {
     }
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "producto_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_producto", sequenceName = "producto_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_producto")
     @Generated(GenerationTime.INSERT)
     private Long id;
     
+    @Column(name="nombre")
     private String name;
     
     private String clave;

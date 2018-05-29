@@ -29,10 +29,11 @@ public class Cliente extends BaseEntity{
     }
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "cliente_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_cliente", sequenceName = "cliente_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_cliente")
     private Long id;
 
+    @Column(name="nomb")
     private String name;
 
     private String lastName;
@@ -41,6 +42,7 @@ public class Cliente extends BaseEntity{
     
     private String telefono;
     
+    @Column(name="electronic_mail")
     private String email;
     
     private Date fecha_nac;

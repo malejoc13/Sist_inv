@@ -14,7 +14,7 @@ Ext.define('Admin.view.inventariosSections.inventario.view.InventarioDetails', {
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
                         '<td><b>Nombre: </b>({productoClave}) {producto}</td>', 
-                        '<td><b>Saldo inicial: </b> {saldo_ini}</td>',
+                        '<td><b>Cantidad inicial: </b> {saldo_ini}</td>',
                         '<td><b>Cantidad: </b> {cantidad}</td>', 
                     '</tr>',
                     '<tr>',
@@ -22,7 +22,12 @@ Ext.define('Admin.view.inventariosSections.inventario.view.InventarioDetails', {
                         '<td><b>Fecha: </b> {[Util.formatDate(values.fecha)]}</td>',
                         '<td><b>Unidad: </b> {unidad}</td>', 
                     '</tr>',
-                '</table>',  
+                '</table>',
+                '<table cellpadding="10" style="width:100%;cellspacing">',
+                    '<tr>',
+                        '<td><b>Descripción: </b> {descripcion}</td>', 
+                    '</tr>',                    
+                '</table>',
                 '<div>'
             ].join('') 
 

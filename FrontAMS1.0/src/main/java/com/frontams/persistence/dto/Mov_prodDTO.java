@@ -10,23 +10,24 @@ package com.frontams.persistence.dto;
  * @author Sistemas
  */
 import java.io.Serializable;
+import java.util.Date;
 public class Mov_prodDTO implements Serializable{
     
     public Mov_prodDTO(){}
     
     private Long id;
     
-    private Double cantidad;
+    private Double cantidad;    
     
-    private Double saldo_prod;
     
-    private String movimiento;
+    private Date fecha;
     private Long movimientoId;
     
     private String producto;
     private String descripcion;
     private String productoClave;
     private Long productoId;
+    private Double precio;
 
     /**
      * @return the id
@@ -54,34 +55,6 @@ public class Mov_prodDTO implements Serializable{
      */
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
-    }
-
-    /**
-     * @return the saldo_prod
-     */
-    public Double getSaldo_prod() {
-        return saldo_prod;
-    }
-
-    /**
-     * @param saldo_prod the saldo_prod to set
-     */
-    public void setSaldo_prod(Double saldo_prod) {
-        this.saldo_prod = saldo_prod;
-    }
-
-    /**
-     * @return the movimiento
-     */
-    public String getMovimiento() {
-        return movimiento;
-    }
-
-    /**
-     * @param movimiento the movimiento to set
-     */
-    public void setMovimiento(String movimiento) {
-        this.movimiento = movimiento;
     }
 
     /**
@@ -152,6 +125,34 @@ public class Mov_prodDTO implements Serializable{
      */
     public void setProductoClave(String productoClave) {
         this.productoClave = productoClave;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public Date getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    /**
+     * @return the precio
+     */
+    public Double getPrecio() {
+        return precio;
+    }
+
+    /**
+     * @param precio the precio to set
+     */
+    public void setPrecio(Double precio) {
+        this.precio = precio;
     }
     
 }

@@ -30,7 +30,7 @@ public class MovimientoDAO extends AbstractBaseDAO<Movimiento, MovimientoDTO>{
 //    }
     
     public void addOrder(Criteria criteria) {
-        criteria.addOrder(Order.asc("fecha"));
+        criteria.addOrder(Order.desc("fecha"));
     }
     
     @Override

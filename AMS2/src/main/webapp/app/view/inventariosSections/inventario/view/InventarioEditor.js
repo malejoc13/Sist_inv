@@ -41,7 +41,7 @@
         {
             items: [                
                 {
-                    fieldLabel: 'Saldo inicial',                  
+                    fieldLabel: 'Cantidad inicial',                  
                     name: 'saldo_ini',
                     xtype: 'baseDoubleField',                    
                     allowBlank : false,

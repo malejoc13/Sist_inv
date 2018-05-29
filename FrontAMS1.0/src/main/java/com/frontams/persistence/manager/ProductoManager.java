@@ -96,13 +96,24 @@ public class ProductoManager extends AbstractManager<Producto, ProductoDTO>{
         return true;  
     }
     
+    private boolean inMovUse(Producto entity) { 
+        if (entity.getMov_prod().isEmpty()) {
+             return false;
+        }        
+        return true;  
+    }
+    
     @Override
      protected WebResponseData del(Producto entity, Principal principal) throws Exception{ 
-        if (!inUse(entity)) {                
-            dao().delete(entity);
+        if (inUse(entity)) {                
+             return new WebResponseData(450, "El producto "+entity.getName()+" no se puede eliminar, a&uacute;n cuenta con existencia en el inventario");
+        } 
+        if (inMovUse(entity)) {                
+             return new WebResponseData(450, "El producto "+entity.getName()+" no se puede eliminar, a&uacute;n se le hace referencia en los movimientos");
+        }
+        dao().delete(entity);
             return new WebResponseData();
-        }       
-         return new WebResponseData(450, "El producto "+entity.getName()+" no se puede eliminar, a&uacute;n cuenta con existencia en el inventario");
+        
      }
     
 }

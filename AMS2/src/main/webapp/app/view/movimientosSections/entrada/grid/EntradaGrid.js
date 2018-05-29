@@ -13,8 +13,9 @@ Ext.define('Admin.view.movimientosSections.entrada.grid.EntradaGrid', {
                 xtype: 'dateGridColumn',
                 text: "Fecha",
                 dataIndex: 'fecha',
+                format: 'd/m/Y g:i:s a',
                 filterType: 'filterDate',
-                width: '15%'
+                width: '18%'
             },
             {
                 text: "Saldo Total",
@@ -27,7 +28,7 @@ Ext.define('Admin.view.movimientosSections.entrada.grid.EntradaGrid', {
                 dataIndex: 'descripcion',
                 filterType: 'filterText',
                 xtype: 'toolTipColumn',
-                width: '69%'
+                width: '66%'
             }
         ]
     },

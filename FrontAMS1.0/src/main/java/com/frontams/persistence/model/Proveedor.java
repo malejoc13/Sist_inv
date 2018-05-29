@@ -38,11 +38,12 @@ public class Proveedor extends BaseEntity{
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "proveedor_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_proveedor", sequenceName = "proveedor_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_proveedor")
     @Generated(GenerationTime.INSERT)
     private Long id;
     
+    @Column(name="nombre")
     private String name;
     
     private String direccion;
@@ -51,6 +52,7 @@ public class Proveedor extends BaseEntity{
     
     private String telefono_m;
     
+    @Column(name="electronic_mail")
     private String email;
     
     private String contacto;

@@ -47,7 +47,6 @@ Ext.define('Admin.base.BaseController', {
                         if (activeSubTab.entity === 'role_page_access') {
                             activeSubTab.setTitle("Rol "+record.data.name+" - Acceso a P&aacute;ginas");
                         }
-                        
                         activeTabElement.getStore().loadPage(1);//recargo el grid del subtab
                     }                                           //y el plugin del grid filter que se anexa 
                                                                //cada vez que creo un grid y le pasa los filtros
@@ -86,6 +85,7 @@ Ext.define('Admin.base.BaseController', {
     deleteGridRow: function (cmp){
        var me = this,
            grid = cmp.up().up().items.items[0],
+           subpanel = cmp.up().up().items.items[1],
            currentTab = grid.up(),
            message = "¿Est&aacute; seguro que desea eliminar?",
            data = grid.getSelectionModel().getSelection();
@@ -93,10 +93,12 @@ Ext.define('Admin.base.BaseController', {
                 return;
             } else {
                 data = data[0].data;
-            }
-        if (String(currentTab.entity) === 'inventario') {
-            //alert('inv.');
+            }            
+        if (String(currentTab.entity) === 'inventario') {            
             message = "¿Est&aacute; seguro que desea eliminar?<br/>Tenga en cuenta que también eliminará todas sus entradas en el Histórico"
+        }
+        if (String(currentTab.entity) === 'movimiento') {            
+            message = "¿Est&aacute; seguro que desea eliminar el Movimiento?<br/>Tenga en cuenta que también eliminará los detalles de los productos asociados a este"
         }
         Ext.Msg.confirm("Eliminar", message, function(btn){
             if (btn == "yes") {
@@ -111,7 +113,20 @@ Ext.define('Admin.base.BaseController', {
                         if (response.status === 450 || response.status === 550 || response.status === 500) {
                              Ext.Msg.alert('Informaci&oacute;n', response.statusMessage);
                         } else {
-                            grid.getStore().loadPage(1);  
+                            grid.getStore().loadPage(1); 
+                            if (subpanel && subpanel instanceof Admin.base.BaseSubPanel) {
+                                var activeSubTab = subpanel.getActiveTab();
+
+                                 if (activeSubTab) {
+                                     var activeTabElement = activeSubTab.items.items[0];
+
+                                     if (activeTabElement instanceof Admin.base.BasePaginatedGrid) {
+                                         activeTabElement.getStore().loadPage(1);
+                                     }
+                                 }
+                             }
+                            
+                            
                         }                                   
                      }
                 }) 
@@ -141,6 +156,7 @@ Ext.define('Admin.base.BaseController', {
     //Se crea un ViewTab del tipo de elemento del grid
    
     openViewTab: function (data, grid) {
+        
         var me = this,
                 xtype = grid.xtype, //ej 'proveedorGridTab'
                 currentTab = grid.up(),//gridTab
@@ -161,7 +177,8 @@ Ext.define('Admin.base.BaseController', {
             me.getView().setActiveTab(existentTab);
         } else {
 
-            var newTab = {xtype: viewTab,
+            var newTab = {
+                xtype: viewTab,
                 closable: true,
                 itemId: itemId,
                 filters: openViewFilters || superTab.filters,

@@ -65,11 +65,11 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
     
     @Override
      protected WebResponseData del(Movimiento entity, Principal principal) throws Exception{ 
-        if (!inUse(entity)) {                
+        //if (!inUse(entity)) {                
             dao().delete(entity);
             return new WebResponseData();
-        }       
-         return new WebResponseData(450, "El movimiento no se puede eliminar");
+       // }       
+        // return new WebResponseData(450, "El movimiento no se puede eliminar");
      }
     
 }

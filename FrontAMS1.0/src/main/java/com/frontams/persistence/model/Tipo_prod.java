@@ -29,18 +29,19 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "tipo_prod", schema = "persistence")
+@Table(name = "tipoprod", schema = "persistence")
 @XmlRootElement
 public class Tipo_prod extends BaseEntity{
     
     public Tipo_prod(){}
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "tipo_prod_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_tipo_prod", sequenceName = "tipo_prod_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_tipo_prod")
     @Generated(GenerationTime.INSERT)
     private Long id;
     
+    @Column(name="nombre")
     private String name;
     
     private String descripcion;

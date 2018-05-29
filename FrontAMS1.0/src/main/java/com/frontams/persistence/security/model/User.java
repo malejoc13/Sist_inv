@@ -32,20 +32,24 @@ public class User extends BaseEntity {
     }
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "user_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_user", sequenceName = "user_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_user")
     private Long id;
 
+    @Column(name="usuario")
     private String username;
 
+    @Column(name="contrasena")
     private String password;
 
     private String firstName;
 
     private String lastName;
 
+    @Column(name="activo")
     private Boolean active;
 
+    @Column(name="electronic_mail")
     private String email;
 
    @ManyToOne

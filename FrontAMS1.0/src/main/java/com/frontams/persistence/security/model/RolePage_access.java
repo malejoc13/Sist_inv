@@ -31,7 +31,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "role_page_access", schema = "security")
+@Table(name = "rolepageaccess", schema = "security")
 @XmlRootElement
 public class RolePage_access extends BaseEntity{
     
@@ -39,8 +39,8 @@ public class RolePage_access extends BaseEntity{
     
     @Id
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "serial")
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "role_page_access_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_sequence")
+    @SequenceGenerator(name = "pk_role_page_access", sequenceName = "role_page_access_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pk_role_page_access")
     @Generated(GenerationTime.INSERT)
     private Long id;
     

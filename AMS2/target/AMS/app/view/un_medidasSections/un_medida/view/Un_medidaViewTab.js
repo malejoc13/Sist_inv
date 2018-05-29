@@ -22,8 +22,6 @@ Ext.define('Admin.view.un_medidasSections.un_medida.view.Un_medidaViewTab', {
         } else {
             if (data && data.id) {
                  title = 'Modificar ' + me.viewName;
-                //var titleName = data[me.propertyTitleName || 'name']; //if data has not name, then specify 'propertyTitleName'
-                //title = me.viewName + ': ' + titleName;
             } else {
                 title = 'Nueva ' + me.viewName;
             }
