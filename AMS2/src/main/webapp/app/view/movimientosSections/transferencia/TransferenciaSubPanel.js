@@ -1,13 +1,14 @@
-Ext.define('Admin.view.movimientosSections.salida.SalidaSubPanel', {
+Ext.define('Admin.view.movimientosSections.transferencia.TransferenciaSubPanel', {
     extend: 'Admin.base.BaseSubPanel',
-    xtype: 'salidaSubPanel',
+    xtype: 'transferenciaSubPanel',
     config: {
         subPanels: [
             {
                 xtype: 'mov_prodGridTab',
-                title: 'Salida - Productos'                
+                title: 'Transferencia - Productos'
             }                                          
         ]
     }
 });
+
 

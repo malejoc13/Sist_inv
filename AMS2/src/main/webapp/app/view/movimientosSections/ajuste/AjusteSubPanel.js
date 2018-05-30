@@ -1,13 +1,14 @@
-Ext.define('Admin.view.movimientosSections.salida.SalidaSubPanel', {
+Ext.define('Admin.view.movimientosSections.ajuste.AjusteSubPanel', {
     extend: 'Admin.base.BaseSubPanel',
-    xtype: 'salidaSubPanel',
+    xtype: 'ajusteSubPanel',
     config: {
         subPanels: [
             {
                 xtype: 'mov_prodGridTab',
-                title: 'Salida - Productos'                
+                title: 'Ajuste - Productos'                
             }                                          
         ]
     }
 });
+
 

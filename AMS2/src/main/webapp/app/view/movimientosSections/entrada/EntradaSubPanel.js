@@ -4,7 +4,8 @@ Ext.define('Admin.view.movimientosSections.entrada.EntradaSubPanel', {
     config: {
         subPanels: [
             {
-                xtype: 'mov_prodGridTab'                
+                xtype: 'mov_prodGridTab',
+                title: 'Entrada - Productos'                
             }                                          
         ]
     }

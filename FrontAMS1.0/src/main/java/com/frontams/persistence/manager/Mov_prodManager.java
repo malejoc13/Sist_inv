@@ -51,7 +51,7 @@ public class Mov_prodManager extends AbstractManager<Mov_prod, Mov_prodDTO>{
              
         Mov_prod mov_prod = new Mov_prod(); 
         if (mov_prodDAO.exist((Long) data.get("productoId"), (Long) data.get("movimientoId")) != null) {
-                throw new RuntimeException("Esta asociaci&oacute;n ya existe.");
+                throw new RuntimeException("Este producto ya se encuentra registrado en el movimiento.");
             }
         update(mov_prod, data, principal);
 
