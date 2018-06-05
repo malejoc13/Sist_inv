@@ -28,7 +28,13 @@ Ext.define('Admin.view.movimientosSections.salida.grid.SalidaGrid', {
                 dataIndex: 'descripcion',
                 filterType: 'filterText',
                 xtype: 'toolTipColumn',
-                width: '66%'
+                width: '46%'
+            }, 
+            {
+                text: "Unidad",//implementar un render para qeu muetre o oculte la columna en caso de quiene sta autenticado
+                dataIndex: 'unidad',
+                filter: 'unidad.name',
+                width: '20%'
             }
         ]
     },

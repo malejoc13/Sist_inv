@@ -12,6 +12,7 @@ Ext.define('Admin.view.movimientosSections.entrada.view.EntradaDetails', {
                 '<div style="padding:20px">',
                 '<table cellpadding="10" style="width:100%;cellspacing">',
                     '<tr>',
+                        '<td><b>Unidad: </b> {unidad}</td>', 
                         '<td><b>Fecha: </b> {[Util.formatDate(values.fecha)]}</td>',
                         '<td><b>Saldo total: </b> {saldo}</td>',
                     '</tr>',                                        

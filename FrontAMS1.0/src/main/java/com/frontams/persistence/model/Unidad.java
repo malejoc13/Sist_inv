@@ -57,6 +57,9 @@ public class Unidad extends BaseEntity{
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "unidad")
     private List<Inventario> inventario;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "unidad")
+    private List<Movimiento> movimiento;
     /**
      * @return the id
      */
@@ -139,6 +142,20 @@ public class Unidad extends BaseEntity{
      */
     public void setInventario(List<Inventario> inventario) {
         this.inventario = inventario;
+    }
+
+    /**
+     * @return the movimiento
+     */
+    public List<Movimiento> getMovimiento() {
+        return movimiento;
+    }
+
+    /**
+     * @param movimiento the movimiento to set
+     */
+    public void setMovimiento(List<Movimiento> movimiento) {
+        this.movimiento = movimiento;
     }
   
     

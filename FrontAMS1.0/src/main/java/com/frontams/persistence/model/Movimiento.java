@@ -61,6 +61,10 @@ public class Movimiento extends BaseEntity{
     
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "movimiento")
     private List<Mov_prod> mov_prod;
+    
+    @ManyToOne
+    @JoinColumn(name = "unidad")
+    private Unidad unidad;
 
     /**
      * @return the id
@@ -145,6 +149,20 @@ public class Movimiento extends BaseEntity{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the unidad
+     */
+    public Unidad getUnidad() {
+        return unidad;
+    }
+
+    /**
+     * @param unidad the unidad to set
+     */
+    public void setUnidad(Unidad unidad) {
+        this.unidad = unidad;
     }
     
     

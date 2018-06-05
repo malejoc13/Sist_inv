@@ -65,7 +65,11 @@ Ext.define('Admin.view.inventariosSections.inv_historico.grid.Inv_historicoGrid'
                 text: "Cantidad",
                 dataIndex: 'cantidad_new',
                 filterType: 'filterNumber',
-                width: '8%'
+                width: '8%',  
+                renderer: function(value, metaData, record) {
+                                metaData.tdAttr = 'data-qtip="'+ ((parseFloat(record.get('cantidad_old'))-parseFloat(record.get('cantidad_new'))).toFixed(3)*-1)+'"';
+                                return value;
+                            }
             },
             {
                 xtype: 'dateGridColumn',

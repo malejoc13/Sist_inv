@@ -25,6 +25,9 @@ public class MovimientoDTO implements Serializable{
     
     /*1 Entrada 2 Salida 3 Transferencia 4 Ajustes*/
     private Integer tipo_mov;
+    
+    private String unidad;
+    private Long unidadId;
 
     /**
      * @return the id
@@ -94,6 +97,34 @@ public class MovimientoDTO implements Serializable{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the unidad
+     */
+    public String getUnidad() {
+        return unidad;
+    }
+
+    /**
+     * @param unidad the unidad to set
+     */
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
+    }
+
+    /**
+     * @return the unidadId
+     */
+    public Long getUnidadId() {
+        return unidadId;
+    }
+
+    /**
+     * @param unidadId the unidadId to set
+     */
+    public void setUnidadId(Long unidadId) {
+        this.unidadId = unidadId;
     }
     
 }

@@ -24,10 +24,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MovimientoDAO extends AbstractBaseDAO<Movimiento, MovimientoDTO>{
     
-//    public Criteria buildCriteria() {
-//        return getCriteria()  //entidad   //alias
-//                .createAlias("tipo_mov", "tipo_mov");
-//    }
+    public Criteria buildCriteria() {
+        return getCriteria()  //entidad   //alias
+                .createAlias("unidad", "unidad");
+    }
     
     public void addOrder(Criteria criteria) {
         criteria.addOrder(Order.desc("fecha"));
@@ -40,7 +40,9 @@ public class MovimientoDAO extends AbstractBaseDAO<Movimiento, MovimientoDTO>{
                 .add(Projections.property("fecha").as("fecha"))   
                 .add(Projections.property("saldo").as("saldo"))
                 .add(Projections.property("descripcion").as("descripcion"))
-                .add(Projections.property("tipo_mov").as("tipo_mov"));
+                .add(Projections.property("tipo_mov").as("tipo_mov"))
+                .add(Projections.property("unidad.name").as("unidad"))
+                .add(Projections.property("unidad.id").as("unidadId"));
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(MovimientoDTO.class));
     }

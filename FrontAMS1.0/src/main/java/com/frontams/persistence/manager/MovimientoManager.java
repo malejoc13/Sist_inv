@@ -13,8 +13,10 @@ import com.frontams.common.dao.AbstractBaseDAO;
 import com.frontams.common.manager.AbstractManager; 
 import com.frontams.common.util.response.WebResponseData;
 import com.frontams.persistence.dao.MovimientoDAO;
+import com.frontams.persistence.dao.UnidadDAO;
 import com.frontams.persistence.dto.MovimientoDTO;
 import com.frontams.persistence.model.Movimiento;
+import com.frontams.persistence.model.Unidad;
 
 import com.frontams.persistence.security.dto.Principal;
 
@@ -31,6 +33,9 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
     
     @Autowired
     private MovimientoDAO movimientoDAO;
+    
+    @Autowired
+    private UnidadDAO unidadDAO;
     
    @Override
     public AbstractBaseDAO dao() {
@@ -52,6 +57,9 @@ public class MovimientoManager extends AbstractManager<Movimiento, MovimientoDTO
         entity.setSaldo((Double) data.get("saldo"));
         entity.setDescripcion((String) data.get("descripcion"));
         entity.setTipo_mov((Integer) data.get("tipo_mov"));
+        
+        Unidad unidad = unidadDAO.findById((Long) data.get("unidadId"));
+        entity.setUnidad(unidad);
     }
     
     @Override
