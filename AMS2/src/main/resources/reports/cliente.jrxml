@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab479676-fa42-4b63-ab11-2cad81b7bde4">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="42"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="name" class="java.lang.String"/>
 	<field name="direccion" class="java.lang.String"/>
@@ -17,7 +17,7 @@
 		<band height="79" splitType="Stretch">
 			<image>
 				<reportElement mode="Transparent" x="57" y="14" width="141" height="65" uuid="567c8039-eeea-4528-a95c-3249f03d9d88"/>
-				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/vc-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://loscompadres.us-west-1.elasticbeanstalk.com/AMS/resources/images/vc-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="262" y="20" width="162" height="36" uuid="a1846c9a-01aa-45b9-b01f-62215c8a8503"/>
@@ -35,7 +35,7 @@
 			</textField>
 			<image>
 				<reportElement x="482" y="0" width="87" height="79" uuid="e378c6c3-ffcd-499c-9357-11ae76359ea0"/>
-				<imageExpression><![CDATA["http://inventario.us-west-1.elasticbeanstalk.com/AMS/resources/images/c-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://loscompadres.us-west-1.elasticbeanstalk.com/AMS/resources/images/c-logo.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
